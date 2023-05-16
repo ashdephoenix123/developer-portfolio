@@ -38,7 +38,7 @@ export default function Home() {
             <h1 className="font-semibold text-4xl text-gray-700 max-[950px]:text-center">Skills I have<span className="font-serif">,</span></h1>
             <p className="italic mb-4  max-[950px]:text-center">These are the building blocks of success.</p>
             <div className="flex items-start">
-              <Image className="max-[530px]:hidden" src={'/settings.gif'} width={180} height={180}></Image>
+              <Image className="max-[530px]:hidden" src={'/connection2.gif'} width={180} height={180}></Image>
               <div className="py-2 px-6 flex gap-1 justify-center max-[950px]:mx-auto self-center flex-wrap">
                 <button className="btn2 hover:scale-105 transition-all bg-red-600">HTML</button>
                 <button className="btn2 hover:scale-105 transition-all bg-blue-600">CSS</button>

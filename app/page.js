@@ -1,113 +1,97 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Card from "./component/Card";
+import Contact from "./component/Contact";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <>
+      <div className="container2">
+        <div className="flex min-[950px]:padd h-[50vh] relative homeS">
+          <div className="left basis-1/2 my-auto heroSection  max-[350px]:px-3">
+            <h1 className="font-semibold text-4xl text-gray-700">Welcome You<span className="font-serif">,</span></h1>
+            <p className="italic mb-4">Building a better web, one line of code at a time.</p>
+            <p className="pr-16 mb-4 removePad1  max-[394px]:text-sm">Want to bring your digital ideas to life through clean, modern, and functional websites and web applications? From conception to launch, I work with you every step of the way to ensure that your online presence accurately reflects your brand and meet your needs.</p>
+            <button className="btn max-[350px]:block max-[350px]:mb-2">Explore Blogs</button>
+            <Link href={'/resume.pdf'} target="_blank" className="ml-2 btn  max-[350px]:ml-0">View Resumé</Link>
+          </div>
+          <div className="right relative basis-1/2 clipIt clipOver">
+            <Image src='/3.jpg' fill className='object-cover' alt="hero-image"></Image>
+          </div>
+          <Image src='/3.jpg' fill className='object-cover disp' alt="hero-image2"></Image>
+        </div>
+        <div className="aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd mt-12 min-[950px]:mt-28" id="about">
+          <div className="left relative basis-1/3 overflow-hidden rounded-2xl shade1">
+            <Image src='/me3.jpg' width={500} height={500} className='w-full object-cover object-top max-[866px]:hidden' alt="hero-image"></Image>
+          </div>
+          <div className="right basis-2/3 max-[866px]:pl-0 pl-16">
+            <h2 className="head1 text-center">About Me<span className="font-serif">,</span></h2>
+            <div className="text-center text-sm italic">
+              <p className="mb-4">Hello and welcome! I am a passionate web developer with a love for creating beautiful, functional websites and web applications. My journey into web development began with a curiosity for how websites worked, and has since evolved into a career focused on bringing my clients' digital visions to life.</p>
+              <p className="mb-4">With a strong foundation in front-end development using HTML, CSS, and JavaScript, I am able to create engaging user interfaces that are responsive across all devices. I am also comfortable working with back-end technologies such as Node.js, and databases such as MongoDB.</p>
+              <p className="max-[530px]:hidden">When I'm not coding, you can find me exploring the outdoors and trying out new foods. I am always looking for ways to challenge myself and continue learning, and I am excited for the opportunity to work with you and bring your digital ideas to life."</p>
+            </div>
+          </div>
+        </div>
+        <div className="skillsandeducation flex mt-12 min-[950px]:mt-28 min-[950px]:padd">
+          <div className="left basis-1/2 mr-4">
+            <h1 className="font-semibold text-4xl text-gray-700 max-[950px]:text-center">Skills I have<span className="font-serif">,</span></h1>
+            <p className="italic mb-4  max-[950px]:text-center">These are the building blocks of success.</p>
+            <div className="flex items-start">
+              <Image className="max-[530px]:hidden" src={'/settings.gif'} width={180} height={180}></Image>
+              <div className="py-2 px-6 flex gap-1 justify-center max-[950px]:mx-auto self-center flex-wrap">
+                <button className="btn2 hover:scale-105 transition-all bg-red-600">HTML</button>
+                <button className="btn2 hover:scale-105 transition-all bg-blue-600">CSS</button>
+                <button className="btn2 hover:scale-105 transition-all bg-yellow-500">JavaScript</button>
+                <button className="btn2 hover:scale-105 transition-all bg-blue-500">React</button>
+                <button className="btn2 hover:scale-105 transition-all bg-green-700">NodeJS</button>
+                <button className="btn2 hover:scale-105 transition-all bg-black">NextJS</button>
+                <button className="btn2 hover:scale-105 transition-all bg-gray-600">Express</button>
+                <button className="btn2 hover:scale-105 transition-all bg-green-800">MongoDB</button>
+              </div>
+            </div>
+          </div>
+          <div className="right relative basis-1/2">
+            <h1 className="font-semibold text-4xl text-gray-700  max-[950px]:text-center">Educational Qualifications<span className="font-serif">,</span></h1>
+            <p className="italic mb-4  max-[950px]:text-center">It's not just a degree, it's the knowledge and skills that help you achieve our goals.</p>
+            <ul>
+              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
+                <Image src={'/jain5.jpg'} width={80} height={80} className="mr-4"></Image>
+                <span className="font-sm text4">Jain University (2021 - present)</span>
+              </li>
+              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
+                <Image src={'/nbu.png'} width={80} height={80} className="mr-4"></Image>
+                <span className="font-sm text4">North Bengal University (2017 - 2021)</span>
+              </li>
+              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
+                <Image src={'/school.jpg'} width={80} height={80} className="mr-4"></Image>
+                <span className="font-sm text4">Siliguri Model High School (2015 - 2017)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="services min-[950px]:padd mt-12 min-[950px]:mt-20" id="services">
+          <h2 className="head1  max-[950px]:text-center">Services I Provide<span className="font-serif">,</span></h2>
+          <div className="cardContainer">
+            <Card
+              title="Website Design & Development"
+              description="I will help you in custom website design and development, as well as responsive design for optimal viewing on different devices."
+              link="Hire me"
             />
-          </a>
+            <Card
+              title="Mentorship"
+              description="I offer one-on-one mentorship to help new and aspiring developers develop their skills. Let's work together to help you achieve your goals and reach your full potential as a web developer."
+              link="Get Support"
+            />
+            <Card
+              title="Content Writing"
+              description="I can help you create website content that captivates and engages your audience. I craft content that is optimized for SEO and designed to convert visitors into customers."
+              link="Get in touch"
+            />
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Contact />
+    </>
   )
 }

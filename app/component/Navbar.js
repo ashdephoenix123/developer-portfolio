@@ -79,7 +79,7 @@ const Navbar = () => {
                                 }
                             </ul>
                         </div>
-                        <Link href="#" className="flex mr-6">
+                        <Link href="/" className="flex mr-6">
                             <Image src="/1.png" width={30} height={10} className='mr-2 dark:hidden' alt='logo'></Image>
                             <Image src="/2.png" width={30} height={10} className='mr-2 dark:block hidden' alt='logo'></Image>
                             <span className='text-xl font-semibold tracking-tight text-gray-700 dark:text-white'>AkashSarki</span>

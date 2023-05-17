@@ -8,6 +8,7 @@
   --text1: #0067C8;
   --bg1: #F2F2F2;
   --bg2: #f7f7f7;
+  --text1: #929292;
   --text2: #676767;
   --text3: #F2F2F2;
   --text4: #494949;
@@ -224,10 +225,10 @@ body {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #fff;
+  border: 8px solid var(--bg1);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  border-color: var(--bg1) transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {

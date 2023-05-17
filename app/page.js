@@ -2,6 +2,7 @@ import Image from "next/image";
 import Card from "./component/Card";
 import Contact from "./component/Contact";
 import Link from "next/link";
+import homeImage from "../public/3.jpg";
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
             <Link href={'/resume.pdf'} target="_blank" className="ml-2 btn  max-[350px]:ml-0">View Resumé</Link>
           </div>
           <div className="right relative basis-1/2 clipIt clipOver">
-            <Image src='/3.jpg' fill className='object-cover' alt="hero-image"></Image>
+            <Image src={homeImage} fill className='object-cover' alt="hero-image" placeholder="blur" priority></Image>
           </div>
         </div>
         <div className="w-full disp">
@@ -32,11 +33,11 @@ export default function Home() {
         </div>
         <div className="aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd mt-12 min-[950px]:mt-28" id="about">
           <div className="left relative basis-1/3 overflow-hidden rounded-2xl shade1">
-            <Image src='/me3.jpg' width={500} height={500} className='w-full object-cover object-top max-[866px]:hidden' alt="hero-image"></Image>
+            <Image src='/me3.jpg' width={500} height={500} className='w-full object-cover object-top max-[866px]:hidden' alt="hero-image" priority></Image>
           </div>
           <div className="right basis-2/3 max-[866px]:pl-0 pl-16">
             <h2 className="head1 text-center dark:text-white">About Me<span className="font-serif">,</span></h2>
-            <Image src='/me3.jpg' width={250} height={250} className='min-[866px]:hidden rounded-3xl mx-auto' alt="hero-image"></Image>
+            <Image src='/me3.jpg' width={250} height={250} className='min-[866px]:hidden rounded-3xl mx-auto' alt="hero-image" priority></Image>
             <div className="text-center text-sm italic max-[866px]:mt-4">
               <p className="mb-4">Hello and welcome! I am a passionate web developer with a love for creating beautiful, functional websites and web applications. My journey into web development began with a curiosity for how websites worked, and has since evolved into a career focused on bringing my clients' digital visions to life.</p>
               <p className="mb-4">With a strong foundation in front-end development using HTML, CSS, and JavaScript, I am able to create engaging user interfaces that are responsive across all devices. I am also comfortable working with back-end technologies such as Node.js, and databases such as MongoDB.</p>

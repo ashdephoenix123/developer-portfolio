@@ -65,7 +65,7 @@ export default function Home() {
           </div>
           <div className="right relative basis-1/2">
             <h1 className="font-semibold text-4xl text-gray-700  max-[950px]:text-center dark:text-white">Educational Qualifications<span className="font-serif">,</span></h1>
-            <p className="italic mb-4  max-[950px]:text-center">It's not just a degree, it's the knowledge and skills that help you achieve our goals.</p>
+            <p className="italic mb-4  max-[950px]:text-center">It's not just a degree, it's the knowledge and skills that help you achieve your goals.</p>
             <ul>
               <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
                 <Image src={'/jain5.jpg'} width={80} height={80} className="mr-4"></Image>

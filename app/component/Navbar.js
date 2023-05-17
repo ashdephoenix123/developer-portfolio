@@ -3,25 +3,24 @@
 import Image from 'next/image'
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { SlArrowRight } from 'react-icons/sl'
 import { VscSearch } from 'react-icons/vsc'
-import { HiOutlineUserPlus } from 'react-icons/hi2'
 import { HiBars3 } from 'react-icons/hi2'
 import { RxCross2 } from 'react-icons/rx'
-import { BsSun, BsFillMoonStarsFill, BsArrowUpRight } from 'react-icons/bs'
-import { SlArrowDown, SlArrowUp } from 'react-icons/sl'
+import { BsSunFill, BsFillMoonStarsFill, BsArrowUpRight } from 'react-icons/bs'
+import { useTheme } from 'next-themes';
 
 const Navbar = () => {
     const [dropdown, setdropdown] = useState(false)
     const [search, setsearch] = useState(false)
     const [toggle, setToggle] = useState(false)
-    const [arrow, setArrow] = useState(false)
-    const [darkMode, setDarkMode] = useState(false)
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme, systemTheme } = useTheme()
     const ref = useRef(null)
     const searchref = useRef(null);
     const toggleref = useRef(null);
 
+    const currentTheme = theme === 'system' ? systemTheme : theme;
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
@@ -51,9 +50,18 @@ const Navbar = () => {
     const submitInputForm = (e) => {
         e.preventDefault();
     }
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+    if (!mounted) {
+        return null
+    }
+
+
     return (
         <>
-            <nav className='navbar shadow-md relative'>
+            <nav className='navbar shadow-md dark:shadow-md dark:shadow-gray-800 relative'>
                 <div className="container2">
                     <div className="py-3 flex items-center fontsm bp1 relative">
                         <div className='hide3 mr-auto'>
@@ -63,20 +71,18 @@ const Navbar = () => {
                                 }
                             </div>
                             <ul>
-                                {!darkMode ?
-                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
+                                {currentTheme === 'light' ?
+                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full' onClick={() => { setTheme('dark'); }}><BsFillMoonStarsFill className='text-gray-600' size={18} /></li>
                                     :
-                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
+                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full' onClick={() => { setTheme('light'); }}><BsSunFill className='text-yellow-400' size={18} /></li>
 
                                 }
                             </ul>
-                            {/* <ul>
-                                <li className='flex items-center mr-4 cursor-pointer' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li>
-                            </ul> */}
                         </div>
                         <Link href="#" className="flex mr-6">
-                            <Image src="/1.png" width={30} height={10} className='mr-2' alt='logo'></Image>
-                            <span className='text-xl font-semibold tracking-tight text-gray-700'>AkashSarki</span>
+                            <Image src="/1.png" width={30} height={10} className='mr-2 dark:hidden' alt='logo'></Image>
+                            <Image src="/2.png" width={30} height={10} className='mr-2 dark:block hidden' alt='logo'></Image>
+                            <span className='text-xl font-semibold tracking-tight text-gray-700 dark:text-white'>AkashSarki</span>
                         </Link>
                         {!search ?
                             <> <ul className='flex ml-4 mr-auto'>
@@ -87,16 +93,13 @@ const Navbar = () => {
                                 <li className='mx-2 border-transparent hide2'><Link href='https://www.thesharkkcompany.tech/' target='_blank' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Projects</div><BsArrowUpRight size={10} /></Link></li>
                             </ul>
                                 <ul className='flex'>
-                                    {/* <li className='flex items-center mr-4 cursor-pointer hide2' onClick={() => setdropdown(prev => !prev)}><div className='mr-1 border-transparent border-2 hover:border-b-black'>Blogs</div><MdOutlineKeyboardArrowDown /></li>
-                                    <li className='flex items-center mr-4 cursor-pointer hide2' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li> */}
-                                    {!darkMode ?
-                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
+                                    {currentTheme === 'light' ?
+                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full' onClick={() => { setTheme('dark'); }}><BsFillMoonStarsFill className='text-gray-600' size={18} /></li>
 
                                         :
-                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
+                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full' onClick={() => { setTheme('light'); }}><BsSunFill className='text-yellow-400' size={18} /></li>
                                     }
                                     <li className='flex items-center cursor-pointer px-1.5 py-1 bg-yellow-300 rounded-full hover:bg-yellow-400'><Link href={'https://www.buymeacoffee.com/akashsarki'} target='_blank' className='relative w-7 h-8'><Image src={'/coffee2.png'} fill /></Link></li>
-                                    {/* <li className='flex items-center cursor-pointer'><Link className='flex items-center' href={'#'}><span className='mr-1.5 hide1'>Sign In</span> <HiOutlineUserPlus size={20} className='border border-gray-600 rounded-2xl p-1.5 text-gray-600 box-content' /></Link></li> */}
                                 </ul>
                             </> : <>
                                 <div className='flex w-full fillit bg-white'>
@@ -191,11 +194,11 @@ const Navbar = () => {
                 toggle && <>
                     <div className='absolute w-full h-fit bg1 z-10' ref={toggleref}>
                         <ul>
-                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'/'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
-                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#about'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
-                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
-                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
-                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'/'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#about'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
                         </ul>
                     </div>
                 </>

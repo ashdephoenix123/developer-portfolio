@@ -120,6 +120,7 @@ const Navbar = () => {
                             <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
                             <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
                             <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'/blogs'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Blogs</span></Link></li>
                         </ul>
                     </div>
                 </>

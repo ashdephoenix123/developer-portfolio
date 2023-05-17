@@ -65,7 +65,8 @@ body {
 .bg4 {
   background-color: var(--primary-color);
 }
-.disp{
+
+.disp {
   display: none;
 }
 
@@ -361,45 +362,41 @@ footer {
 
 @media only screen and (max-width: 950px) {
   .heroSection {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    z-index: 9;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    background-color: var(--bg1);
-    padding: 1rem 2rem;
+    display: none;
   }
 
   .clipOver {
-   display: none;
+    display: none;
   }
-  .disp{
+  .homeS{
+    display: none;
+  }
+
+  .disp {
     display: block;
   }
-  .skillsandeducation{
+
+  .skillsandeducation {
     display: block;
-    &>*{
+
+    &>* {
       margin-bottom: 4rem;
     }
   }
 }
 
 @media only screen and (max-width: 722px) {
- .removePad1{
-  padding-right: 0;
- }
+  .removePad1 {
+    padding-right: 0;
+  }
 }
 
 @media only screen and (max-width: 635px) {
-  .heroSection{
+  .heroSection {
     width: 90%;
   }
-  .homeS{
+
+  .homeS {
     height: 80vh;
   }
- }
- 
- 
+}

@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { SlArrowRight } from 'react-icons/sl'
 import { VscSearch } from 'react-icons/vsc'
 import { HiBars3 } from 'react-icons/hi2'
 import { RxCross2 } from 'react-icons/rx'
@@ -11,7 +10,6 @@ import { BsSunFill, BsFillMoonStarsFill, BsArrowUpRight } from 'react-icons/bs'
 import { useTheme } from 'next-themes';
 
 const Navbar = () => {
-    const [dropdown, setdropdown] = useState(false)
     const [search, setsearch] = useState(false)
     const [toggle, setToggle] = useState(false)
     const [mounted, setMounted] = useState(false)
@@ -29,9 +27,6 @@ const Navbar = () => {
     }, []);
 
     const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-            setdropdown(false);
-        }
         if (searchref.current && !searchref.current.contains(event.target)) {
             setsearch(false);
         }
@@ -91,6 +86,7 @@ const Navbar = () => {
                                 <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#services'>Services</Link></li>
                                 <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#contact'>Contact</Link></li>
                                 <li className='mx-2 border-transparent hide2'><Link href='https://www.thesharkkcompany.tech/' target='_blank' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Projects</div><BsArrowUpRight size={10} /></Link></li>
+                                <li className='mx-2 border-transparent hide2'><Link href='/blogs' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Blogs</div></Link></li>
                             </ul>
                                 <ul className='flex'>
                                     {currentTheme === 'light' ?
@@ -115,90 +111,15 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            {dropdown &&
-                <div className='dropdown z-10' ref={ref}>
-                    <div className="dropdownGrid mb-6">
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                        <div className="dropdownchild">
-                            <h3 className='fontsm font-semibold mb-4'>Category</h3>
-                            <ul className="singlecol">
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                                <li className="fontsm py-2 hover:underline text4"><Link href="#">Blog title</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className='absolute w-full left-0 border-b-black border-b-2'>
-                        <div className="block bg-zinc-200 w-full text-center py-2">
-                            <Link href={'#'}><span className='uppercase fontxs mr-1.5 hover:underline'>Visit Blog Site</span></Link>
-                            <SlArrowRight size={12} className='inline-block text-sm' />
-                        </div>
-                    </div>
-                </div>
-            }
             {
                 toggle && <>
                     <div className='absolute w-full h-fit bg1 z-10' ref={toggleref}>
                         <ul>
-                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'/'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
-                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#about'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
-                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
-                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
-                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'/'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#about'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
+                            <li onClick={() => { setToggle(prev => !prev) }} className='cursor-pointer dark:bg-gray-700 dark:hover:bg-slate-800 dark:border-b-slate-500 hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
                         </ul>
                     </div>
                 </>

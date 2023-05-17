@@ -191,11 +191,11 @@ const Navbar = () => {
                 toggle && <>
                     <div className='absolute w-full h-fit bg1 z-10' ref={toggleref}>
                         <ul>
-                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
-                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
-                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
-                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
-                            <li className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span></Link></li>
+                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'/'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Home</span></Link></li>
+                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#about'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>About</span></Link></li>
+                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#services'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Services</span></Link></li>
+                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'#contact'} className='p-4 block'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Contact</span></Link></li>
+                            <li onClick={()=> {setToggle(prev => !prev)}} className='cursor-pointer hover:bg-zinc-200 border-b'><Link href={'https://www.thesharkkcompany.tech'} target='_blank' className='p-4 flex items-center'><span className='w-fit inline-block text-sm tracking-wide mr-1.5'>Projects</span><BsArrowUpRight size={10} /></Link></li>
                         </ul>
                     </div>
                 </>

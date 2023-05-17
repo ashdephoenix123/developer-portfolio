@@ -63,11 +63,12 @@ const Navbar = () => {
                                 }
                             </div>
                             <ul>
-                            {!darkMode ?
-                                        <li className='flex items-center mr-4 cursor-pointer px-2 py-1 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
-                                        :
-                                        <li className='flex items-center mr-4 cursor-pointer px-2 py-1 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
-                                    }
+                                {!darkMode ?
+                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
+                                    :
+                                    <li className='flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
+
+                                }
                             </ul>
                             {/* <ul>
                                 <li className='flex items-center mr-4 cursor-pointer' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li>
@@ -89,11 +90,12 @@ const Navbar = () => {
                                     {/* <li className='flex items-center mr-4 cursor-pointer hide2' onClick={() => setdropdown(prev => !prev)}><div className='mr-1 border-transparent border-2 hover:border-b-black'>Blogs</div><MdOutlineKeyboardArrowDown /></li>
                                     <li className='flex items-center mr-4 cursor-pointer hide2' onClick={searchHandler}><div className='mr-1 border-transparent border-2 hover:border-b-black hide1'>Search</div><VscSearch size={15} /></li> */}
                                     {!darkMode ?
-                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-2 py-1 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
+                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
+
                                         :
-                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-2 py-1 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsFillMoonStarsFill size={18} /></li>
+                                        <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full hover:bg-slate-200' onClick={() => { setDarkMode(prev => !prev) }}><BsSun size={18} /></li>
                                     }
-                                    <li className='flex items-center cursor-pointer'><button className='btn'>Buy me Coffee</button></li>
+                                    <li className='flex items-center cursor-pointer px-1.5 py-1 bg-yellow-300 rounded-full hover:bg-yellow-400'><Link href={'https://www.buymeacoffee.com/akashsarki'} target='_blank' className='relative w-7 h-8'><Image src={'/coffee2.png'} fill /></Link></li>
                                     {/* <li className='flex items-center cursor-pointer'><Link className='flex items-center' href={'#'}><span className='mr-1.5 hide1'>Sign In</span> <HiOutlineUserPlus size={20} className='border border-gray-600 rounded-2xl p-1.5 text-gray-600 box-content' /></Link></li> */}
                                 </ul>
                             </> : <>

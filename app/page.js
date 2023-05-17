@@ -4,6 +4,7 @@ import Contact from "./component/Contact";
 import Link from "next/link";
 
 export default function Home() {
+
   return (
     <>
       <div className="container2">
@@ -21,12 +22,12 @@ export default function Home() {
         </div>
         <div className="w-full disp">
           {/* <Image src='/3.jpg' fill className='w-full object-cover opacity-90' alt="hero-image2"></Image> */}
-          <div className="px-4 py-12 my-auto bg-gradient-to-r from-gray-400 to-gray-200">
+          <div className="px-4 py-12 my-auto max-[866px]:text-center">
             <h1 className="font-semibold text-4xl text-gray-700">Welcome You<span className="font-serif">,</span></h1>
             <p className="italic mb-4 text-sm -mt-0.5">Building a better web, one line of code at a time.</p>
-            <p className="mb-6 text-sm min-[520px]:pr-12"><span className="block">Want to bring your digital ideas to life through web applications? </span>From conception to launch, I work with you every step of the way to ensure that your online presence accurately reflects your brand and meet your needs.</p>
-            {/* <button className="btn">Explore Blogs</button> */}
-            <Link href={'/resume.pdf'} target="_blank" className="btn">View Resumé</Link>
+            <p className="mb-6 text-sm min-[866px]:pr-48"><span className="block">Want to bring your digital ideas to life through web applications? </span>From conception to launch, I work with you every step of the way to ensure that your online presence accurately reflects your brand and meet your needs.</p>
+            <button className="btn">Explore Blogs</button>
+            <Link href={'/resume.pdf'} target="_blank" className="ml-2 btn">View Resumé</Link>
           </div>
         </div>
         <div className="aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd mt-12 min-[950px]:mt-28" id="about">

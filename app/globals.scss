@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --primary-font: #60657B;
   --primary-color: #0070f3;
@@ -53,6 +52,7 @@ body {
   margin: auto;
   padding: 1.5rem;
 }
+
 
 .bg1 {
   background-color: var(--bg1);

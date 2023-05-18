@@ -61,12 +61,19 @@ body {
   display: none;
 }
 
+.fontxs{
+  font-size: 0.75rem;
+}
 .fontsm {
   font-size: 0.85rem;
 }
 
 .text1 {
   color: var(--text1);
+}
+
+.text2{
+  @apply text-gray-700 dark:text-white; 
 }
 
 .text4 {
@@ -79,6 +86,10 @@ body {
 
 .shade1 {
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .5) !important;
+}
+
+.scaleIt:hover{
+  transform: scale(1.01);
 }
 
 .head1 {
@@ -133,10 +144,10 @@ body {
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid var(--bg1);
+  border: 8px solid var(--text5);
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--bg1) transparent transparent transparent;
+  border-color: var(--text5) transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {

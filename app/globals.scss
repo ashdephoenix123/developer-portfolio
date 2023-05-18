@@ -72,6 +72,9 @@ body {
 .fontsm {
   font-size: 0.85rem;
 }
+.fonttest{
+  font-size: 0.3rem;
+}
 
 .text1 {
   color: var(--text1);
@@ -103,6 +106,12 @@ body {
 
 .head2 {
   @apply font-semibold text-4xl mb-4 text-white;
+}
+.head3{
+  @apply text-xl min-[1200px]:text-2xl;
+}
+.head4{
+  @apply my-6 text-xl font-bold;
 }
 
 .after:after {

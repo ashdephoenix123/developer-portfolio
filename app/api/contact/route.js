@@ -10,9 +10,9 @@ export async function POST(request) {
             from: {
                 name: email,
                 email: 'akashsarki24@gmail.com'
-            }, // Change to your verified sender
+            },
             subject: subject,
-            text: 'message received',
+            text: 'Message received',
             html: `<p>${message}</p>`,
         }
         await sgMail.send(msg)

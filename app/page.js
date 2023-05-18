@@ -4,6 +4,7 @@ import Contact from "./component/Contact";
 import Link from "next/link";
 import homeImage from "../public/3.jpg";
 
+
 export default function Home() {
 
   return (

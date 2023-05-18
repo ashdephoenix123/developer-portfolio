@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
 
@@ -30,7 +33,29 @@ const Contact = () => {
             body: JSON.stringify(details)
         })
         const data = await dataSend.json();
-        console.log(data)
+        if (data.message === 'success') {
+            toast.success('Message sent!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        } else {
+            toast.error('Some error occured, Please try again!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
         setDetails({
             email: "",
             subject: "",
@@ -40,6 +65,18 @@ const Contact = () => {
 
     return (
         <div className="contactbg flex flex-col justify-center w-full py-20 mt-12 min-[950px]:mt-28">
+            <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className="contact min-[950px]:padd mb-12 text-center" id="contact">
                 <h2 className="head2">Contact Me<span className="font-serif">,</span></h2>
                 <form onSubmit={handleSubmit} className="flex flex-col mx-auto mt-22 text-black fontsm w-[90%] min-[710px]:w-[70%] min-[950px]:w-1/3">

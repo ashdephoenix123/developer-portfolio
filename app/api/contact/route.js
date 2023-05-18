@@ -13,7 +13,7 @@ export async function POST(request) {
             },
             subject: subject,
             text: 'Message received',
-            html: `<p>${message}</p>`,
+            html: `<p>${message} <br/> If you want to reply to this email then reply from akashsarki24@gmail.com</p>`,
         }
         await sgMail.send(msg)
         return NextResponse.json({ message: 'success' })

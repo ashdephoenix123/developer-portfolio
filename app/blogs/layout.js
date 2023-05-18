@@ -17,7 +17,7 @@ const layout = ({ children }) => {
                     <div className='w-[120%] max-[880px]:w-[100%]'>
                         {children}
                     </div>
-                    <Sidebar />
+                    {/* <Sidebar /> */}
                 </div>
             </div>
         </>

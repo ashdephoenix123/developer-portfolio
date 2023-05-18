@@ -95,7 +95,7 @@ const Navbar = () => {
                                         :
                                         <li className='flex items-center mr-4 cursor-pointer hide2 px-3 py-2 rounded-full' onClick={() => { setTheme('light'); }}><BsSunFill className='text-yellow-400' size={18} /></li>
                                     }
-                                    <li className='flex items-center cursor-pointer px-1.5 py-1 bg-yellow-300 rounded-full hover:bg-yellow-400'><Link href={'https://www.buymeacoffee.com/akashsarki'} target='_blank' className='relative w-7 h-8'><Image src={'/coffee2.png'} fill /></Link></li>
+                                    <li className='flex items-center cursor-pointer px-1.5 py-1 bg-yellow-300 rounded-full hover:bg-yellow-400'><Link href={'https://www.buymeacoffee.com/akashsarki'} target='_blank' className='relative w-7 h-8'><Image src={'/coffee2.png'} fill alt='coffee' /></Link></li>
                                 </ul>
                             </> : <>
                                 <div className='flex w-full fillit bg-white'>

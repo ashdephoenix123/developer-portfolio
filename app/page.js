@@ -50,7 +50,7 @@ export default function Home() {
             <h1 className="font-semibold text-4xl text-gray-700 max-[950px]:text-center dark:text-white">Skills I have<span className="font-serif">,</span></h1>
             <p className="italic mb-4  max-[950px]:text-center">These are the building blocks of success.</p>
             <div className="flex items-start">
-              <Image className="max-[530px]:hidden" src={'/connection2.gif'} width={180} height={180}></Image>
+              <Image className="max-[530px]:hidden" src={'/connection2.gif'} width={180} height={180} alt="skillimg"></Image>
               <div className="py-2 px-6 flex gap-1 justify-center max-[950px]:mx-auto self-center flex-wrap">
                 <button className="btn2 hover:scale-105 transition-all bg-red-600">HTML</button>
                 <button className="btn2 hover:scale-105 transition-all bg-blue-600">CSS</button>
@@ -68,15 +68,15 @@ export default function Home() {
             <p className="italic mb-4  max-[950px]:text-center">It's not just a degree, it's the knowledge and skills that help you achieve your goals.</p>
             <ul>
               <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image src={'/jain5.jpg'} width={80} height={80} className="mr-4"></Image>
+                <Image src={'/jain5.jpg'} width={80} height={80} className="mr-4" alt="educationimg"></Image>
                 <span className="font-sm text4 dark:text-gray-300">Jain University (2021 - present)</span>
               </li>
               <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image src={'/nbu.png'} width={80} height={80} className="mr-4"></Image>
+                <Image src={'/nbu.png'} width={80} height={80} className="mr-4" alt="educationimg"></Image>
                 <span className="font-sm text4 dark:text-gray-300">North Bengal University (2017 - 2021)</span>
               </li>
               <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image src={'/school.jpg'} width={80} height={80} className="mr-4"></Image>
+                <Image src={'/school.jpg'} width={80} height={80} className="mr-4" alt="educationimg"></Image>
                 <span className="font-sm text4 dark:text-gray-300">Siliguri Model High School (2015 - 2017)</span>
               </li>
             </ul>

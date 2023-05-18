@@ -10,7 +10,7 @@ const page = () => {
                 <div className='px-12 py-16 max-[1200px]:px-4 max-[1200px]:py-12'>
                     <h2 className='font-bold text-5xl text-black mb-2 max-[980px]:text-4xl dark:text-neutral-300'>JavaScript: Empowering the Web with Dynamic Interactivity</h2>
                     <div className='fontxs flex items-center'>
-                        <Image src='/me.jpg' className=' object-cover rounded-full overflow-hidden w-[30px] h-[30px]' width={100} height={100} />
+                        <Image src='/me.jpg' className=' object-cover rounded-full overflow-hidden w-[30px] h-[30px]' width={100} height={100} alt='developerimage' />
                         <span className='ml-2 fontsm'><span className='font-bold'>Akash Sarki</span> posted on May 18th 2023</span>
                     </div>
 
@@ -28,17 +28,18 @@ const page = () => {
                         <h3 className='head4'>Web Application Development</h3>
                         <p>JavaScript frameworks and libraries, such as React, Angular, and Vue.js, have revolutionized web application development. These tools provide developers with a structured and efficient way to build complex applications. They offer reusable components, state management, and routing mechanisms that simplify the development process and enhance productivity.</p>
                         <h3 className='head4'>JavaScript's Ever-Growing Ecosystem</h3>
-                        <p>JavaScript's popularity has given rise to a vast ecosystem of libraries, frameworks, and tools. The JavaScript community is vibrant and constantly evolving, with developers contributing new solutions and ideas every day. Here are a few examples of popular JavaScript frameworks:
-                        <ul>
-                            <li>React: Developed by Facebook, React is a widely adopted JavaScript library for building user interfaces. It follows a component-based approach and promotes code reusability, making it ideal for large-scale applications.</li>
-                            <li>Angular: Developed by Google, Angular is a comprehensive framework for building web applications. It provides a robust structure for organizing code, a powerful templating system, and extensive tooling for testing and deployment.</li>
-                            <li>Vue.js: Known for its simplicity and ease of integration, Vue.js</li>
-                        </ul></p>
+                        <div>JavaScript's popularity has given rise to a vast ecosystem of libraries, frameworks, and tools. The JavaScript community is vibrant and constantly evolving, with developers contributing new solutions and ideas every day. Here are a few examples of popular JavaScript frameworks:
+                            <ul>
+                                <li>React: Developed by Facebook, React is a widely adopted JavaScript library for building user interfaces. It follows a component-based approach and promotes code reusability, making it ideal for large-scale applications.</li>
+                                <li>Angular: Developed by Google, Angular is a comprehensive framework for building web applications. It provides a robust structure for organizing code, a powerful templating system, and extensive tooling for testing and deployment.</li>
+                                <li>Vue.js: Known for its simplicity and ease of integration, Vue.js</li>
+                            </ul></div>
                         <h3 className='head4'>Conclusion</h3>
                         <p>JavaScript has become an integral part of modern web development, enabling developers to build dynamic, interactive, and feature-rich applications. Its versatility, coupled with a vast ecosystem of libraries and frameworks, makes it a go-to choice for both beginners and experienced developers. As the web continues to evolve, JavaScript will undoubtedly remain a driving force behind the innovation and growth of web technologies.</p>
                     </div>
                 </div>
             </div>
+          
         </>
     )
 }

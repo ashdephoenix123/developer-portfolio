@@ -6,7 +6,7 @@ const page = () => {
     return (
         <>
             <div className='text-gray-800 bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-600  dark:text-zinc-300'>
-                <Image src={imageonblog} className='w-full h-full' alt='mainImage'></Image>
+                <Image src={imageonblog} className='w-full h-full' alt='mainImage' placeholder='blur'></Image>
                 <div className='px-12 py-16 max-[1200px]:px-4 max-[1200px]:py-12'>
                     <h2 className='font-bold text-5xl text-black mb-2 max-[980px]:text-4xl dark:text-neutral-300'>JavaScript: Empowering the Web with Dynamic Interactivity</h2>
                     <div className='fontxs flex items-center'>

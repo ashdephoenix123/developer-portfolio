@@ -44,6 +44,11 @@ const Contact = () => {
                 progress: undefined,
                 theme: "light",
             });
+            setDetails({
+                email: "",
+                subject: "",
+                message: ""
+            })
         } else {
             toast.error('Some error occured, Please try again!', {
                 position: "top-right",
@@ -56,11 +61,6 @@ const Contact = () => {
                 theme: "light",
             });
         }
-        setDetails({
-            email: "",
-            subject: "",
-            message: ""
-        })
     }
 
     return (

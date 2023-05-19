@@ -26,11 +26,12 @@ const page = async () => {
                         </div>
                     </div>
                     <div className='my-4'>
-                        {
+                        {/* {
                             blogs.map((blog) => {
                                 return <BlogCard key={blog.title} blog={blog} />
                             })
-                        }
+                        } */}
+                        <BlogCard blog={blogs[0]} />
                     </div>
                     <div className='w-full border-2 bg-gray-50 border-gray-100 text-black rounded-lg p-4 self-start max-[880px]:ml-0 max-[880px]:mt-4 max-[880px]:w-full dark:bg-gray-600 dark:border-gray-600 dark:text-zinc-300'>
                         <h2 className='font-semibold head3 dark:text-neutral-300 mb-2'>Note</h2>

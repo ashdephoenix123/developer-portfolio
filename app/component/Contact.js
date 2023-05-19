@@ -79,7 +79,7 @@ const Contact = () => {
             />
             <div className="contact min-[950px]:padd mb-12 text-center" id="contact">
                 <h2 className="head2">Contact Me<span className="font-serif">,</span></h2>
-                <form onSubmit={handleSubmit} className="flex flex-col mx-auto mt-22 text-black fontsm w-[90%] min-[710px]:w-[70%] min-[950px]:w-1/3">
+                <form action="https://formspree.io/f/xyyajalr" method="post" className="flex flex-col mx-auto mt-22 text-black fontsm w-[90%] min-[710px]:w-[70%] min-[950px]:w-1/3">
                     <input required onChange={handleDetails} name='email' value={details.email} type="email" placeholder="name@email.com" className="dark:text-white rounded my-1 px-3 py-1.5 outline-none" />
                     <input required onChange={handleDetails} name='subject' value={details.subject} type="text" placeholder="Subject" className="dark:text-white rounded my-1 px-3 py-1.5 outline-none" />
                     <textarea required onChange={handleDetails} name='message' value={details.message} cols="30" rows="10" placeholder="Leave a comment..." className="dark:text-white rounded my-1 px-3 py-2 outline-none"></textarea>

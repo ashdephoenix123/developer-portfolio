@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa'
-import Sidebar from '../component/Sidebar'
 import Link from 'next/link'
 
 const layout = ({ children }) => {
@@ -17,7 +16,6 @@ const layout = ({ children }) => {
                     <div className='w-[120%] max-[880px]:w-[100%]'>
                         {children}
                     </div>
-                    {/* <Sidebar /> */}
                 </div>
             </div>
         </>

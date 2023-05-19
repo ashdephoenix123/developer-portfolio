@@ -25,7 +25,7 @@ const Navbar = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
-
+ 
     const handleClickOutside = (event) => {
         if (searchref.current && !searchref.current.contains(event.target)) {
             setsearch(false);

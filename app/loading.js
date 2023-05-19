@@ -1,6 +1,6 @@
 import React from 'react'
 
-const loading = () => {
+const Loading = () => {
     return (
         <>
             <div className='relative h-screen'>
@@ -10,4 +10,4 @@ const loading = () => {
     )
 }
 
-export default loading
+export default Loading

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 async function getBlog(blog) {
-    const res = await fetch(`/api/blogs`)
+    const res = await fetch(`https://www.akashsarki.me/api/blogs`)
     const data = await res.json()
     const thatBlog = await data.find((item) => item.id === Number(blog))
     return thatBlog

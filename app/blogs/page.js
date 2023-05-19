@@ -4,8 +4,20 @@ import BlogCard from '../component/BlogCard'
 import Link from 'next/link'
 
 async function getBlogs() {
-    const res = await fetch('http://localhost/api/blogs')
-    const blogs = await res.json()
+    // const res = await fetch('http://127.0.0.1:3000/api/blogs');
+    // if (!res.ok) {
+    //     throw new Error('Failed to fetch data');
+    // }
+    // const blogs = await res.json()
+    const blogs = [{
+        "id": 1,
+        "title": "JavaScript: Empowering the Web with Dynamic Interactivity",
+        "description": "In the world of web development, JavaScript has emerged as an essential programming language. With its versatility and power, JavaScript enables developers to create dynamic, interactive, and engaging web applications. From simple scripts to complex frameworks, JavaScript has revolutionized the way websites and web applications are built and experienced.",
+        "author": "akash sarki",
+        "authorimg": "https://www.akashsarki.me/_next/image?url=%2Fme3.jpg&w=1080&q=75",
+        "date": "19 May 2023",
+        "image": "https://northsoft.co/blog/wp-content/uploads/2022/11/image-1024x538.jpeg"
+    }]
     return blogs
 }
 
@@ -27,7 +39,7 @@ const page = async () => {
                     </div>
                     <div className='my-4'>
                         {
-                           blogs.length !==0 && blogs.map((blog) => {
+                            blogs.map((blog) => {
                                 return <BlogCard key={blog.title} blog={blog} />
                             })
                         }

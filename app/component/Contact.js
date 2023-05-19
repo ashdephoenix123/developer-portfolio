@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react'
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,45 +23,45 @@ const Contact = () => {
         })
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const dataSend = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(details)
-        })
-        const data = await dataSend.json();
-        if (data.message === 'success') {
-            toast.success('Message sent!', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
-            setDetails({
-                email: "",
-                subject: "",
-                message: ""
-            })
-        } else {
-            toast.error('Some error occured, Please try again!', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
-        }
-    }
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const dataSend = await fetch('/api/contact', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(details)
+    //     })
+    //     const data = await dataSend.json();
+    //     if (data.message === 'success') {
+    //         toast.success('Message sent!', {
+    //             position: "top-right",
+    //             autoClose: 2000,
+    //             hideProgressBar: false,
+    //             closeOnClick: true,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //             theme: "light",
+    //         });
+    //         setDetails({
+    //             email: "",
+    //             subject: "",
+    //             message: ""
+    //         })
+    //     } else {
+    //         toast.error('Some error occured, Please try again!', {
+    //             position: "top-right",
+    //             autoClose: 2000,
+    //             hideProgressBar: false,
+    //             closeOnClick: true,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //             theme: "light",
+    //         });
+    //     }
+    // }
 
     return (
         <div className="contactbg flex flex-col justify-center w-full py-20 mt-12 min-[950px]:mt-28">

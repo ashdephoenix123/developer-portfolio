@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 async function getBlog(blog) {
-    const res = await fetch(`https://www.akashsarki.me/api/blogs`)
+    const res = await fetch(`/api/blogs`)
     const data = await res.json()
     const thatBlog = await data.find((item) => item.id === Number(blog))
     return thatBlog
@@ -11,7 +11,7 @@ async function getBlog(blog) {
 
 const BlogPost = async ({ params: { blog } }) => {
     const fetchBlog = await getBlog(blog)
-    const {id, title, description, author, authorimg, date, image} = fetchBlog;
+    const { title, description, author, authorimg, date, image} = fetchBlog;
     return (
         <div className='text-gray-800 bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-600  dark:text-zinc-300'>
             <Image src={image} width={500} height={500} className='w-full h-full' alt='mainImage' ></Image>

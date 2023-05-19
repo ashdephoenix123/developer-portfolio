@@ -25,7 +25,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const dataSend = await fetch('/api/contact', {
+        const dataSend = await fetch('https://www.akashsarki.me/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

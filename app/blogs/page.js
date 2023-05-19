@@ -4,7 +4,7 @@ import BlogCard from '../component/BlogCard'
 import Link from 'next/link'
 
 export async function getBlogs() {
-    const res = await fetch('http://localhost:3000/api/blogs', { next: { revalidate: 10 } })
+    const res = await fetch('https://www.akashsarki.me/api/blogs', { next: { revalidate: 10 } })
     const blogs = await res.json()
     return blogs
 }

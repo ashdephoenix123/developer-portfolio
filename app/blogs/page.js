@@ -3,7 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import BlogCard from '../component/BlogCard'
 import Link from 'next/link'
 
-export async function getBlogs() {
+async function getBlogs() {
     const res = await fetch('https://www.akashsarki.me/api/blogs', { next: { revalidate: 10 } })
     const blogs = await res.json()
     return blogs

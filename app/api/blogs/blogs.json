@@ -1,15 +1,15 @@
 [
     {
-        "id": 1,
+        "slug": "javascript-empowering-the-web-with-dynamic-interactivity",
         "title": "JavaScript: Empowering the Web with Dynamic Interactivity",
-        "description": "In the world of web development, JavaScript has emerged as an essential programming language. With its versatility and power, JavaScript enables developers to create dynamic, interactive, and engaging web applications. From simple scripts to complex frameworks, JavaScript has revolutionized the way websites and web applications are built and experienced.",
+        "description": "In the world of web development, JavaScript has emerged as an essential programming language. With its versatility and power, JavaScript enables developers to create dynamic, interactive, and engaging web applications. From simple scripts to complex frameworks, JavaScript has revolutionized the way websites and web applications are built and experienced. In the world of web development, JavaScript has emerged as an essential programming language. With its versatility and power, JavaScript enables developers to create dynamic, interactive, and engaging web applications. From simple scripts to complex frameworks, JavaScript has revolutionized the way websites and web applications are built and experienced.",
         "author": "akash sarki",
         "authorimg": "https://www.akashsarki.me/_next/image?url=%2Fme3.jpg&w=1080&q=75",
         "date": "19 May 2023",
         "image": "https://northsoft.co/blog/wp-content/uploads/2022/11/image-1024x538.jpeg"
     },
     {
-        "id": 2,
+        "slug": "python-the-tool-to-master-ai-and-machine-learning",
         "title": "Python, The tool to master AI and Machine Learning",
         "description": "Python is a popular high-level programming language known for its simplicity and readability. Created by Guido van Rossum and first released in 1991, Python has since become one of the most widely used programming languages worldwide.",
         "author": "Akash Sarki",
@@ -18,7 +18,7 @@
         "image": "https://miro.medium.com/v2/resize:fit:1400/1*m0H6-tUbW6grMlezlb52yw.png"
     },
     {
-        "id": 3,
+        "slug": "flask-building-web-applications-with-ease",
         "title": "Flask: Building Web Applications with Ease",
         "description": "In the world of web development, frameworks play a vital role in simplifying the process of building robust and scalable applications. Flask, a microframework written in Python, has gained tremendous popularity for its simplicity, flexibility, and ease of use. Whether you are a beginner or an experienced developer, Flask provides a solid foundation for building web applications with minimal effort. In this article, we will explore the features and benefits of Flask and understand why it has become a go-to framework for many developers.",
         "author": "Akash Sarki",
@@ -27,7 +27,7 @@
         "image": "https://miro.medium.com/v2/resize:fit:438/1*0G5zu7CnXdMT9pGbYUTQLQ.png"
     },
     {
-        "id": 4,
+        "slug": "django-empowering-web-development-with-batteries-included",
         "title": "Django: Empowering Web Development with Batteries Included",
         "description": "When it comes to building robust and scalable web applications, Django stands out as a powerful and feature-rich framework. Created in 2003 by a team of experienced developers, Django has gained immense popularity for its ability to simplify the web development process while maintaining high standards of code quality. In this article, we will explore the features and benefits of Django and understand why it has become the framework of choice for many developers.",
         "author": "Akash Sarki",

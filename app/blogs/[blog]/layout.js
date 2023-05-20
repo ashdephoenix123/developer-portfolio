@@ -12,7 +12,7 @@ const layout = ({ children }) => {
                 </div>
                 <Sidebar />
             </div>
-            <div className='text-gray-800 bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-600  dark:text-zinc-300 px-12 py-4 max-[1200px]:px-4 mt-6'>
+            {/* <div className='text-gray-800 bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-600  dark:text-zinc-300 px-12 py-4 max-[1200px]:px-4 mt-6'>
                 <h2 className='head4'>Read Next &rarr;</h2>
                 <Link href={'/'} className='fontxs flex items-center my-6 w-fit group'>
                     <Image src='/me.jpg' className=' object-cover rounded-full overflow-hidden w-[60px] h-[60px]' width={100} height={100} alt='developerimage' />
@@ -36,7 +36,7 @@ const layout = ({ children }) => {
                     </div>
                 </Link>
 
-            </div>
+            </div> */}
         </>
     )
 }

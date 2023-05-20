@@ -21,7 +21,7 @@ const page = async () => {
     }, [])
 
     if (loading) {
-        return <div className='container2'>loading</div>
+        return <div className='container2'>Loading All Blogs...</div>
         // return <Loading />
     }
 

@@ -4,7 +4,7 @@ import BlogCard from '../component/BlogCard'
 import Link from 'next/link'
 
 async function getBlogs() {
-    const res = await fetch('http://127.0.0.1:3000/api/blogs', { cache: 'no-store' });
+    const res = await fetch('https://testproject-g95v54c30-ashdephoenix123.vercel.app/api/blogs', { cache: 'no-store' });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }

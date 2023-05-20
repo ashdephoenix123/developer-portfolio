@@ -1,7 +1,5 @@
 import React from 'react'
 import Sidebar from '../../component/Sidebar'
-import Image from 'next/image'
-import Link from 'next/link'
 
 const layout = ({ children }) => {
     return (

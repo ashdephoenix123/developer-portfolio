@@ -121,6 +121,22 @@ body {
   width: 2px;
 }
 
+.heartAnimation{
+  animation: heartBeat .5s ease-in-out 1 both;
+}
+
+@keyframes heartBeat {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.25);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
 .padd {
   @apply px-16;
 }

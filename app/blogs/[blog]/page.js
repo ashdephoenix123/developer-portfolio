@@ -4,7 +4,7 @@ import Link from 'next/link';
 // import javascriptimg from '/public/javascriptimg.jpeg'
 
 const fetchBlog = async (blog) => {
-    const res = await fetch('https://testproject-g95v54c30-ashdephoenix123.vercel.app/api/blogs', { cache: 'no-store' })
+    const res = await fetch('https://www.akashsarki.me/api/blogs', { cache: 'no-store' })
     const data = await res.json()
     return data
 }

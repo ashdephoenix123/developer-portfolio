@@ -10,17 +10,21 @@ export default function Error({ error, reset }) {
   }, [error]);
  
   return (
-    <div className='container2'>
-      <h2>Something went wrong!</h2>
+    <div className='container2 min-h-screen'>
+      <h2 className='mb-6 mt-12 text-xl font-semibold'>Oops! Something went wrong!</h2>
       <button
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()
-        }
+        } 
+        className='btn'
       >
         Try again
-      </button>
-      <Link href='/'>Go to Home Page</Link>
+      </button> 
+      {' '}
+      Or
+      {' '}
+      <Link href='/' className='btn'>Go back to Home Page</Link>
     </div>
   );
 }

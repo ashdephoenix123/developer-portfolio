@@ -4,7 +4,7 @@ import Link from 'next/link';
 // import { Remarkable } from 'remarkable';
 
 const fetchBlog = async () => {
-    const res = await fetch('https://www.akashsarki.me/api/blogs', { cache: 'no-store' })
+    const res = await fetch('https://testproject-yffe56dmi-ashdephoenix123.vercel.app/api/blogs', { cache: 'no-store' })
     const data = await res.json()
     return data
 }

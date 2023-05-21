@@ -24,6 +24,11 @@ module.exports = {
                 protocol: 'https',
                 hostname: 'www.akashsarki.me',
                 pathname: '/_next/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                pathname: '/**',
             }
         ],
     }

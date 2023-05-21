@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-// import { Remarkable } from 'remarkable';
 
 const fetchBlog = async () => {
     const res = await fetch('https://www.akashsarki.me/api/blogs', { cache: 'no-store' })
@@ -21,10 +20,8 @@ const BlogPost = async ({ params: { blog } }) => {
     }
     const restBlogs = allBlogs.filter((item) => item.slug !== blog)
     const { title, description, image, author, date, authorimg } = thatBlog;
-    // const md = new Remarkable();
 
     function markup(content) {
-        // const renderedHTML = md.render(content);
         return { __html: content };
     }
 

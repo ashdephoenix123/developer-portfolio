@@ -12,7 +12,7 @@ const page = async () => {
 
     useEffect(() => {
         async function getBlogs() {
-            const res = await fetch('http://localhost:3000/api/blogs', { cache: "no-cache" });
+            const res = await fetch('https://testproject-9lviw8m9w-ashdephoenix123.vercel.app/api/blogs', { cache: "no-cache" });
             const blogs = await res.json()
             setBlogs(blogs)
             setLoading(false)

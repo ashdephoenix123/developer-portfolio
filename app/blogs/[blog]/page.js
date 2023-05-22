@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const fetchBlog = async () => {
-    const res = await fetch('https://www.akashsarki.me/api/blogs', { cache: 'no-store' })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WEBSITELINK}/api/blogs`, { cache: 'no-store' })
     const data = await res.json()
     return data
 }

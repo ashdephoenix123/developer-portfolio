@@ -12,7 +12,7 @@ const page = async () => {
 
     useEffect(() => {
         async function getBlogs() {
-            const res = await fetch('https://www.akashsarki.me/api/blogs', { cache: "no-cache" });
+            const res = await fetch(`${process.env.NEXT_PUBLIC_WEBSITELINK}/api/blogs`, { cache: "no-cache" });
             const blogs = await res.json()
             setBlogs(blogs)
             setLoading(false)

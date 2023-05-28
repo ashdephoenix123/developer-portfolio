@@ -29,7 +29,7 @@ export default function Home() {
             <p className="italic mb-4 text-sm -mt-0.5">Building a better web, one line of code at a time.</p>
             <p className="mb-6 text-sm min-[866px]:pr-48"><span className="block">Want to bring your digital ideas to life through web applications? </span>From conception to launch, I work with you every step of the way to ensure that your online presence accurately reflects your brand and meet your needs.</p>
             <Link href={'/blogs'} className="btn">Explore Blogs</Link>
-            <Link href={'/resume.pdf'} target="_blank" className="ml-2 btn">View Resumé</Link>
+            <Link href={'/myResume.pdf'} target="_blank" className="ml-2 btn">View Resumé</Link>
           </div>
         </div>
         <div className="aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd mt-12 min-[950px]:mt-28" id="about">

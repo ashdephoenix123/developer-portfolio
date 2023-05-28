@@ -10,8 +10,8 @@ const Footer = () => {
     return (
         <footer className='py-8 dark:bg-slate-950 dark:text-gray-400'>
             <div className='container2 fontsm'>
-                <div className='flex items-center mb-2 hover:underline w-fit'><IoMdMail className='mr-2' size={20} />akashsarki24@gmail.com</div>
-                <div className='flex items-center mb-2 hover:underline w-fit'><BsFillTelephoneFill className='mr-2' size={20} />9883475729</div>
+                <div className='flex items-center mb-2 w-fit'><IoMdMail className='mr-2' size={20} />akashsarki24@gmail.com</div>
+                <div className='flex items-center mb-2 w-fit'><BsFillTelephoneFill className='mr-2' size={20} />9883475729</div>
                 <Link className='flex items-center mb-4 hover:underline w-fit' target='_blank' href={'https://www.google.com/maps/place/Champasari+Rd,+Siliguri,+West+Bengal+734003/@26.7518566,88.4144492,17z/data=!3m1!4b1!4m6!3m5!1s0x39e440dc036f43e7:0xc38e5c4edbd49084!8m2!3d26.7518566!4d88.4170241!16s%2Fg%2F1tk9p589?entry=ttu'}><ImLocation className='mr-2' size={20} />Siliguri, West Bengal, IN</Link>
             </div>
             <div className='container2 h-[0.2px] bg-gray-500'>

@@ -16,7 +16,7 @@ export default function Home() {
             <p className="italic mb-4">Building a better web, one line of code at a time.</p>
             <p className="pr-16 mb-4 removePad1  max-[394px]:text-sm"><span className="block">Want to bring your digital ideas to life through clean, modern, and functional websites and web applications?</span> From conception to launch, I work with you every step of the way to ensure that your online presence accurately reflects your brand and meet your needs.</p>
             <Link href={'/blogs'} className="btn max-[350px]:block max-[350px]:mb-2">Explore Blogs</Link>
-            <Link href={'/resume.pdf'} target="_blank" className="ml-2 btn max-[350px]:ml-0">View Resumé</Link>
+            <Link href={'/myResume.pdf'} target="_blank" className="ml-2 btn max-[350px]:ml-0">View Resumé</Link>
           </div>
           <div className="right relative basis-1/2 clipIt clipOver">
             <Image src={homeImage} fill className='object-cover' alt="hero-image" placeholder="blur" priority></Image>

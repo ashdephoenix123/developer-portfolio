@@ -11,6 +11,12 @@
   --text2: #676767;
   --text3: #F2F2F2;
   --text4: #494949;
+
+  --h1: 300px;
+  --w1: 480px;
+
+  --h2: 180px;
+  --w2: 280px;
 }
 
 *,
@@ -346,8 +352,13 @@ footer {
 }
 .slide-track{
   display: flex;
-  width: calc(500px * 12);
-  animation: autoplayslider 20s linear infinite;
+  width: calc(var(--w1) * 12);
+  animation: autoplayslider 25s linear infinite;
+  transition: transform .1s;
+
+  @media only screen and (max-width: 620px) {
+    width: calc(var(--w2) * 12);
+  }
 }
 .slide-track:hover{
   animation-play-state: paused;
@@ -358,20 +369,40 @@ footer {
     transform: translateX(0)
   }
   100%{
-    transform: translateX(calc(-480px * 6))
+    transform: translateX(calc(var(--w1) * -6))
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  @keyframes autoplayslider{
+    100%{
+      transform: translateX(calc(var(--w2) * -6))
+    }
   }
 }
 .slide{
-  height: 300px;
-  width: 480px;
-  margin: 0 10px;
+  height: var(--h1);
+  width: var(--w1);
   overflow: hidden;
-
+  transition: transform .1s;
+  
   @media only screen and (max-width: 620px) {
-    height: 180px;
-    width: 280px;
+    height: var(--h2);
+    width: var(--w2);
   }
+  
+}
+.projBack{
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: transform 1s;
+}
 
+.slide:hover .projBack{
+  display: block;
 }
 
 .imageInSlide{
@@ -379,6 +410,14 @@ footer {
   transition: transform .1s;
 }
 
-.imageInSlide:hover{
+.slide:hover .imageInSlide{
   transform: scale(1.05);
+}
+
+//button
+
+.btn-outline{
+  padding: 1rem 2rem;
+  color: white;
+  border: 2px solid white;
 }

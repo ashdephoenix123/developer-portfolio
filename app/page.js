@@ -3,6 +3,7 @@ import Card from "./component/Card";
 import Contact from "./component/Contact";
 import Link from "next/link";
 import homeImage from "../public/3.jpg";
+import { BsArrowUpRight } from 'react-icons/bs'
 
 
 export default function Home() {
@@ -109,45 +110,91 @@ export default function Home() {
             <div className="slide-track">
               <div className="slide relative">
                 <Image src={'/proj1.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://nextecomm.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
               </div>
               <div className="slide relative">
                 <Image src={'/proj2.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://newzappnews.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj3.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://microsoftclone1.vercel.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj4.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://sarkihouse.vercel.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj5.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://sttconverter.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj6.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://www.thesharkkcompany.tech/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
 
               <div className="slide relative">
                 <Image src={'/proj1.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://nextecomm.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
               </div>
               <div className="slide relative">
                 <Image src={'/proj2.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://newzappnews.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj3.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://microsoftclone1.vercel.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj4.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://sarkihouse.vercel.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj5.png'} fill className="imageInSlide" alt="projectimg"></Image>
+                <div className="projBack">
+                  <Link href={'https://sttconverter.netlify.app/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
+
               </div>
               <div className="slide relative">
                 <Image src={'/proj6.png'} fill className="imageInSlide" alt="projectimg"></Image>
-              </div>
-              
+                <div className="projBack">
+                  <Link href={'https://www.thesharkkcompany.tech/'} target="_blank" className="btn-outline absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 flex items-center">VISIT <BsArrowUpRight className="ml-1" /></Link>
+                </div>
 
-             
-              
+              </div>
+
+
+
+
             </div>
           </div>
         </div>

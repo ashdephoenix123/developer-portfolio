@@ -103,6 +103,54 @@ export default function Home() {
             />
           </div>
         </div>
+        <div className="services min-[950px]:padd mt-12 min-[950px]:mt-20" id="services">
+          <h2 className="head1  max-[950px]:text-center dark:text-white">Some of my Projects<span className="font-serif">,</span></h2>
+          <div className="slider">
+            <div className="slide-track">
+              <div className="slide relative">
+                <Image src={'/proj1.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj2.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj3.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj4.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj5.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj6.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+
+              <div className="slide relative">
+                <Image src={'/proj1.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj2.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj3.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj4.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj5.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              <div className="slide relative">
+                <Image src={'/proj6.png'} fill className="imageInSlide" alt="projectimg"></Image>
+              </div>
+              
+
+             
+              
+            </div>
+          </div>
+        </div>
       </div>
       <Contact />
     </>

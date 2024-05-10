@@ -85,7 +85,7 @@ const Navbar = () => {
                                 <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#about'>About</Link></li>
                                 <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#services'>Services</Link></li>
                                 <li className='mx-2 border-transparent border-2 hover:border-b-black hide2'><Link href='#contact'>Contact</Link></li>
-                                <li className='mx-2 border-transparent hide2'><Link href='https://www.thesharkkcompany.tech/' target='_blank' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Projects</div><BsArrowUpRight size={10} /></Link></li>
+                                <li className='mx-2 border-transparent hide2'><Link href='https://akashsarki-projects.vercel.app/' target='_blank' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Projects</div><BsArrowUpRight size={10} /></Link></li>
                                 <li className='mx-2 border-transparent hide2'><Link href='/blogs' className='flex items-center'><div className='mr-0.5 border-2 hover:border-b-black border-transparent'>Blogs</div></Link></li>
                             </ul>
                                 <ul className='flex'>

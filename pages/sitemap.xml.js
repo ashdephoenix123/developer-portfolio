@@ -1,3 +1,5 @@
+import blogs from "../app/api/blogs/blogs.json";
+
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -17,7 +19,7 @@ function generateSiteMap(posts) {
         <priority>0.80</priority>
     </url>
       ${posts
-        .map((post) => {
+        ?.map((post) => {
           return `
           <url>
             <loc>https://www.akashsarki.com/blog/${post.slug}</loc>
@@ -35,9 +37,10 @@ function generateSiteMap(posts) {
 
 export async function getServerSideProps({ res }) {
   // Fetch dynamic URLs
-  const posts = await fetch(`${process.env.NEXT_PUBLIC_WEBSITELINK}/api/blogs`);
+  // const posts = await fetch(`${process.env.NEXT_PUBLIC_WEBSITELINK}/api/blogs`);
+
   // Generate sitemap
-  const sitemap = generateSiteMap(posts);
+  const sitemap = generateSiteMap(blogs);
 
   // Set response content type
   res.setHeader("Content-Type", "application/xml");

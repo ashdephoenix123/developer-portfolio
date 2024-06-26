@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --primary-font: #60657B;
+  --primary-font: #60657b;
   --primary-color: #0070f3;
-  --text1: #0067C8;
+  --text1: #0067c8;
   --bg2: #f7f7f7;
   --text5: #929292;
   --text2: #676767;
-  --text3: #F2F2F2;
+  --text3: #f2f2f2;
   --text4: #494949;
 
   --h1: 300px;
@@ -33,7 +33,7 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: var(--primary-font);
   line-height: 1.6;
@@ -44,9 +44,9 @@ body {
   @apply dark:text-gray-300 dark:bg-slate-950;
 }
 
-::selection{
+::selection {
   background-color: var(--primary-font);
-  color: var(--text3)
+  color: var(--text3);
   // user-select: none;
 }
 
@@ -72,13 +72,13 @@ body {
   display: none;
 }
 
-.fontxs{
+.fontxs {
   font-size: 0.75rem;
 }
 .fontsm {
   font-size: 0.85rem;
 }
-.fonttest{
+.fonttest {
   font-size: 0.3rem;
 }
 
@@ -86,8 +86,8 @@ body {
   color: var(--text1);
 }
 
-.text2{
-  @apply text-gray-700 dark:text-white; 
+.text2 {
+  @apply text-gray-700 dark:text-white;
 }
 
 .text4 {
@@ -99,10 +99,10 @@ body {
 }
 
 .shade1 {
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .5) !important;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
-.scaleIt:hover{
+.scaleIt:hover {
   transform: scale(1.01);
 }
 
@@ -113,32 +113,32 @@ body {
 .head2 {
   @apply font-semibold text-4xl mb-4 text-white;
 }
-.head3{
+.head3 {
   @apply text-xl min-[1200px]:text-2xl;
 }
-.head4{
+.head4 {
   @apply my-6 text-xl font-bold;
 }
 
 .after:after {
-  content: '';
+  content: "";
   display: inline-block;
   height: 14px;
   width: 2px;
 }
 
-.heartAnimation{
-  animation: heartBeat .25s ease-in-out 1 both;
+.heartAnimation {
+  animation: heartBeat 0.25s ease-in-out 1 both;
 }
 
 @keyframes heartBeat {
-  0%{
+  0% {
     transform: scale(1);
   }
-  50%{
+  50% {
     transform: scale(1.25);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
@@ -156,14 +156,19 @@ body {
 }
 
 .contactbg {
-  background-image: linear-gradient(to right, rgba(33, 33, 33, 0.5), rgba(71, 71, 71, 0.6)), url('/4.jpg');
+  background-image: linear-gradient(
+      to right,
+      rgba(33, 33, 33, 0.5),
+      rgba(71, 71, 71, 0.6)
+    ),
+    url("/4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .lds-ring {
@@ -227,7 +232,7 @@ footer {
     text-transform: capitalize;
 
     &-lists {
-      font-size: .7rem;
+      font-size: 0.7rem;
       font-weight: 400;
       color: var(--text2);
     }
@@ -235,17 +240,17 @@ footer {
     @media only screen and (max-width: 520px) {
       display: block;
 
-      &>*:not(:last-child) {
+      & > *:not(:last-child) {
         margin-bottom: 3rem;
       }
     }
 
     &-1 {
       h3 {
-        font-size: .9rem;
+        font-size: 0.9rem;
         color: var(--text2);
         font-weight: 500;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
       }
 
       font-size: 1rem;
@@ -261,7 +266,6 @@ footer {
       }
     }
   }
-
 }
 
 .hide3 {
@@ -271,7 +275,7 @@ footer {
 @media only screen and (max-width: 1026px) {
   .container2 {
     width: 98%;
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -304,7 +308,7 @@ footer {
   .clipOver {
     display: none;
   }
-  .homeS{
+  .homeS {
     display: none;
   }
 
@@ -315,7 +319,7 @@ footer {
   .skillsandeducation {
     display: block;
 
-    &>* {
+    & > * {
       margin-bottom: 4rem;
     }
   }
@@ -337,7 +341,7 @@ footer {
   }
 }
 
-.slider{
+.slider {
   height: 350px;
   width: 100%;
   overflow: hidden;
@@ -345,54 +349,52 @@ footer {
   place-items: center;
   position: relative;
 
-
   @media only screen and (max-width: 620px) {
     height: 200px;
   }
 }
-.slide-track{
+.slide-track {
   display: flex;
   width: calc(var(--w1) * 12);
   animation: autoplayslider 25s linear infinite;
-  transition: transform .1s;
+  transition: transform 0.1s;
 
   @media only screen and (max-width: 620px) {
     width: calc(var(--w2) * 12);
   }
 }
-.slide-track:hover{
+.slide-track:hover {
   animation-play-state: paused;
 }
 
-@keyframes autoplayslider{
-  0%{
-    transform: translateX(0)
+@keyframes autoplayslider {
+  0% {
+    transform: translateX(0);
   }
-  100%{
-    transform: translateX(calc(var(--w1) * -6))
+  100% {
+    transform: translateX(calc(var(--w1) * -6));
   }
 }
 
 @media only screen and (max-width: 620px) {
-  @keyframes autoplayslider{
-    100%{
-      transform: translateX(calc(var(--w2) * -6))
+  @keyframes autoplayslider {
+    100% {
+      transform: translateX(calc(var(--w2) * -6));
     }
   }
 }
-.slide{
+.slide {
   height: var(--h1);
   width: var(--w1);
   overflow: hidden;
-  transition: transform .1s;
-  
+  transition: transform 0.1s;
+
   @media only screen and (max-width: 620px) {
     height: var(--h2);
     width: var(--w2);
   }
-  
 }
-.projBack{
+.projBack {
   display: none;
   height: 100%;
   width: 100%;
@@ -401,23 +403,121 @@ footer {
   transition: transform 1s;
 }
 
-.slide:hover .projBack{
+.slide:hover .projBack {
   display: block;
 }
 
-.imageInSlide{
+.imageInSlide {
   width: 100%;
-  transition: transform .1s;
+  transition: transform 0.1s;
 }
 
-.slide:hover .imageInSlide{
+.slide:hover .imageInSlide {
   transform: scale(1.05);
 }
 
 //button
 
-.btn-outline{
+.btn-outline {
   padding: 1rem 2rem;
   color: white;
   border: 2px solid white;
+}
+
+.projectSection {
+  .container {
+    max-width: 120rem;
+    margin: 10rem auto;
+    padding: 0 2rem;
+  }
+
+  .svg-1 {
+    width: 3rem;
+    height: 3rem;
+    fill: #fff;
+    margin-right: 1rem;
+  }
+  .primary-heading {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    @media only screen and (max-width: 400px) {
+      flex-direction: column;
+    }
+
+    &-fit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: 400px) {
+        &:last-child {
+          display: none;
+        }
+      }
+      span {
+        font-weight: bold;
+        font-weight: 1.4rem;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 3rem;
+        }
+      }
+    }
+  }
+
+  .project-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    align-items: start;
+    gap: 4rem;
+
+    .card {
+      background-color: rgb(109, 109, 109);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        // transform: translateY(-5px);
+        transform: scale(1.02);
+      }
+
+      &-figure {
+        width: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+      }
+
+      &-img {
+        width: inherit;
+        object-fit: cover;
+        min-height: 15rem;
+        max-height: 20rem;
+        border-radius: 10px;
+      }
+
+      &-info {
+        & > * {
+          margin: 1rem;
+        }
+      }
+
+      &-desc {
+        font-family: "Open Sans", sans-serif;
+      }
+    }
+  }
 }

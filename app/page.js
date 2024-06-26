@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Card from "./component/Card";
-import Contact from "./component/Contact";
 import Link from "next/link";
 import homeImage from "../public/3.jpg";
 import { BsArrowUpRight } from "react-icons/bs";
@@ -133,7 +131,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div>{" "}
+        */}
         <div className="skillsandeducation flex mt-12 min-[950px]:mt-28 min-[950px]:padd">
           <div className="left basis-1/2 mr-4">
             <h1 className="font-semibold text-4xl text-gray-700 max-[950px]:text-center dark:text-white">
@@ -467,9 +466,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="text-center">
+            <Link className="btn" href="/projects">
+              View All projects
+            </Link>
+          </div>
         </div>
       </div>
-      <Contact />
     </>
   );
 }

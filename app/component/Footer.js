@@ -19,7 +19,7 @@ const Footer = () => {
             <div className='flex flex-wrap container2 items-center justify-between mb-4 fontsm max-[677px]:block mt-12'>
                 <div className='flex items-center max-[677px]:justify-center max-[677px]:mb-2  max-[394px]:block  max-[394px]:text-center mt-4'>
                     <div className='flex items-center mr-2  max-[394px]:block'>
-                        <div>Copyright &copy; {year} @akashsarki.me</div>
+                        <div>Copyright &copy; {year} @akashsarki.com</div>
                     </div>
                     <span className='after bg-gray-400 max-[394px]:hidden'></span>
                     <span className='ml-2'>All Rights Reserved</span>

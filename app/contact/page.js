@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contactbg flex flex-col justify-center w-full py-20">
+    <div className="contactbg flex flex-col justify-center w-full min-[768px]:py-20 max-[768px]:py-8">
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -77,12 +77,12 @@ const Contact = () => {
         theme="light"
       />
       <div className="contact min-[950px]:padd mb-12 text-center" id="contact">
-        <h2 className="head2">
-          Leave a Message<span className="font-serif">,</span>
-        </h2>
+        <h1 className="head1">
+          Get in touch with me<span className="font-serif"></span>
+        </h1>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col mx-auto mt-22 text-black fontsm w-[90%] min-[710px]:w-[70%] min-[950px]:w-1/3"
+          className="flex flex-col mx-auto mt-22 text-black fontsm  min-[710px]:w-[70%] min-[950px]:w-1/3"
         >
           <input
             required
@@ -90,7 +90,7 @@ const Contact = () => {
             name="email"
             value={details.email}
             type="email"
-            placeholder="name@email.com"
+            placeholder="Your Email"
             className="dark:text-white rounded my-1 px-3 py-1.5 outline-none"
           />
           <input
@@ -109,7 +109,7 @@ const Contact = () => {
             value={details.message}
             cols="30"
             rows="10"
-            placeholder="Leave a comment..."
+            placeholder="Anything you want to say..."
             className="dark:text-white rounded my-1 px-3 py-2 outline-none"
           ></textarea>
           <button

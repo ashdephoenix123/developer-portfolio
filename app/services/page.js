@@ -4,12 +4,12 @@ import Card from "../component/Card";
 const Services = () => {
   return (
     <div
-      className="container2 services min-[950px]:padd mt-12 min-[950px]:mt-20 min-[950px]:mb-36"
+      className="container2 services min-[950px]:padd mt-12 min-[950px]:mt-20 min-[950px]:mb-36  max-[768px]:my-8"
       id="services"
     >
-      <h2 className="head1  max-[950px]:text-center dark:text-white">
-        Services I Provide<span className="font-serif">,</span>
-      </h2>
+      <h1 className="head1  max-[950px]:text-center dark:text-white">
+        Services that I Provide <span className="font-serif">:</span>
+      </h1>
       <div className="cardContainer">
         <Card
           title="Website Design & Development"

@@ -107,11 +107,17 @@ body {
 }
 
 .head1 {
-  @apply font-semibold text-4xl mb-4 text-gray-700;
+  @apply font-semibold  mb-4 text-white;
+  font-size: 4rem;
+  line-height: 1.2;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .head2 {
-  @apply font-semibold text-4xl mb-4 text-white;
+  @apply font-semibold text-4xl  mb-4 text-white;
 }
 .head3 {
   @apply text-xl min-[1200px]:text-2xl;
@@ -165,6 +171,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  .contact {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 body {
@@ -478,9 +489,9 @@ footer {
 
   .project-lists {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: start;
-    gap: 4rem;
+    gap: 2rem;
 
     .card {
       background-color: rgb(109, 109, 109);

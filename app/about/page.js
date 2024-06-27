@@ -17,10 +17,10 @@ const About = () => {
           priority
         ></Image>
       </div>
-      <div className="right basis-2/3 max-[866px]:pl-0 pl-16">
-        <h2 className="head1 text-center dark:text-white">
-          About Me<span className="font-serif">,</span>
-        </h2>
+      <div className="right basis-2/3 max-[866px]:pl-0 pl-16 max-[768px]:my-8">
+        <h1 className="head1 text-center dark:text-white">
+          What you need to know about me <span className="font-serif">?</span>
+        </h1>
         <Image
           src="/me3.jpg"
           width={250}
@@ -29,26 +29,22 @@ const About = () => {
           alt="hero-image"
           priority
         ></Image>
-        <div className="text-center text-sm italic max-[866px]:mt-4">
+        <div className="text-center text-sm max-[866px]:mt-4">
           <p className="mb-4">
-            Hello and welcome! I am a passionate web developer with a love for
-            creating beautiful, functional websites and web applications. My
-            journey into web development began with a curiosity for how websites
-            worked, and has since evolved into a career focused on bringing my
-            clients' digital visions to life.
+            I am a passionate web developer born in a beautiful town - Siliguri,
+            a part of West Bengal.
           </p>
           <p className="mb-4">
-            With a strong foundation in front-end development using HTML, CSS,
-            and JavaScript, I am able to create engaging user interfaces that
-            are responsive across all devices. I am also comfortable working
-            with back-end technologies such as Node.js, and databases such as
-            MongoDB.
+            With love for creating beautiful websites, my journey into web
+            development began with a curiosity for how websites worked, and has
+            since evolved into a career focused on bringing my clients' digital
+            visions to life. With a strong foundation in website development, I
+            create appealing user interfaces.
           </p>
           <p className="max-[530px]:hidden">
             When I'm not coding, you can find me exploring the outdoors and
             trying out new foods. I am always looking for ways to challenge
-            myself and continue learning, and I am excited for the opportunity
-            to work with you and bring your digital ideas to life."
+            myself and continue learning.
           </p>
         </div>
       </div>

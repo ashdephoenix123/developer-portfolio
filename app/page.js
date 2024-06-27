@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Card from "./component/Card";
-import Contact from "./component/Contact";
 import Link from "next/link";
 import homeImage from "../public/3.jpg";
 import { BsArrowUpRight } from "react-icons/bs";
@@ -81,57 +79,6 @@ export default function Home() {
             <Link href={"/myResume.pdf"} target="_blank" className="ml-2 btn">
               View Resumé
             </Link>
-          </div>
-        </div>
-        <div
-          className="aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd mt-12 min-[950px]:mt-28"
-          id="about"
-        >
-          <div className="left relative basis-1/3 overflow-hidden rounded-2xl shade1">
-            <Image
-              src="/me3.jpg"
-              width={500}
-              height={500}
-              className="w-full object-cover object-top max-[866px]:hidden"
-              alt="hero-image"
-              priority
-            ></Image>
-          </div>
-          <div className="right basis-2/3 max-[866px]:pl-0 pl-16">
-            <h2 className="head1 text-center dark:text-white">
-              About Me<span className="font-serif">,</span>
-            </h2>
-            <Image
-              src="/me3.jpg"
-              width={250}
-              height={250}
-              className="min-[866px]:hidden rounded-3xl mx-auto"
-              alt="hero-image"
-              priority
-            ></Image>
-            <div className="text-center text-sm italic max-[866px]:mt-4">
-              <p className="mb-4">
-                Hello and welcome! I am a passionate web developer with a love
-                for creating beautiful, functional websites and web
-                applications. My journey into web development began with a
-                curiosity for how websites worked, and has since evolved into a
-                career focused on bringing my clients' digital visions to life.
-              </p>
-              <p className="mb-4">
-                With a strong foundation in front-end development using HTML,
-                CSS, and JavaScript, I am able to create engaging user
-                interfaces that are responsive across all devices. I am also
-                comfortable working with back-end technologies such as Node.js,
-                and databases such as MongoDB.
-              </p>
-              <p className="max-[530px]:hidden">
-                When I'm not coding, you can find me exploring the outdoors and
-                trying out new foods. I am always looking for ways to challenge
-                myself and continue learning, and I am excited for the
-                opportunity to work with you and bring your digital ideas to
-                life."
-              </p>
-            </div>
           </div>
         </div>
         <div className="skillsandeducation flex mt-12 min-[950px]:mt-28 min-[950px]:padd">
@@ -226,36 +173,12 @@ export default function Home() {
             </ul>
           </div>
         </div>
+
         <div
           className="services min-[950px]:padd mt-12 min-[950px]:mt-20"
           id="services"
         >
-          <h2 className="head1  max-[950px]:text-center dark:text-white">
-            Services I Provide<span className="font-serif">,</span>
-          </h2>
-          <div className="cardContainer">
-            <Card
-              title="Website Design & Development"
-              description="I will help you in custom website design and development, as well as responsive design for optimal viewing on different devices."
-              link="Hire me"
-            />
-            <Card
-              title="Mentorship"
-              description="I offer one-on-one mentorship to help new and aspiring developers develop their skills. Let's work together to help you achieve your goals and reach your full potential as a web developer."
-              link="Get Support"
-            />
-            <Card
-              title="Content Writing"
-              description="I can help you create website content that captivates and engages your audience. I craft content that is optimized for SEO and designed to convert visitors into customers."
-              link="Get in touch"
-            />
-          </div>
-        </div>
-        <div
-          className="services min-[950px]:padd mt-12 min-[950px]:mt-20"
-          id="services"
-        >
-          <h2 className="head1  max-[950px]:text-center dark:text-white">
+          <h2 className="head2 max-[950px]:text-center dark:text-white">
             Some of my Projects<span className="font-serif">,</span>
           </h2>
           <div className="slider">
@@ -467,9 +390,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="text-center">
+            <Link className="btn" href="/projects">
+              View All projects
+            </Link>
+          </div>
         </div>
       </div>
-      <Contact />
     </>
   );
 }

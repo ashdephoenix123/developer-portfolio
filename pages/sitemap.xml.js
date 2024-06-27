@@ -29,7 +29,7 @@ function generateSiteMap() {
 }
 
 export async function getServerSideProps({ res }) {
-  const sitemap = generateSiteMap(blogs);
+  const sitemap = generateSiteMap();
 
   res.setHeader("Content-Type", "application/xml");
   res.write(sitemap);

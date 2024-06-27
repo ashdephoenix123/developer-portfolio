@@ -4,7 +4,7 @@ import homeImage from "../public/3.jpg";
 import { BsArrowUpRight } from "react-icons/bs";
 
 export const metadata = {
-  title: "Akash Sarki | Portfolio - Web Developer",
+  title: "Akash Sarki - A Web Developer",
   description:
     "Explore Akash Sarki's portfolio showcasing a diverse range of web development projects. Discover skills in frontend and backend development and more.",
 };
@@ -13,6 +13,74 @@ export default function Home() {
   return (
     <>
       <div className="container2">
+        <div className="heroSection">
+          <h1 className="heroTitle">
+            Full Stack <span className="span1">Developer</span>
+          </h1>
+          <h2 className="head1">
+            Hi<span className="font-serif">,</span> I am{" "}
+            <span className="span1">Akash</span>
+          </h2>
+          <p className="subText">
+            Want to build modern, scalable and reliable websites
+            <span className="font-serif">?</span> From conception to launch, I
+            work with you every step of the way to ensure that your online
+            presence accurately reflects your brand and meet your needs.
+          </p>
+        </div>
+        <div className="skillSection">
+          <h3 className="head1">
+            Skills<span className="font-serif">,</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
+            et possimus ex similique sunt, minima esse sed ad, ipsam alias
+            dolores architecto! Odit error vel, repellendus ducimus doloremque
+            saepe eos nam consectetur at dolore magni expedita consequatur ea
+            perferendis iusto ad aspernatur a non, molestias rerum
+            exercitationem quo?
+          </p>
+        </div>
+        <div className="EducationSection">
+          <h3 className="head1">
+            My Qualifications<span className="font-serif">'</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
+            et possimus ex similique sunt, minima esse sed ad, ipsam alias
+            dolores architecto! Odit error vel, repellendus ducimus doloremque
+            saepe eos nam consectetur at dolore magni expedita consequatur ea
+            perferendis iusto ad aspernatur a non, molestias rerum
+            exercitationem quo?
+          </p>
+        </div>
+        <div className="EducationSection">
+          <h3 className="head1">
+            What others say about me<span className="font-serif">?</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
+            et possimus ex similique sunt, minima esse sed ad, ipsam alias
+            dolores architecto! Odit error vel, repellendus ducimus doloremque
+            saepe eos nam consectetur at dolore magni expedita consequatur ea
+            perferendis iusto ad aspernatur a non, molestias rerum
+            exercitationem quo?
+          </p>
+        </div>
+        <div className="EducationSection">
+          <h3 className="head2">
+            Check out Blogs I have written
+            <span className="font-serif">...</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
+            et possimus ex similique sunt, minima esse sed ad, ipsam alias
+            dolores architecto! Odit error vel, repellendus ducimus doloremque
+            saepe eos nam consectetur at dolore magni expedita consequatur ea
+            perferendis iusto ad aspernatur a non, molestias rerum
+            exercitationem quo?
+          </p>
+        </div>
         <div className="flex min-[950px]:padd h-[50vh] relative homeS">
           <div className="left basis-1/2 my-auto heroSection  max-[350px]:px-3">
             <h1 className="font-semibold text-4xl text-gray-700 dark:text-white">

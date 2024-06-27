@@ -532,3 +532,41 @@ footer {
     }
   }
 }
+
+.heroSection {
+  min-height: 100vh;
+  padding-block: 4rem;
+  text-align: center;
+
+  // background: linear-gradient(to right, rgb(30, 0, 255) 40%, green 60%);
+  // background-image: url("/vercel.svg"), url("/vercel.svg");
+  // background-repeat: no-repeat;
+  // background-position: left top, right bottom;
+  // background-size: 50px 50px, 100px 100px;
+
+  .heroTitle {
+    @apply font-semibold mb-4 text-white;
+    margin-block: 2rem;
+    font-size: 6rem;
+    line-height: 1.2;
+
+    .span1 {
+      background: linear-gradient(to right, rgb(30, 0, 255), green);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .span2 {
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .subText {
+    font-size: 1.2rem;
+    width: 60%;
+    margin: auto;
+  }
+}

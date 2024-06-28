@@ -43,6 +43,7 @@ export default function Home() {
               <p className="js">Javascript</p>
               <p className="react">React</p>
               <p className="next">NextJS</p>
+              <p className="etc">and more...</p>
             </div>
           </div>
         </div>

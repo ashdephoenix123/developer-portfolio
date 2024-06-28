@@ -607,7 +607,8 @@ footer {
     .react,
     .sql,
     .node,
-    .next {
+    .next,
+    .etc {
       font-size: 10rem;
       font-weight: bold;
       line-height: 0.75;
@@ -620,6 +621,11 @@ footer {
 
     .next {
       font-size: 10rem;
+    }
+
+    .etc {
+      font-size: 4rem;
+      line-height: 1;
     }
   }
 }

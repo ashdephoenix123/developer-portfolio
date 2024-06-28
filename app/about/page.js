@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -47,6 +48,13 @@ const About = () => {
             myself and continue learning.
           </p>
         </div>
+        <Link
+          href={"/myResume.pdf"}
+          target="_blank"
+          className="ml-2 btn max-[350px]:ml-0"
+        >
+          View Resumé
+        </Link>
       </div>
     </div>
   );

@@ -12,74 +12,62 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <div className="container2">
-        <div className="heroSection">
-          <h1 className="heroTitle">
-            Full Stack <span className="span1">Developer</span>
-          </h1>
-          <h2 className="head1">
-            Hi<span className="font-serif">,</span> I am{" "}
-            <span className="span1">Akash</span>
-          </h2>
-          <p className="subText">
-            Want to build modern, scalable and reliable websites
-            <span className="font-serif">?</span> From conception to launch, I
-            work with you every step of the way to ensure that your online
-            presence accurately reflects your brand and meet your needs.
-          </p>
+      <div className="">
+        <div className="heroSection container2">
+          <div className="heroContain">
+            <h2 className="head1 text-white">
+              Hi<span className="font-serif">,</span> I am{" "}
+              <span className="span1">Akash</span>
+            </h2>
+            <h1 className="heroTitle">
+              A Full Stack <span className="span1">Developer</span>
+            </h1>
+            <p className="subText">
+              Want to build modern, scalable and reliable websites
+              <span className="font-serif">?</span> From conception to launch, I
+              work with you every step of the way to ensure that your online
+              presence accurately reflects your brand and meet your needs.
+            </p>
+          </div>
         </div>
-        <div className="skillSection">
-          <h3 className="head1">
-            Skills<span className="font-serif">,</span>
-          </h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
-            et possimus ex similique sunt, minima esse sed ad, ipsam alias
-            dolores architecto! Odit error vel, repellendus ducimus doloremque
-            saepe eos nam consectetur at dolore magni expedita consequatur ea
-            perferendis iusto ad aspernatur a non, molestias rerum
-            exercitationem quo?
-          </p>
+        <div className="skillSection text-black">
+          <div className="container2">
+            <h3 className="head1">
+              Technologies I work with<span className="font-serif">,</span>
+            </h3>
+            <p className="subText">
+              Building websites with the latest technologies to keep you
+              updated!
+            </p>
+            <div className="skill">
+              <p className="js">Javascript</p>
+              <p className="react">React</p>
+              <p className="next">NextJS</p>
+            </div>
+          </div>
         </div>
-        <div className="EducationSection">
-          <h3 className="head1">
-            My Qualifications<span className="font-serif">'</span>
-          </h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
-            et possimus ex similique sunt, minima esse sed ad, ipsam alias
-            dolores architecto! Odit error vel, repellendus ducimus doloremque
-            saepe eos nam consectetur at dolore magni expedita consequatur ea
-            perferendis iusto ad aspernatur a non, molestias rerum
-            exercitationem quo?
-          </p>
+        <div className="studySection container2">
+          <h3 className="head1 text-white">Educational Qualifications</h3>
+          <ul>
+            <li></li>
+          </ul>
         </div>
-        <div className="EducationSection">
-          <h3 className="head1">
-            What others say about me<span className="font-serif">?</span>
-          </h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
-            et possimus ex similique sunt, minima esse sed ad, ipsam alias
-            dolores architecto! Odit error vel, repellendus ducimus doloremque
-            saepe eos nam consectetur at dolore magni expedita consequatur ea
-            perferendis iusto ad aspernatur a non, molestias rerum
-            exercitationem quo?
-          </p>
-        </div>
-        <div className="EducationSection">
-          <h3 className="head2">
-            Check out Blogs I have written
-            <span className="font-serif">...</span>
-          </h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quae
-            et possimus ex similique sunt, minima esse sed ad, ipsam alias
-            dolores architecto! Odit error vel, repellendus ducimus doloremque
-            saepe eos nam consectetur at dolore magni expedita consequatur ea
-            perferendis iusto ad aspernatur a non, molestias rerum
-            exercitationem quo?
-          </p>
+
+        <div className="showBlogSection">
+          <div className="container2">
+            <h3 className="head1">
+              Check out Blogs I have written
+              <span className="font-serif">...</span>
+            </h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio
+              quae et possimus ex similique sunt, minima esse sed ad, ipsam
+              alias dolores architecto! Odit error vel, repellendus ducimus
+              doloremque saepe eos nam consectetur at dolore magni expedita
+              consequatur ea perferendis iusto ad aspernatur a non, molestias
+              rerum exercitationem quo?
+            </p>
+          </div>
         </div>
         <div className="flex min-[950px]:padd h-[50vh] relative homeS">
           <div className="left basis-1/2 my-auto heroSection  max-[350px]:px-3">

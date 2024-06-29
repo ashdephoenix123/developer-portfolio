@@ -131,7 +131,7 @@ body {
 }
 
 .head2 {
-  @apply font-semibold text-4xl  mb-4 text-white;
+  @apply font-semibold text-4xl mb-4 text-white;
 }
 .head3 {
   @apply text-xl min-[1200px]:text-2xl;
@@ -632,4 +632,58 @@ footer {
 
 .studySection {
   padding-block: 6rem;
+
+  .head1 {
+    margin-bottom: 0;
+  }
+
+  .subText {
+    margin-left: 0.5rem;
+  }
+
+  .educationLists {
+    padding-top: 3rem;
+    .educ {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+
+      .educationimg {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+
+      .rightSec {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .name {
+          color: #fff;
+          margin-bottom: 0.5rem;
+        }
+        .paraG {
+          font-style: italic;
+        }
+        .paraLower {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.services {
+  padding-block: 6rem;
+  .head1 {
+    color: #fff;
+  }
+}
+
+.showBlogSection {
+  background-color: #fff;
+  padding-block: 6rem;
+  .head1 {
+    color: #000;
+  }
 }

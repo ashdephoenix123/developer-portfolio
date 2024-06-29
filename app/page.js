@@ -4,7 +4,7 @@ import homeImage from "../public/3.jpg";
 import { BsArrowUpRight } from "react-icons/bs";
 
 export const metadata = {
-  title: "Akash Sarki - A Web Developer",
+  title: "Akash Sarki - Web Developer Portfolio",
   description:
     "Explore Akash Sarki's portfolio showcasing a diverse range of web development projects. Discover skills in frontend and backend development and more.",
 };
@@ -49,9 +49,74 @@ export default function Home() {
         </div>
         <div className="studySection container2">
           <h3 className="head1 text-white">Educational Qualifications</h3>
-          <ul>
-            <li></li>
-          </ul>
+          <p className="subText">
+            Empowering my journey with knowledge and skills to shape a brighter
+            future.
+          </p>
+          <div className="educationLists">
+            <div className="educ">
+              <Image
+                src={"/jain8.jpeg"}
+                width={150}
+                height={150}
+                className="mr-4 educationimg"
+                alt="educationimg"
+              ></Image>
+              <div className="rightSec">
+                <div className="name head3">JAIN (Deemed-to-be University)</div>
+                <p className="paraG">
+                  Masters<span className="font-serif">'</span> in Computer
+                  Application (2021 - 2023)
+                </p>
+                <p className="paraLower">
+                  Completed my Master's degree through an online program,
+                  demonstrating commitment, adaptability, and the ability to
+                  excel in a digital learning environment.
+                </p>
+              </div>
+            </div>
+
+            <div className="educ">
+              <Image
+                src={"/nbu.png"}
+                width={150}
+                height={150}
+                className="mr-4 educationimg"
+                alt="educationimg"
+              ></Image>
+              <div className="rightSec">
+                <div className="name head3">North Bengal University</div>
+                <p className="paraG">
+                  Bachelor<span className="font-serif">'</span> in Computer
+                  Science (2017 - 2021)
+                </p>
+                <p className="paraLower">
+                  Earned my Bachelor's degree, laying a strong foundation of
+                  knowledge and skills that have propelled my academic and
+                  professional journey forward.
+                </p>
+              </div>
+            </div>
+
+            <div className="educ">
+              <Image
+                src={"/school.jpg"}
+                width={150}
+                height={150}
+                className="mr-4 educationimg"
+                alt="educationimg"
+              ></Image>
+              <div className="rightSec">
+                <div className="name head3">Siliguri Model High School</div>
+                <p className="paraG">Secondary School (2015 - 2017)</p>
+                <p className="paraLower">
+                  Completed my secondary education with distinction,
+                  establishing a solid academic foundation and igniting a
+                  passion for lifelong learning and growth.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="showBlogSection">
@@ -70,173 +135,13 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex min-[950px]:padd h-[50vh] relative homeS">
-          <div className="left basis-1/2 my-auto heroSection  max-[350px]:px-3">
-            <h1 className="font-semibold text-4xl text-gray-700 dark:text-white">
-              Welcome You<span className="font-serif">,</span>
-            </h1>
-            <p className="italic mb-4">
-              Building a better web, one line of code at a time.
-            </p>
-            <p className="pr-16 mb-4 removePad1  max-[394px]:text-sm">
-              <span className="block">
-                Want to bring your digital ideas to life through clean, modern,
-                and functional websites and web applications?
-              </span>{" "}
-              From conception to launch, I work with you every step of the way
-              to ensure that your online presence accurately reflects your brand
-              and meet your needs.
-            </p>
-            <Link
-              href={"/blogs"}
-              className="btn max-[350px]:block max-[350px]:mb-2"
-            >
-              Explore Blogs
-            </Link>
-            <Link
-              href={"/myResume.pdf"}
-              target="_blank"
-              className="ml-2 btn max-[350px]:ml-0"
-            >
-              View Resumé
-            </Link>
-          </div>
-          <div className="right relative basis-1/2 clipIt clipOver">
-            <Image
-              src={homeImage}
-              fill
-              className="object-cover"
-              alt="hero-image"
-              placeholder="blur"
-              priority
-            ></Image>
-          </div>
-        </div>
-        <div className="w-full disp">
-          {/* <Image src='/3.jpg' fill className='w-full object-cover opacity-90' alt="hero-image2"></Image> */}
-          <div className="px-4 py-12 my-auto max-[866px]:text-center">
-            <h1 className="font-semibold text-4xl text-gray-700 dark:text-white">
-              Welcome You<span className="font-serif">,</span>
-            </h1>
-            <p className="italic mb-4 text-sm -mt-0.5">
-              Building a better web, one line of code at a time.
-            </p>
-            <p className="mb-6 text-sm min-[866px]:pr-48">
-              <span className="block">
-                Want to bring your digital ideas to life through web
-                applications?{" "}
-              </span>
-              From conception to launch, I work with you every step of the way
-              to ensure that your online presence accurately reflects your brand
-              and meet your needs.
-            </p>
-            <Link href={"/blogs"} className="btn">
-              Explore Blogs
-            </Link>
-            <Link href={"/myResume.pdf"} target="_blank" className="ml-2 btn">
-              View Resumé
-            </Link>
-          </div>
-        </div>
-        <div className="skillsandeducation flex mt-12 min-[950px]:mt-28 min-[950px]:padd">
-          <div className="left basis-1/2 mr-4">
-            <h1 className="font-semibold text-4xl text-gray-700 max-[950px]:text-center dark:text-white">
-              Skills I have<span className="font-serif">,</span>
-            </h1>
-            <p className="italic mb-4  max-[950px]:text-center">
-              These are the building blocks of success.
-            </p>
-            <div className="flex items-start">
-              <Image
-                className="max-[530px]:hidden"
-                src={"/connection2.gif"}
-                width={180}
-                height={180}
-                alt="skillimg"
-              ></Image>
-              <div className="py-2 px-6 flex gap-1 justify-center max-[950px]:mx-auto self-center flex-wrap">
-                <button className="btn2 hover:scale-105 transition-all bg-red-600">
-                  HTML
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-blue-600">
-                  CSS
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-yellow-500">
-                  JavaScript
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-blue-500">
-                  React
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-green-700">
-                  NodeJS
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-black">
-                  NextJS
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-gray-600">
-                  Express
-                </button>
-                <button className="btn2 hover:scale-105 transition-all bg-green-800">
-                  MongoDB
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="right relative basis-1/2">
-            <h1 className="font-semibold text-4xl text-gray-700  max-[950px]:text-center dark:text-white">
-              Educational Qualifications<span className="font-serif">,</span>
-            </h1>
-            <p className="italic mb-4  max-[950px]:text-center">
-              It's not just a degree, it's the knowledge and skills that help
-              you achieve your goals.
-            </p>
-            <ul>
-              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image
-                  src={"/jain5.jpg"}
-                  width={80}
-                  height={80}
-                  className="mr-4"
-                  alt="educationimg"
-                ></Image>
-                <span className="font-sm text4 dark:text-gray-300">
-                  Jain University (2021 - present)
-                </span>
-              </li>
-              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image
-                  src={"/nbu.png"}
-                  width={80}
-                  height={80}
-                  className="mr-4"
-                  alt="educationimg"
-                ></Image>
-                <span className="font-sm text4 dark:text-gray-300">
-                  North Bengal University (2017 - 2021)
-                </span>
-              </li>
-              <li className="flex items-center overflow-hidden  max-[950px]:justify-center">
-                <Image
-                  src={"/school.jpg"}
-                  width={80}
-                  height={80}
-                  className="mr-4"
-                  alt="educationimg"
-                ></Image>
-                <span className="font-sm text4 dark:text-gray-300">
-                  Siliguri Model High School (2015 - 2017)
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
 
         <div
           className="services min-[950px]:padd mt-12 min-[950px]:mt-20"
           id="services"
         >
-          <h2 className="head2 max-[950px]:text-center dark:text-white">
-            Some of my Projects<span className="font-serif">,</span>
+          <h2 className="head1 container2">
+            What others say about me<span className="font-serif">?</span>
           </h2>
           <div className="slider">
             <div className="slide-track">
@@ -453,6 +358,14 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* <Link
+          href={"/myResume.pdf"}
+          target="_blank"
+          className="ml-2 btn max-[350px]:ml-0"
+        >
+          View Resumé
+        </Link> */}
       </div>
     </>
   );

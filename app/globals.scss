@@ -124,6 +124,7 @@ body {
   @apply font-semibold  mb-4;
   font-size: 4rem;
   line-height: 1.2;
+  color: #fff;
 
   @media screen and (max-width: 768px) {
     font-size: 2rem;
@@ -594,6 +595,7 @@ footer {
 
   .head1 {
     margin-bottom: 0;
+    color: #000;
   }
 
   .subText {
@@ -681,9 +683,25 @@ footer {
 }
 
 .showBlogSection {
-  background-color: #fff;
+  background-color: #090979;
   padding-block: 6rem;
   .head1 {
-    color: #000;
+    color: #fff;
   }
+
+  .homeBlog {
+    padding-block: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .blogHomeCard {
+    flex: 1;
+  }
+}
+
+.footer {
+  padding-top: 8rem;
+  background-color: #2c2c31;
+  color: #fff;
 }

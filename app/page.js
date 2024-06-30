@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import homeImage from "../public/3.jpg";
 import { BsArrowUpRight } from "react-icons/bs";
+import BblogCard2 from "./component/BblogCard2";
 
 export const metadata = {
   title: "Akash Sarki - Web Developer Portfolio",
@@ -30,7 +31,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="skillSection text-black">
+        <div className="skillSection text-black min-h-screen">
           <div className="container2">
             <h3 className="head1">
               Technologies I work with<span className="font-serif">,</span>
@@ -119,25 +120,22 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="showBlogSection">
+        <div className="showBlogSection min-h-screen">
           <div className="container2">
             <h3 className="head1">
               Check out Blogs I have written
               <span className="font-serif">...</span>
             </h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio
-              quae et possimus ex similique sunt, minima esse sed ad, ipsam
-              alias dolores architecto! Odit error vel, repellendus ducimus
-              doloremque saepe eos nam consectetur at dolore magni expedita
-              consequatur ea perferendis iusto ad aspernatur a non, molestias
-              rerum exercitationem quo?
-            </p>
+            <div className="homeBlog">
+              {Array.from({ length: 3 }, (_, i) => i).map((_, ind) => (
+                <BblogCard2 />
+              ))}
+            </div>
           </div>
         </div>
 
         <div
-          className="services min-[950px]:padd mt-12 min-[950px]:mt-20"
+          className="services min-[950px]:padd mt-12 min-[950px]:mt-20  min-h-screen"
           id="services"
         >
           <h2 className="head1 container2">

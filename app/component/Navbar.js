@@ -6,19 +6,15 @@ import Link from "next/link";
 import { VscSearch } from "react-icons/vsc";
 import { HiBars3 } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
-import { BsSunFill, BsFillMoonStarsFill, BsArrowUpRight } from "react-icons/bs";
-import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [search, setsearch] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, systemTheme } = useTheme();
   const ref = useRef(null);
   const searchref = useRef(null);
   const toggleref = useRef(null);
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -55,9 +51,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar shadow-md dark:shadow-md dark:shadow-gray-800 relative">
+      <nav className="navbar shadow-md relative">
         <div className="container2">
-          <div className="py-3 flex items-center fontsm bp1 relative">
+          <div className="flex items-center fontmd bp1 relative py-4">
             <div className="hide3 mr-auto">
               <div
                 onClick={() => {
@@ -73,51 +69,23 @@ const Navbar = () => {
                   />
                 )}
               </div>
-              <ul>
-                {currentTheme === "light" ? (
-                  <li
-                    className="flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full"
-                    onClick={() => {
-                      setTheme("dark");
-                    }}
-                  >
-                    <BsFillMoonStarsFill className="text-gray-600" size={18} />
-                  </li>
-                ) : (
-                  <li
-                    className="flex items-center mr-4 cursor-pointer px-2 py-2 rounded-full"
-                    onClick={() => {
-                      setTheme("light");
-                    }}
-                  >
-                    <BsSunFill className="text-yellow-400" size={18} />
-                  </li>
-                )}
-              </ul>
             </div>
             <Link href="/" className="flex mr-6">
-              <Image
-                src="/1.png"
-                width={30}
-                height={10}
-                className="mr-2 dark:hidden"
-                alt="logo"
-              ></Image>
               <Image
                 src="/2.png"
                 width={30}
                 height={10}
-                className="mr-2 dark:block hidden"
+                className="mr-2"
                 alt="logo"
               ></Image>
-              <span className="text-xl font-semibold tracking-tight text-gray-700 dark:text-white">
+              <span className="text-xl font-semibold tracking-tight ">
                 AkashSarki
               </span>
             </Link>
             {!search ? (
               <>
                 {" "}
-                <ul className="flex ml-4 mr-auto">
+                <ul className="flex ml-auto">
                   {/* <li className="mx-2 border-transparent border-2 hover:border-b-black hide2">
                     <Link href="/">Home</Link>
                   </li> */}
@@ -144,30 +112,6 @@ const Navbar = () => {
                       </div>
                     </Link>
                   </li>
-                </ul>
-                <ul className="flex">
-                  {currentTheme === "light" ? (
-                    <li
-                      className="flex items-center  cursor-pointer hide2 px-3 py-2 rounded-full"
-                      onClick={() => {
-                        setTheme("dark");
-                      }}
-                    >
-                      <BsFillMoonStarsFill
-                        className="text-gray-600"
-                        size={18}
-                      />
-                    </li>
-                  ) : (
-                    <li
-                      className="flex items-center cursor-pointer hide2 px-3 py-2 rounded-full"
-                      onClick={() => {
-                        setTheme("light");
-                      }}
-                    >
-                      <BsSunFill className="text-yellow-400" size={18} />
-                    </li>
-                  )}
                 </ul>
               </>
             ) : (

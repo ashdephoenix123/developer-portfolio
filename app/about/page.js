@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const About = () => {
+  const router = useRouter();
+
   return (
     <div
       className="container2 aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd min-[950px]:my-20"
@@ -46,6 +51,15 @@ const About = () => {
             trying out new foods. I am always looking for ways to challenge
             myself and continue learning.
           </p>
+        </div>
+        <div className="btnCont">
+          <button
+            onClick={() => router.push("/myResume.pdf")}
+            target="_blank"
+            className="button layoutBtn"
+          >
+            View Resumé
+          </button>
         </div>
       </div>
     </div>

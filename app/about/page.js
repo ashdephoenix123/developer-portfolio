@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const About = () => {
+  const router = useRouter();
+
   return (
     <div
       className="container2 aboutSection flex flex-wrap items-center max-[866px]:block min-[950px]:padd min-[950px]:my-20"
@@ -48,13 +52,15 @@ const About = () => {
             myself and continue learning.
           </p>
         </div>
-        <Link
-          href={"/myResume.pdf"}
-          target="_blank"
-          className="ml-2 btn max-[350px]:ml-0"
-        >
-          View Resumé
-        </Link>
+        <div className="btnCont">
+          <button
+            onClick={() => router.push("/myResume.pdf")}
+            target="_blank"
+            className="button layoutBtn"
+          >
+            View Resumé
+          </button>
+        </div>
       </div>
     </div>
   );

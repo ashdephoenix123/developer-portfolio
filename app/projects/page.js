@@ -8,7 +8,7 @@ const Projects = () => {
           <svg className="svg-1">
             <use xlinkHref="/sprite.svg#icon-books"></use>
           </svg>
-          <h1 className="primary-heading">All Projects</h1>
+          <h1 className="primary-heading text-white">All Projects</h1>
         </div>
       </div>
       <main className="project-lists">
@@ -17,15 +17,15 @@ const Projects = () => {
             <img className="card-img" src="img/proj9.png" alt="proj9" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">NextJS ECommerce</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              NextJS ECommerce
+            </h2>
+            <p className="card-desc text-white">
               A Fully fledged E-Commerce application made using NextJS Framework
               with various functionalities. Sendgrid API is used for Email
-              intimation. &nbsp;
+              intimation.
               <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - NextJS, MongoDB, NodeJS and Sendgrid API
-                &nbsp;
+                Made with - NextJS, MongoDB, NodeJS and Sendgrid API.
               </span>
             </p>
             <a
@@ -52,15 +52,14 @@ const Projects = () => {
             <img className="card-img" src="img/proj1.png" alt="proj1" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">React E-Commerce</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              React E-Commerce
+            </h2>
+            <p className="card-desc text-white">
               A Simple React based Web application with functionality like
               Products listings & Add to cart. Listed products are fetched
-              through REST API. &nbsp;
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - React &nbsp;
-              </span>
+              through REST API.
+              <span className="makeItBold">Made with - React</span>
             </p>
             <a
               className="btn"
@@ -86,15 +85,14 @@ const Projects = () => {
             <img className="card-img" src="img/proj2.png" alt="proj2" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">News Application</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              News Application
+            </h2>
+            <p className="card-desc text-white">
               A News Web Application designed solely for reading news articles
               with modern approach of infinite scroll. Data Fetched from a third
-              party API- NewsData.io &nbsp;{" "}
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - React &nbsp;
-              </span>{" "}
+              party API- NewsData.io
+              <span className="makeItBold">Made with - React</span>{" "}
             </p>
             <a
               className="btn"
@@ -120,13 +118,12 @@ const Projects = () => {
             <img className="card-img" src="img/proj10.png" alt="proj3" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">Microsoft Clone</h2>
-            <p className="card-desc">
-              A Clone of Microsoft's Home Page. &nbsp;{" "}
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - HTML, CSS & NextJS &nbsp;
-              </span>{" "}
+            <h2 className="secondary-heading  text-white font-semibold">
+              Microsoft Clone
+            </h2>
+            <p className="card-desc text-white">
+              A Clone of Microsoft's Home Page.
+              <span className="makeItBold">Made with - HTML, CSS & NextJS</span>
             </p>
             <a
               className="btn"
@@ -152,13 +149,14 @@ const Projects = () => {
             <img className="card-img" src="img/proj11.png" alt="proj11" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">Speech to Text Converter</h2>
-            <p className="card-desc">
-              A Speech to text Converter &nbsp;{" "}
+            <h2 className="secondary-heading  text-white font-semibold">
+              Speech to Text Converter
+            </h2>
+            <p className="card-desc text-white">
+              A Speech to text Converter
               <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - React and NPM packages &nbsp;
-              </span>{" "}
+                Made with - React and NPM packages
+              </span>
             </p>
             <a
               className="btn"
@@ -184,13 +182,14 @@ const Projects = () => {
             <img className="card-img" src="img/proj3.png" alt="proj3" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">To-do List App</h2>
-            <p className="card-desc">
-              A Simple to-do list application. &nbsp;{" "}
+            <h2 className="secondary-heading  text-white font-semibold">
+              To-do List App
+            </h2>
+            <p className="card-desc text-white">
+              A Simple to-do list application.
               <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - HTML, CSS, JavaScript & EJS template &nbsp;
-              </span>{" "}
+                Made with - HTML, CSS, JavaScript & EJS template
+              </span>
             </p>
             <a
               className="btn"
@@ -216,13 +215,12 @@ const Projects = () => {
             <img className="card-img" src="img/proj4.png" alt="proj4" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">To-do List App V2</h2>
-            <p className="card-desc">
-              A Simple To-do list application. &nbsp;{" "}
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - React &nbsp;
-              </span>{" "}
+            <h2 className="secondary-heading  text-white font-semibold">
+              To-do List App V2
+            </h2>
+            <p className="card-desc text-white">
+              A Simple To-do list application.
+              <span className="makeItBold">Made with - React</span>
             </p>
             <a
               className="btn"
@@ -240,14 +238,13 @@ const Projects = () => {
             <img className="card-img" src="img/proj8.png" alt="proj8" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">Booking App</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              Booking App
+            </h2>
+            <p className="card-desc text-white">
               A UI of a Booking Application made using css flexbox. Reference-
-              Trillo application by John Schmedtmann &nbsp;{" "}
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - HTML & Sass &nbsp;
-              </span>{" "}
+              Trillo application by John Schmedtmann
+              <span className="makeItBold">Made with - HTML & Sass</span>
             </p>
             <a
               className="btn"
@@ -273,15 +270,16 @@ const Projects = () => {
             <img className="card-img" src="img/proj5.png" alt="proj5" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">Blog Website</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              Blog Website
+            </h2>
+            <p className="card-desc text-white">
               A Simple Blog website with backend functionality. Blogs are saved
               in MongoDB Database. A User can write an article and save it for
-              his reference. &nbsp;{" "}
+              his reference.
               <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - EJS template, MongoDB, Mongoose &nbsp;
-              </span>{" "}
+                &nbsp; Made with - EJS template, MongoDB, Mongoose
+              </span>
             </p>
             <a
               className="btn"
@@ -307,14 +305,13 @@ const Projects = () => {
             <img className="card-img" src="img/proj6.png" alt="proj6" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">Weather Application</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              Weather Application
+            </h2>
+            <p className="card-desc text-white">
               A Weather application, Data is fetched from open source weather
-              API - openweather.org. &nbsp;{" "}
-              <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - React &nbsp;
-              </span>{" "}
+              API - openweather.org.
+              <span className="makeItBold">Made with - React</span>
             </p>
             <a
               className="btn"
@@ -332,14 +329,15 @@ const Projects = () => {
             <img className="card-img" src="img/proj7.png" alt="proj7" />
           </figure>
           <div className="card-info">
-            <h2 className="secondary-heading">REST API</h2>
-            <p className="card-desc">
+            <h2 className="secondary-heading  text-white font-semibold">
+              REST API
+            </h2>
+            <p className="card-desc text-white">
               A JSON data made using using REST API which is saved in MongoDB
-              database. &nbsp;{" "}
+              database.
               <span className="makeItBold">
-                {" "}
-                &nbsp; Made with - NodeJS, MongoDB, Mongoose &nbsp;
-              </span>{" "}
+                Made with - NodeJS, MongoDB, Mongoose
+              </span>
             </p>
             <a
               className="btn"

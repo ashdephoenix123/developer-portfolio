@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 
 export const metadata = {
   title: "Akash Sarki - Web Developer Portfolio",
@@ -9,6 +10,12 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+    <Head>
+      <meta property="og:title" content="Akash Sarki - A Website Developer" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/me.jpg" />
+<meta property="og:url" content="https://www.akashsarki.com" />
+    </Head>
       <div className="">
         <div className="heroSection container2">
           <div className="heroContain">

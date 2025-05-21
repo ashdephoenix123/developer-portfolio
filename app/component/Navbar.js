@@ -106,7 +106,10 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="mx-2 border-transparent hide2">
-                    <Link href="/blogs" className="flex items-center">
+                    <Link
+                      href="https://blogs.akashsarki.com/"
+                      className="flex items-center"
+                    >
                       <div className="mr-0.5 border-2 hover:border-b-black border-transparent">
                         Blogs
                       </div>

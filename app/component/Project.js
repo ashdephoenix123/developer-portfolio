@@ -2,7 +2,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <div className="projectSection min-[950px]:my-12">
+    <div className="max-w-lg projectSection min-[950px]:my-12">
       <div className="header">
         <div className="header-fit">
           <svg className="svg-1">

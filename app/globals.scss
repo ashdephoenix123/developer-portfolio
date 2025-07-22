@@ -91,7 +91,7 @@ body {
 }
 
 .shade1 {
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.5) !important;
+  box-shadow: inset 1rem 1rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
 .navbar {
@@ -696,4 +696,41 @@ footer {
 .btnCont {
   text-align: center;
   margin-top: 2rem;
+}
+
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  width: 360px;
+  height: 360px;
+  font-weight: bold;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 24px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }

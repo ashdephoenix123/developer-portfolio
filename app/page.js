@@ -16,6 +16,7 @@ export default function Home() {
         <meta property="og:image" content="/me.jpg" />
         <meta property="og:url" content="https://www.akashsarki.com" />
       </Head>
+
       <About />
     </>
   );

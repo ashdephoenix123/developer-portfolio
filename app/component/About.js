@@ -3,25 +3,34 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import CircularText from "./CircularText";
 
 const About = () => {
   const router = useRouter();
   return (
     <div
-      className="lg:flex mt-16 lg:mt-0 flex-wrap items-center min-h-screen max-w-[62rem] mx-auto p-4 md:p-8"
+      className="lg:flex mt-16 lg:mt-0 flex-wrap items-center min-h-screen mx-auto p-4 md:p-8"
       id="about"
     >
-      <div className="left relative lg:basis-1/3 overflow-hidden rounded-full shade1">
+      <div className="relative lg:basis-1/3 flex justify-center">
         <Image
           src="/profile-picture.jpg"
-          width={500}
-          height={500}
-          className="w-full object-cover object-top max-[866px]:hidden"
+          width={220}
+          height={220}
+          className="w-72 h-72 object-cover object-top max-[866px]:hidden rounded-full"
           alt="hero-image"
           priority
         ></Image>
+        <div className="absolute hidden lg:block -top-[36px]">
+          <CircularText
+            text="JS*DEVELOPER*JS*DEVELOPER*JS*DEVELOPER*"
+            onHover="speedUp"
+            spinDuration={30}
+            className="bg-transparent"
+          />
+        </div>
       </div>
-      <div className="right lg:basis-2/3 max-[866px]:pl-0 max-[768px]:my-8">
+      <div className="lg:basis-2/3 max-[866px]:pl-0 max-[768px]:my-8">
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
         </h1>

@@ -10,26 +10,26 @@
   {
     "id": 2,
     "title": "Learning Management System",
-    "subTitle": "",
+    "subTitle": "A Learning Management for students. Features includes Learning Materials, Discussions and forums.",
     "link": "https://anonymousuniversity.vercel.app/",
-    "github": "https://github.com/ashdephoenix123",
-    "image": null
+    "github": "https://github.com/ashdephoenix123/learning-management-system",
+    "image": "img/lms.png"
   },
   {
     "id": 3,
     "title": "Personal Blog Website",
-    "subTitle": "",
+    "subTitle": "A Blog site for Personal Use. Managed using sanity - enabling you to focus on the content more than the website.",
     "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
-    "github": "https://github.com/ashdephoenix123",
-    "image": null
+    "github": "https://github.com/ashdephoenix123/personal-blog-site",
+    "image": "img/blog.png"
   },
   {
     "id": 4,
     "title": "Video Uploading Site",
-    "subTitle": "",
+    "subTitle": "A Simple Video uploading site - You can upload and manage videos, also enabling you to subscribe to your favorite content creators. inspired by YouTube.",
     "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
-    "github": "https://github.com/ashdephoenix123",
-    "image": null
+    "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
+    "image": "img/flixstream.png"
   },
   {
     "id": 5,

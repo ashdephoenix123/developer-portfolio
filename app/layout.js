@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <main>
+        <main className="flex flex-col gap-4 lg:gap-8 justify-between">
           <Navbar />
-          <div className="max-w-[68rem] mx-auto mt-16 lg:mt-0 p-4 lg:p-8">
+          <div className="min-h-[calc(100vh-201px)] px-4 lg:px-8 flex flex-col justify-center">
             {children}
           </div>
           <Footer />

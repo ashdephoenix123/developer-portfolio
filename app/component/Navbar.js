@@ -6,7 +6,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar px-4 lg:px-8 fixed top-0 w-full">
+      <nav className="navbar px-4 lg:px-8 w-full">
         <div className="">
           <div className="flex items-center fontmd bp1 relative py-4">
             <Link href="/" className="flex mr-6">

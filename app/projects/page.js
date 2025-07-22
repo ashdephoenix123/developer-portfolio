@@ -9,7 +9,7 @@ import ProjectCard from "../component/ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="projectSection min-[950px]:my-20">
+    <div className="projectSection max-w-6xl mx-auto">
       <div className="flex items-center text-3xl font-bold mb-4">
         <svg className="svg-1">
           <use xlinkHref="/sprite.svg#icon-books"></use>

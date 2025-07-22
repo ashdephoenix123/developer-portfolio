@@ -8,10 +8,7 @@ import CircularText from "./CircularText";
 const About = () => {
   const router = useRouter();
   return (
-    <div
-      className="lg:flex flex-wrap items-center min-h-screen mx-auto"
-      id="about"
-    >
+    <div className="lg:flex items-center max-w-6xl mx-auto">
       <div className="relative lg:basis-1/3 flex justify-center">
         <Image
           src="/profile-picture.jpg"
@@ -30,7 +27,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="lg:basis-2/3 max-[866px]:pl-0 max-[768px]:my-8">
+      <div className="lg:basis-2/3 lg:pl-14">
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
         </h1>

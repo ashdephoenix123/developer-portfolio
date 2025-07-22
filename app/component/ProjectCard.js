@@ -1,18 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
 const ProjectCard = ({ project }) => {
   return (
     <div className="card">
-      {project?.image && (
-        <Image
-          src={"/" + project.image}
-          alt={project.title + " image"}
-          className="object-cover object-top h-44 mb-4"
-          width={550}
-          height={180}
-        />
-      )}
+      <Image
+        src={"/" + (project?.image || "placeholder.jpg")}
+        alt={project?.title + " image"}
+        className="object-cover object-top h-44 mb-4"
+        width={550}
+        height={180}
+      />
       <div className="mb-4">
         <h2 className="text-md text-white font-semibold">{project.title}</h2>
         <p className="text-sm text-white">{project.subTitle}</p>

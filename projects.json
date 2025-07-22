@@ -9,38 +9,30 @@
   },
   {
     "id": 2,
-    "title": "React E-Commerce",
-    "subTitle": " A Simple React based Web application with functionality like Products listings & Add to cart. Listed products are fetched through REST API.",
-    "link": "https://sarkihouse.vercel.app/",
-    "github": "https://github.com/ashdephoenix123/sarkihouse",
-    "image": "img/proj1.png"
+    "title": "Learning Management System",
+    "subTitle": "",
+    "link": "https://anonymousuniversity.vercel.app/",
+    "github": "https://github.com/ashdephoenix123",
+    "image": null
   },
   {
     "id": 3,
-    "title": "Speech to Text Converter",
-    "subTitle": "A Speech to text ConverterMade with - React and NPM packages",
-    "link": "https://sttconverter.netlify.app/",
-    "github": "https://github.com/ashdephoenix123/speech-to-text-converter",
-    "image": "img/proj11.png"
+    "title": "Personal Blog Website",
+    "subTitle": "",
+    "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
+    "github": "https://github.com/ashdephoenix123",
+    "image": null
   },
   {
     "id": 4,
-    "title": "Microsoft Clone",
-    "subTitle": "A Clone of Microsoft's Home Page.Made with - HTML, CSS & NextJS",
-    "link": "https://microsoftclone1.vercel.app/",
-    "github": "https://github.com/ashdephoenix123/microsoft-clone",
-    "image": "img/proj10.png"
+    "title": "Video Uploading Site",
+    "subTitle": "",
+    "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
+    "github": "https://github.com/ashdephoenix123",
+    "image": null
   },
   {
     "id": 5,
-    "title": "E-commerce Website",
-    "subTitle": "A Fully fledged E-Commerce application made using NextJS Framework with various functionalities. Sendgrid API is used for Email intimation.Made with - NextJS, MongoDB, NodeJS and Sendgrid API.",
-    "link": "https://nextecomm.netlify.app/",
-    "github": "https://github.com/ashdephoenix123/NextJS-Ecom",
-    "image": "img/proj9.png"
-  },
-  {
-    "id": 6,
     "title": "React E-Commerce",
     "subTitle": " A Simple React based Web application with functionality like Products listings & Add to cart. Listed products are fetched through REST API.",
     "link": "https://sarkihouse.vercel.app/",
@@ -48,7 +40,7 @@
     "image": "img/proj1.png"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Speech to Text Converter",
     "subTitle": "A Speech to text ConverterMade with - React and NPM packages",
     "link": "https://sttconverter.netlify.app/",
@@ -56,7 +48,7 @@
     "image": "img/proj11.png"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "Microsoft Clone",
     "subTitle": "A Clone of Microsoft's Home Page.Made with - HTML, CSS & NextJS",
     "link": "https://microsoftclone1.vercel.app/",

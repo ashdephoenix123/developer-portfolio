@@ -27,7 +27,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="lg:basis-2/3 lg:pl-14">
+      <div className="lg:basis-2/3 lg:pl-20">
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
         </h1>
@@ -40,7 +40,7 @@ const About = () => {
           priority
         ></Image>
         <div className="text-center text-sm max-[866px]:mt-4">
-          <p className="mb-4 max-w-lg mx-auto">
+          <p className="mb-4 max-w-lg mx-auto text-neutral-400">
             I'm a front-end developer with experience in JavaScript and React,
             focused on building responsive, user-friendly interfaces. I enjoy
             turning ideas into functional and visually engaging web experiences.

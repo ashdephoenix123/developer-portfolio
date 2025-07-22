@@ -21,7 +21,7 @@ const About = () => {
         <div className="absolute hidden lg:block -top-[36px]">
           <CircularText
             text="JS*DEVELOPER*JS*DEVELOPER*JS*DEVELOPER*"
-            onHover="speedUp"
+            onHover="slowDown"
             spinDuration={30}
             className="bg-transparent"
           />

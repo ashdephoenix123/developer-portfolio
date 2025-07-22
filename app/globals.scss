@@ -444,7 +444,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     @media only screen and (max-width: 400px) {
       flex-direction: column;
     }
@@ -479,45 +479,10 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     align-items: start;
     gap: 2rem;
-
-    .card {
-      background-color: rgb(109, 109, 109);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: all 0.1s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        // transform: translateY(-5px);
-        transform: scale(1.02);
-      }
-
-      &-figure {
-        width: 100%;
-        margin: 0 auto;
-        object-fit: cover;
-      }
-
-      &-img {
-        width: inherit;
-        object-fit: cover;
-        min-height: 15rem;
-        max-height: 20rem;
-        border-radius: 10px;
-      }
-
-      &-info {
-        & > * {
-          margin: 1rem;
-        }
-      }
-
-      &-desc {
-        font-family: "Open Sans", sans-serif;
-      }
-    }
   }
+}
+
+.card {
 }
 
 .heroSection {
@@ -733,4 +698,22 @@ footer {
 body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000 !important;
+  fill: black !important;
+  stroke: black !important;
+  padding: 30px;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
 }

@@ -4,7 +4,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="footer fixed bottom-0  right-0 py-4 w-full">
-      <ul className="flex flex-wrap items-center justify-end max-[677px]:justify-center mt-4 pr-8">
+      <ul className="flex flex-wrap items-center justify-end max-[677px]:justify-center mt-4 lg:pr-8">
         <li className="mx-2 hover:underline">
           <Link target="_blank" href="https://www.instagram.com/akashsarki_/">
             <FaInstagram size={20} />

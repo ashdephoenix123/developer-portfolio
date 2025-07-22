@@ -9,7 +9,7 @@ const About = () => {
   const router = useRouter();
   return (
     <div
-      className="lg:flex mt-16 lg:mt-0 flex-wrap items-center min-h-screen mx-auto p-4 md:p-8"
+      className="lg:flex flex-wrap items-center min-h-screen mx-auto"
       id="about"
     >
       <div className="relative lg:basis-1/3 flex justify-center">

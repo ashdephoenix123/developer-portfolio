@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
       <body>
         <main>
           <Navbar />
-          <div className="max-w-[68rem] mx-auto">{children}</div>
+          <div className="max-w-[68rem] mx-auto mt-16 lg:mt-0 p-4 lg:p-8">
+            {children}
+          </div>
           <Footer />
         </main>
       </body>

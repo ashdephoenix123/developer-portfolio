@@ -8,11 +8,11 @@ import CircularText from "./CircularText";
 const About = () => {
   const router = useRouter();
   return (
-    <div className="lg:flex items-center max-w-6xl mx-auto  ">
+    <div className="lg:grid lg:grid-cols-2 mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
-        className="relative lg:basis-1/3 flex justify-center"
+        className="relative  flex justify-center"
       >
         <Image
           src="/profile-picture.jpg"
@@ -38,7 +38,7 @@ const About = () => {
           y: 0,
           transition: { delay: 0.8, duration: 1 },
         }}
-        className="lg:basis-2/3 lg:pl-20"
+        className="overflow-hidden"
       >
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
@@ -47,7 +47,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
-          className="relative lg:basis-1/3 flex justify-center my-12"
+          className="relative lg:basis-1/3 justify-center my-12 flex lg:hidden"
         >
           <Image
             src="/profile-picture.jpg"

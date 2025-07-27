@@ -5,6 +5,28 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import CircularText from "./CircularText";
 
+const itemVariant = {
+  initial: { opacity: 0, y: 20 },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const containerVariant = {
+  initial: { opacity: 0 },
+  final: {
+    opacity: 1,
+    transition: {
+      delayChildren: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const About = () => {
   const router = useRouter();
   return (
@@ -12,7 +34,7 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
-        className="relative  flex justify-center"
+        className="relative flex justify-center"
       >
         <Image
           src="/profile-picture.jpg"
@@ -32,21 +54,13 @@ const About = () => {
         </div>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          transition: { delay: 0.8, duration: 1 },
-        }}
+        variants={containerVariant}
+        initial="initial"
+        animate="final"
         className="overflow-hidden"
       >
-        <h1 className="head1 text-center dark:text-white">
-          Hi, I am Akash<span className="font-serif">,</span>
-        </h1>
-
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
+          variants={itemVariant}
           className="relative lg:basis-1/3 justify-center my-12 flex lg:hidden"
         >
           <Image
@@ -66,7 +80,16 @@ const About = () => {
             />
           </div>
         </motion.div>
-        <div className="text-center text-sm max-[866px]:mt-4">
+        <motion.h1
+          variants={itemVariant}
+          className="head1 text-center dark:text-white"
+        >
+          Hi, I am Akash<span className="font-serif">,</span>
+        </motion.h1>
+        <motion.div
+          variants={itemVariant}
+          className="text-center text-sm max-[866px]:mt-4"
+        >
           <p className="mb-4 max-w-lg mx-auto text-neutral-400">
             I'm a front-end developer with experience in JavaScript and React,
             focused on building responsive, user-friendly interfaces. I enjoy
@@ -74,8 +97,8 @@ const About = () => {
             Always eager to learn and improve, I strive to write clean,
             efficient code that brings designs to life.
           </p>
-        </div>
-        <div className="btnCont gap-2 ">
+        </motion.div>
+        <motion.div variants={itemVariant} className="btnCont gap-2 ">
           <button
             onClick={() => router.push("/myResume.pdf")}
             target="_blank"
@@ -90,7 +113,7 @@ const About = () => {
           >
             View projects
           </button>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

@@ -43,14 +43,29 @@ const About = () => {
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
         </h1>
-        <Image
-          src="/profile-picture.jpg"
-          width={250}
-          height={250}
-          className="min-[866px]:hidden rounded-full mx-auto"
-          alt="hero-image"
-          priority
-        ></Image>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
+          className="relative lg:basis-1/3 flex justify-center my-12"
+        >
+          <Image
+            src="/profile-picture.jpg"
+            width={180}
+            height={180}
+            className="min-[866px]:hidden rounded-full mx-auto"
+            alt="hero-image"
+            priority
+          ></Image>
+          <div className="absolute lg:hidden -top-[30px]">
+            <CircularText
+              text="JS*DEVELOPER*JS*DEVELOPER*JS*DEVELOPER*"
+              onHover="slowDown"
+              spinDuration={30}
+              className="bg-transparent"
+            />
+          </div>
+        </motion.div>
         <div className="text-center text-sm max-[866px]:mt-4">
           <p className="mb-4 max-w-lg mx-auto text-neutral-400">
             I'm a front-end developer with experience in JavaScript and React,

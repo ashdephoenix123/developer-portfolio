@@ -718,6 +718,15 @@ body {
   fill: black !important;
   stroke: black !important;
   padding: 30px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+
+    &:after {
+      font-size: 20px !important;
+      font-weight: bold;
+    }
+  }
 }
 
 .swiper-button-prev {
@@ -727,4 +736,3 @@ body {
 .swiper-button-next {
   right: 0 !important;
 }
-

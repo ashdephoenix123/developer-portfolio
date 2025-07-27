@@ -27,7 +27,7 @@ const cardVariant = {
 
 const Projects = ({ projects }) => {
   return (
-    <div className="projectSection max-w-6xl mx-auto">
+    <div className="projectSection w-full lg:max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.6, duration: 1 } }}
@@ -45,6 +45,10 @@ const Projects = ({ projects }) => {
           modules={[Navigation]}
           className="px-4 lg:px-0"
           breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
             768: {
               slidesPerView: 2,
               spaceBetween: 30,

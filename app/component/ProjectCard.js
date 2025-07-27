@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, animationVariant }) => {
   return (
-    <div className="card">
+    <motion.div className="card" variants={animationVariant}>
       <Image
         src={"/" + (project?.image || "placeholder.jpg")}
         alt={project?.title + " image"}
@@ -35,7 +36,7 @@ const ProjectCard = ({ project }) => {
           Github Repo
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

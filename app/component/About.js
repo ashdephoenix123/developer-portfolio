@@ -1,15 +1,19 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
 import CircularText from "./CircularText";
 
 const About = () => {
   const router = useRouter();
   return (
-    <div className="lg:flex items-center max-w-6xl mx-auto">
-      <div className="relative lg:basis-1/3 flex justify-center">
+    <div className="lg:flex items-center max-w-6xl mx-auto  ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}
+        className="relative lg:basis-1/3 flex justify-center"
+      >
         <Image
           src="/profile-picture.jpg"
           width={220}
@@ -26,8 +30,16 @@ const About = () => {
             className="bg-transparent"
           />
         </div>
-      </div>
-      <div className="lg:basis-2/3 lg:pl-20">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.8, duration: 1 },
+        }}
+        className="lg:basis-2/3 lg:pl-20"
+      >
         <h1 className="head1 text-center dark:text-white">
           Hi, I am Akash<span className="font-serif">,</span>
         </h1>
@@ -64,7 +76,7 @@ const About = () => {
             View projects
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

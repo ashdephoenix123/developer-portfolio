@@ -8,6 +8,7 @@ const ProjectCard = ({ project, animationVariant }) => {
   return (
     <motion.div className="card" variants={animationVariant}>
       <Image
+        priority
         src={"/" + (project?.image || "placeholder.jpg")}
         alt={project?.title + " image"}
         className="object-cover object-top h-44 mb-4"

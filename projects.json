@@ -32,14 +32,6 @@
     "image": "img/flixstream.png"
   },
   {
-    "id": 5,
-    "title": "React E-Commerce",
-    "subTitle": " A Simple React based Web application with functionality like Products listings & Add to cart. Listed products are fetched through REST API.",
-    "link": "https://sarkihouse.vercel.app/",
-    "github": "https://github.com/ashdephoenix123/sarkihouse",
-    "image": "img/proj1.png"
-  },
-  {
     "id": 6,
     "title": "Speech to Text Converter",
     "subTitle": "A Speech to text ConverterMade with - React and NPM packages",

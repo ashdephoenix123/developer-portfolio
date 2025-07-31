@@ -1,2 +1,2 @@
 ## Developer's Portfolio site
-Check out the deployed site [https://akashsarki.vercel.app/](here)
+Check out the deployed site [here](https://akashsarki.vercel.app/)

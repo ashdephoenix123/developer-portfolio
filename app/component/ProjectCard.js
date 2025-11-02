@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const ProjectCard = ({ project, animationVariant }) => {
   return (
-    <motion.div className="card" variants={animationVariant}>
+    <motion.div className="card relative" variants={animationVariant}>
       <Image
         priority
         src={"/" + (project?.image || "placeholder.jpg")}
@@ -15,6 +15,11 @@ const ProjectCard = ({ project, animationVariant }) => {
         width={550}
         height={180}
       />
+      {project.status !== "completed" && (
+        <div className="absolute -top-2 -right-2 bg-red-600 px-3 py-1 rounded-lg text-sm text-white">
+          {project.status}
+        </div>
+      )}
       <div className="mb-4">
         <h2 className="text-md text-white font-semibold">{project.title}</h2>
         <p className="text-sm text-white">{project.subTitle}</p>

@@ -1,50 +1,65 @@
 [
   {
-    "id": 3,
+    "id": "Personal-Blog-Website",
     "title": "Personal Blog Website",
     "subTitle": "A Blog site for Personal Use. Managed using sanity - enabling you to focus on the content more than the website.",
     "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
     "github": "https://github.com/ashdephoenix123/personal-blog-site",
-    "image": "img/blog.png"
+    "image": "img/blog.png",
+    "status": "completed"
   },
   {
-    "id": 1,
+    "id": "next-ecomm",
     "title": "E-commerce Website",
     "subTitle": "A Fully fledged E-Commerce application made using NextJS Framework with various functionalities. Sendgrid API is used for Email intimation.Made with - NextJS, MongoDB, NodeJS and Sendgrid API.",
     "link": "https://nextecomm.netlify.app/",
     "github": "https://github.com/ashdephoenix123/NextJS-Ecom",
-    "image": "img/image.png"
+    "image": "img/image.png",
+    "status": "In Progress"
   },
   {
-    "id": 2,
+    "id": "next-ecomm-product-management",
+    "title": "Project Management for E-commerce Website",
+    "subTitle": "A Product management for the previous E-commerce application - Built using Next JS.",
+    "link": "https://next-ecomm-product-management.vercel.app/",
+    "github": "https://github.com/ashdephoenix123/next-ecomm-product-management",
+    "image": "img/next-ecomm-pm.jpg",
+    "status": "completed"
+  },
+  {
+    "id": "lms",
     "title": "Learning Management System",
     "subTitle": "A Learning Management for students. Features includes Learning Materials, Discussions and forums.",
     "link": "https://anonymousuniversity.vercel.app/",
     "github": "https://github.com/ashdephoenix123/learning-management-system",
-    "image": "img/lms.png"
+    "image": "img/lms.png",
+    "status": "Paused"
   },
   {
-    "id": 4,
+    "id": "youtube-clone",
     "title": "Video Uploading Site",
     "subTitle": "A Simple Video uploading site - You can upload and manage videos, also enabling you to subscribe to your favorite content creators. inspired by YouTube.",
     "link": "https://flix-stream-azure.vercel.app/",
     "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
-    "image": "img/flixstream.png"
+    "image": "img/flixstream.png",
+    "status": "Fixes Needed"
   },
   {
-    "id": 6,
+    "id": "stl-converter",
     "title": "Speech to Text Converter",
     "subTitle": "A Speech to text ConverterMade with - React and NPM packages",
     "link": "https://sttconverter.netlify.app/",
     "github": "https://github.com/ashdephoenix123/speech-to-text-converter",
-    "image": "img/proj11.png"
+    "image": "img/proj11.png",
+    "status": "completed"
   },
   {
-    "id": 7,
+    "id": "microsoft-clone",
     "title": "Microsoft Clone",
     "subTitle": "A Clone of Microsoft's Home Page.Made with - HTML, CSS & NextJS",
     "link": "https://microsoftclone1.vercel.app/",
     "github": "https://github.com/ashdephoenix123/microsoft-clone",
-    "image": "img/proj10.png"
+    "image": "img/proj10.png",
+    "status": "completed"
   }
 ]

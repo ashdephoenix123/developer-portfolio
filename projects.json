@@ -1,8 +1,8 @@
 [
   {
     "id": "Personal-Blog-Website",
-    "title": "Personal Blog Website",
-    "subTitle": "A Blog site for Personal Use. Managed using sanity - enabling you to focus on the content more than the website.",
+    "title": "Web Journal",
+    "subTitle": "A personal blogging platform powered by Sanity CMS — built to prioritize writing and content creation over site maintenance.",
     "link": "https://web-journal-ashdephoenix123s-projects.vercel.app/",
     "github": "https://github.com/ashdephoenix123/personal-blog-site",
     "image": "img/blog.png",
@@ -10,8 +10,8 @@
   },
   {
     "id": "next-ecomm",
-    "title": "E-commerce Website",
-    "subTitle": "A Fully fledged E-Commerce application made using NextJS Framework with various functionalities. Sendgrid API is used for Email intimation.Made with - NextJS, MongoDB, NodeJS and Sendgrid API.",
+    "title": "The Sharkk Co.",
+    "subTitle": "A full-scale e-commerce application built with Next.js, MongoDB and Node.js — featuring user accounts, product listings and automated email notifications via brevo.",
     "link": "https://nextecomm.netlify.app/",
     "github": "https://github.com/ashdephoenix123/NextJS-Ecom",
     "image": "img/image.png",
@@ -19,8 +19,8 @@
   },
   {
     "id": "next-ecomm-product-management",
-    "title": "Project Management for E-commerce Website",
-    "subTitle": "A Product management for the previous E-commerce application - Built using Next JS.",
+    "title": "Project Management - The Sharkk Co.",
+    "subTitle": "A dedicated product management dashboard for the main Sharkk Co. e-commerce platform — built with Next.js to streamline product creation, updates and inventory control.",
     "link": "https://next-ecomm-product-management.vercel.app/",
     "github": "https://github.com/ashdephoenix123/next-ecomm-product-management",
     "image": "img/next-ecomm-pm.jpg",
@@ -28,8 +28,8 @@
   },
   {
     "id": "lms",
-    "title": "Learning Management System",
-    "subTitle": "A Learning Management for students. Features includes Learning Materials, Discussions and forums.",
+    "title": "Anonymous University",
+    "subTitle": "A Learning Management System where students can access study materials, participate in discussions and collaborate via community-style forums.",
     "link": "https://anonymousuniversity.vercel.app/",
     "github": "https://github.com/ashdephoenix123/learning-management-system",
     "image": "img/lms.png",
@@ -37,8 +37,8 @@
   },
   {
     "id": "youtube-clone",
-    "title": "Video Uploading Site",
-    "subTitle": "A Simple Video uploading site - You can upload and manage videos, also enabling you to subscribe to your favorite content creators. inspired by YouTube.",
+    "title": "Flix Stream",
+    "subTitle": "A streamlined video-sharing platform inspired by YouTube — upload videos, manage your channel and subscribe to other creators.",
     "link": "https://flix-stream-azure.vercel.app/",
     "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
     "image": "img/flixstream.png",
@@ -46,8 +46,8 @@
   },
   {
     "id": "stl-converter",
-    "title": "Speech to Text Converter",
-    "subTitle": "A Speech to text ConverterMade with - React and NPM packages",
+    "title": "Speech to Text",
+    "subTitle": "A real-time speech-to-text converter built using React — convert spoken audio into text through browser-based voice recognition.",
     "link": "https://sttconverter.netlify.app/",
     "github": "https://github.com/ashdephoenix123/speech-to-text-converter",
     "image": "img/proj11.png",
@@ -56,7 +56,7 @@
   {
     "id": "microsoft-clone",
     "title": "Microsoft Clone",
-    "subTitle": "A Clone of Microsoft's Home Page.Made with - HTML, CSS & NextJS",
+    "subTitle": "A pixel-inspired recreation of Microsoft’s homepage, built using HTML, CSS and Next.js.",
     "link": "https://microsoftclone1.vercel.app/",
     "github": "https://github.com/ashdephoenix123/microsoft-clone",
     "image": "img/proj10.png",

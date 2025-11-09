@@ -31,18 +31,18 @@ const Projects = ({ projects }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.6, duration: 1 } }}
-        className="flex items-center text-3xl font-bold mb-4"
+        className="flex items-center text-3xl font-bold mb-14"
       >
         <svg className="svg-1">
           <use xlinkHref="/sprite.svg#icon-books"></use>
         </svg>
-        <h1 className="text-white">All Projects</h1>
+        <h1 className="text-white">Projects</h1>
       </motion.div>
       <motion.div
         variants={containerVariant}
         initial="initial"
         animate="final"
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-10"
       >
         {projects.map((project) => (
           <ProjectCard project={project} animationVariant={cardVariant} />

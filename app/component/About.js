@@ -100,7 +100,7 @@ const About = () => {
         </motion.div>
         <motion.div variants={itemVariant} className="btnCont gap-2 ">
           <button
-            onClick={() => router.push("/akash-sarki-resume.pdf")}
+            onClick={() => router.push("/akash_sarki_resume_09_nov_2025.pdf")}
             target="_blank"
             className="button border border-neutral-600 rounded-full text-sm bg-neutral-600/80 text-white px-4 py-2 hover:bg-transparent"
           >

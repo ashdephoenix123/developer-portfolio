@@ -21,10 +21,10 @@ const ProjectCard = ({ project, animationVariant }) => {
         </div>
       )}
       <div className="mb-6">
-        <h2 className="text-md text-neutral-300 font-semibold italic mb-2">
+        <h2 className="text-md text-neutral-200 font-semibold italic mb-2">
           {project.title}
         </h2>
-        <p className="text-sm text-neutral-500">{project.subTitle}</p>
+        <p className="text-sm text-neutral-400">{project.subTitle}</p>
       </div>
       <div className="flex gap-2">
         <a

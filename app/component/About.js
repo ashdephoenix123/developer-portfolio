@@ -37,10 +37,10 @@ const About = () => {
         className="relative flex justify-center"
       >
         <Image
-          src="/profile-picture.jpg"
+          src="/profile-27-JAN.JPG"
           width={220}
           height={220}
-          className="w-72 h-72 object-cover object-top max-[866px]:hidden rounded-full"
+          className="w-72 h-72 object-cover max-[866px]:hidden rounded-full"
           alt="hero-image"
           priority
         ></Image>
@@ -64,7 +64,7 @@ const About = () => {
           className="relative lg:basis-1/3 justify-center my-12 flex lg:hidden"
         >
           <Image
-            src="/profile-picture.jpg"
+            src="/profile-27-JAN.JPG"
             width={180}
             height={180}
             className="min-[866px]:hidden rounded-full mx-auto"
@@ -102,14 +102,14 @@ const About = () => {
           <button
             onClick={() => router.push("/resume-18-dec-2025.pdf")}
             target="_blank"
-            className="button border border-neutral-600 rounded-full text-sm bg-neutral-600/80 text-white px-4 py-2 hover:bg-transparent"
+            className="button text-sm bg-neutral-600/80 text-white px-6 py-3 hover:bg-transparent button-gradient-1"
           >
             View Resumé
           </button>
           <button
             onClick={() => router.push("/projects")}
             target="_blank"
-            className="button border border-neutral-600 rounded-full text-sm bg-transparent text-white px-4 py-2 ml-2"
+            className="button border border-neutral-700 lg:border-transparent lg:hover:border-neutral-700 text-sm bg-transparent text-white px-6 py-3 ml-2"
           >
             View projects
           </button>

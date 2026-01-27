@@ -42,7 +42,7 @@ const Projects = ({ projects }) => {
         variants={containerVariant}
         initial="initial"
         animate="final"
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-10"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8"
       >
         {projects.map((project) => (
           <ProjectCard project={project} animationVariant={cardVariant} />

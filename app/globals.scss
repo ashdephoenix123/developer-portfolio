@@ -13,6 +13,9 @@
   --text3: #f2f2f2;
   --text4: #494949;
 
+  --gradient-1: #2a2a2a;
+  --gradient-2: #151515;
+
   --h1: 300px;
   --w1: 480px;
 
@@ -39,8 +42,13 @@ body {
   color: var(--primary-font);
   line-height: 1.6;
   scroll-behavior: smooth;
-  background-color: var(--primary-color-dark);
+  background: linear-gradient(
+    to bottom right,
+    var(--gradient-1),
+    var(--gradient-2) 75%
+  );
   user-select: none;
+  min-height: 100vh;
 }
 
 ::selection {
@@ -168,11 +176,8 @@ body {
 }
 
 .contactbg {
-  background-image: linear-gradient(
-      to right,
-      rgba(33, 33, 33, 0.5),
-      rgba(71, 71, 71, 0.6)
-    ),
+  background-image:
+    linear-gradient(to right, rgba(33, 33, 33, 0.5), rgba(71, 71, 71, 0.6)),
     url("/4.jpg");
   background-size: cover;
   background-position: center;
@@ -233,7 +238,7 @@ body {
 }
 
 footer {
-  background-color: var(--text3);
+  background-color: transparent;
 
   .footer__links {
     display: grid;
@@ -644,7 +649,6 @@ footer {
 }
 
 .footer {
-  background-color: #000;
   color: #fff;
   // box-shadow: 0 0 0.1rem 0 rgba(255, 255, 255, 1);
 }
@@ -735,4 +739,15 @@ body {
 
 .swiper-button-next {
   right: 0 !important;
+}
+
+.button-gradient-1 {
+  background: linear-gradient(var(--gradient-2), var(--gradient-1));
+}
+
+a:focus,
+a:active {
+  outline: none;
+  box-shadow: none;
+  background: none;
 }

@@ -102,14 +102,14 @@ const About = () => {
           <button
             onClick={() => router.push("/resume-18-dec-2025.pdf")}
             target="_blank"
-            className="button text-sm bg-neutral-600/80 text-white px-6 py-3 hover:bg-transparent button-gradient-1"
+            className="button text-sm bg-neutral-600/80 text-white px-6 py-3 hover:bg-transparent  button-gradient-1"
           >
             View Resumé
           </button>
           <button
             onClick={() => router.push("/projects")}
             target="_blank"
-            className="button border border-neutral-700 lg:border-transparent lg:hover:border-neutral-700 text-sm bg-transparent text-white px-6 py-3 ml-2"
+            className="button border border-neutral-700 lg:border-neutral-700 text-sm bg-transparent text-white px-6 py-3 ml-2"
           >
             View projects
           </button>

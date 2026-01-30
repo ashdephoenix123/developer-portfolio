@@ -1,6 +1,11 @@
 import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import "./globals.scss";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Akash Sarki",
@@ -12,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <main className="flex flex-col gap-1 md:gap-4 lg:gap-8 justify-between">
           <Navbar />

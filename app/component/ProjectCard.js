@@ -14,7 +14,7 @@ const ProjectCard = ({ project, animationVariant }) => {
         priority
         src={"/" + (project?.image || "placeholder.jpg")}
         alt={project?.title + " image"}
-        className="object-cover object-top h-56"
+        className="object-cover object-top h-52"
         width={550}
         height={180}
       />
@@ -40,7 +40,7 @@ const ProjectCard = ({ project, animationVariant }) => {
             View Project
           </a>
           <a
-            className="flex-1 text-center md:flex-none button border border-neutral-700 lg:border-transparent lg:hover:border-neutral-700 text-sm text-white px-4 py-4 md:py-2 bg-transparent"
+            className="flex-1 text-center md:flex-none button border border-neutral-700 lg:border-neutral-700 text-sm text-white px-4 py-4 md:py-2 bg-transparent"
             href={project.github}
             target="_blank"
             rel="noreferrer"

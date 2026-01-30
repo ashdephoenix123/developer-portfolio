@@ -9,6 +9,15 @@
     "status": "completed"
   },
   {
+    "id": "youtube-clone",
+    "title": "Flix Stream",
+    "subTitle": "A streamlined video-sharing platform inspired by YouTube — upload videos, manage your channel and subscribe to other creators.",
+    "link": "https://flix-stream-azure.vercel.app/",
+    "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
+    "image": "img/flixstream.png",
+    "status": "completed"
+  },
+  {
     "id": "next-ecomm",
     "title": "The Sharkk Co.",
     "subTitle": "A full-scale e-commerce application built with Next.js, MongoDB and Node.js — featuring user accounts, product listings and automated email notifications via brevo.",
@@ -34,32 +43,5 @@
     "github": "https://github.com/ashdephoenix123/learning-management-system",
     "image": "img/lms.png",
     "status": "Paused"
-  },
-  {
-    "id": "youtube-clone",
-    "title": "Flix Stream",
-    "subTitle": "A streamlined video-sharing platform inspired by YouTube — upload videos, manage your channel and subscribe to other creators.",
-    "link": "https://flix-stream-azure.vercel.app/",
-    "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
-    "image": "img/flixstream.png",
-    "status": "Fixes Needed"
-  },
-  {
-    "id": "stl-converter",
-    "title": "Speech to Text",
-    "subTitle": "A real-time speech-to-text converter built using React — convert spoken audio into text through browser-based voice recognition.",
-    "link": "https://sttconverter.netlify.app/",
-    "github": "https://github.com/ashdephoenix123/speech-to-text-converter",
-    "image": "img/proj11.png",
-    "status": "completed"
-  },
-  {
-    "id": "microsoft-clone",
-    "title": "Microsoft Clone",
-    "subTitle": "A pixel-inspired recreation of Microsoft’s homepage, built using HTML, CSS and Next.js.",
-    "link": "https://microsoftclone1.vercel.app/",
-    "github": "https://github.com/ashdephoenix123/microsoft-clone",
-    "image": "img/proj10.png",
-    "status": "completed"
   }
 ]

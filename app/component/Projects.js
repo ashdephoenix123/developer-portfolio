@@ -27,7 +27,7 @@ const cardVariant = {
 
 const Projects = ({ projects }) => {
   return (
-    <div className="projectSection w-full lg:max-w-6xl mx-auto">
+    <div className="projectSection w-full lg:max-w-[1600px] mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.6, duration: 1 } }}
@@ -42,7 +42,7 @@ const Projects = ({ projects }) => {
         variants={containerVariant}
         initial="initial"
         animate="final"
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8"
+        className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
       >
         {projects.map((project) => (
           <ProjectCard project={project} animationVariant={cardVariant} />

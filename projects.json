@@ -12,7 +12,7 @@
     "id": "youtube-clone",
     "title": "Flix Stream",
     "subTitle": "A streamlined video-sharing platform inspired by YouTube — upload videos, manage your channel and subscribe to other creators.",
-    "link": "https://flix-stream-azure.vercel.app/",
+    "link": "https://flixstream.online",
     "github": "https://github.com/ashdephoenix123/video-streaming-frontend",
     "image": "img/flixstream.png",
     "status": "completed"

@@ -24,7 +24,7 @@
     "link": "https://nextecomm.netlify.app/",
     "github": "https://github.com/ashdephoenix123/NextJS-Ecom",
     "image": "img/image.png",
-    "status": "In Progress"
+    "status": "completed"
   },
   {
     "id": "next-ecomm-product-management",
@@ -42,6 +42,6 @@
     "link": "https://anonymousuniversity.vercel.app/",
     "github": "https://github.com/ashdephoenix123/learning-management-system",
     "image": "img/lms.png",
-    "status": "Paused"
+    "status": "In Progress"
   }
 ]

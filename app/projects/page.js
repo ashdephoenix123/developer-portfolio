@@ -1,8 +1,12 @@
-import projects from "@/projects.json";
-import Projects from "../component/Projects";
+import projects from "@/projects.mock";
+import ProjectsInline from "../component/ProjectsInline";
 
 const ProjectsPage = () => {
-  return <Projects projects={projects} />;
+  return (
+    <div className="max-w-4xl mx-auto">
+      <ProjectsInline projects={projects} />
+    </div>
+  );
 };
 
 export default ProjectsPage;

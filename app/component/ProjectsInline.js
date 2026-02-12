@@ -1,11 +1,29 @@
+"use client";
+
 import Header from "./common/Header";
 import ProjectCard from "./Projects/ProjectCard.projects";
+import { motion } from "framer-motion";
+
+const containerVariant = {
+  initial: {},
+  final: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 const ProjectsInline = ({ projects }) => {
   return (
     <section className="projects space-y-8">
       <Header>Projects</Header>
-      <div className="flex flex-col gap-4">
+      <motion.div
+        variants={containerVariant}
+        initial="initial"
+        whileInView="final"
+        viewport={{ once: true, margin: "-50px" }}
+        className="flex flex-col gap-6"
+      >
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -18,7 +36,7 @@ const ProjectsInline = ({ projects }) => {
             hideLink={project.hideLink}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

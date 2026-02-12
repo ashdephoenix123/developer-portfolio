@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Header from "./common/Header";
+import { motion } from "framer-motion";
 
 const techStacks = [
   { name: "HTML", imagesrc: "html" },
@@ -19,27 +22,55 @@ const techStacks = [
   { name: "Webpack", imagesrc: "webpack" },
 ];
 
+const containerVariant = {
+  initial: {},
+  final: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const itemVariant = {
+  initial: { opacity: 0, y: 16 },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4 },
+  },
+};
+
 const Techs = () => {
   return (
     <section className="techStacks">
       <Header>Frequently used Tech Stacks:</Header>
-      <div className="grid [grid-template-columns:repeat(auto-fill,minmax(80px,1fr))] gap-4">
+      <motion.div
+        variants={containerVariant}
+        initial="initial"
+        whileInView="final"
+        viewport={{ once: true, margin: "-80px" }}
+        className="grid [grid-template-columns:repeat(auto-fill,minmax(90px,1fr))] gap-4"
+      >
         {techStacks.map((tech) => {
           return (
-            <div className="flex flex-col gap-2 items-center">
+            <motion.div
+              key={tech.name}
+              variants={itemVariant}
+              className="glass-card flex flex-col gap-3 items-center p-4 cursor-default"
+            >
               <Image
-                width={60}
-                height={60}
+                width={44}
+                height={44}
                 src={`/techstacks/${tech.imagesrc}.png`}
                 alt={tech.name}
               />
-              <p className="text-xs text-center text-gray-300 font-light">
+              <p className="text-xs text-center text-gray-400 font-light">
                 {tech.name}
               </p>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,11 @@
 import Head from "next/head";
 import About from "./component/About";
+import Techs from "./component/TechStacks";
+import ProjectsInline from "./component/ProjectsInline";
+import Experience from "./component/Experience";
+import CurrentLearning from "./component/CurrentLearning";
+import Footer from "./component/Footer";
+import projects from "@/projects.mock";
 
 export const metadata = {
   title: "Akash Sarki - Web Developer Portfolio",
@@ -17,6 +23,13 @@ export default function Home() {
         <meta property="og:url" content="https://www.akashsarki.com" />
       </Head>
       <About />
+      <div className="max-w-4xl mx-auto space-y-12">
+        <Techs />
+        <ProjectsInline projects={projects} />
+        <Experience />
+        <CurrentLearning />
+        <Footer />
+      </div>
     </>
   );
 }

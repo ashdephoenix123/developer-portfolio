@@ -21,10 +21,9 @@ export default function RootLayout({ children }) {
       <body>
         <main className="flex flex-col gap-1 md:gap-4 lg:gap-8 justify-between">
           <Navbar />
-          <div className="min-h-[calc(100vh-201px)] px-4 lg:px-8 flex flex-col justify-center">
+          <div className="px-4 lg:px-8 flex flex-col justify-center">
             {children}
           </div>
-          <Footer />
         </main>
       </body>
     </html>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Header from "./common/Header";
 
 const techStacks = [
   { name: "HTML", imagesrc: "html" },
@@ -20,10 +21,8 @@ const techStacks = [
 
 const Techs = () => {
   return (
-    <div className="my-12">
-      <p className="text-xl mb-8 font-semibold text-gray-300">
-        Frequently used Tech Stacks:
-      </p>
+    <section className="techStacks">
+      <Header>Frequently used Tech Stacks:</Header>
       <div className="grid [grid-template-columns:repeat(auto-fill,minmax(80px,1fr))] gap-4">
         {techStacks.map((tech) => {
           return (
@@ -41,7 +40,7 @@ const Techs = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,8 +1,10 @@
+import Header from "./common/Header";
 import ProjectCard from "./Projects/ProjectCard.projects";
 
 const ProjectsInline = ({ projects }) => {
   return (
-    <>
+    <section className="projects space-y-8">
+      <Header>Projects</Header>
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
           <ProjectCard
@@ -17,7 +19,7 @@ const ProjectsInline = ({ projects }) => {
           />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

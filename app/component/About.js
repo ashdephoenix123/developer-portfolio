@@ -30,7 +30,7 @@ const containerVariant = {
 const About = () => {
   const router = useRouter();
   return (
-    <div className="lg:grid lg:grid-cols-2 mx-auto">
+    <div className="lg:grid lg:grid-cols-2 mx-auto min-h-[80vh] items-center relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.5, duration: 2 } }}

@@ -1,14 +1,3 @@
-import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { SiSanity } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiReactquery } from "react-icons/si";
-import { SiAxios } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { SiRazorpay } from "react-icons/si";
-import { SiMui } from "react-icons/si";
-import { SiBrevo } from "react-icons/si";
-
 const projectMOCK = [
   {
     id: "Personal-Blog-Website",
@@ -22,15 +11,15 @@ const projectMOCK = [
     tech: [
       {
         label: "React",
-        icon: FaReact,
+        icon: "react",
       },
       {
         label: "Next JS",
-        icon: SiNextdotjs,
+        icon: "next",
       },
       {
         label: "Sanity",
-        icon: SiSanity,
+        icon: "sanity",
       },
     ],
   },
@@ -46,23 +35,23 @@ const projectMOCK = [
     tech: [
       {
         label: "React",
-        icon: FaReact,
+        icon: "react",
       },
       {
         label: "Next JS",
-        icon: SiNextdotjs,
+        icon: "next",
       },
       {
         label: "React Query",
-        icon: SiReactquery,
+        icon: "reactQuery",
       },
       {
         label: "Axios",
-        icon: SiAxios,
+        icon: "axios",
       },
       {
         label: "MongoDB",
-        icon: DiMongodb,
+        icon: "mongodb",
       },
     ],
   },
@@ -78,23 +67,23 @@ const projectMOCK = [
     tech: [
       {
         label: "React",
-        icon: FaReact,
+        icon: "react",
       },
       {
         label: "Next JS",
-        icon: SiNextdotjs,
+        icon: "next",
       },
       {
         label: "MongoDB",
-        icon: DiMongodb,
+        icon: "mongodb",
       },
       {
         label: "Razorpay",
-        icon: SiRazorpay,
+        icon: "razorpay",
       },
       {
         label: "Brevo",
-        icon: SiBrevo,
+        icon: "brevo",
       },
     ],
   },
@@ -110,15 +99,15 @@ const projectMOCK = [
     tech: [
       {
         label: "React",
-        icon: FaReact,
+        icon: "react",
       },
       {
         label: "Next JS",
-        icon: SiNextdotjs,
+        icon: "next",
       },
       {
         label: "MUI",
-        icon: SiMui,
+        icon: "mui",
       },
     ],
     hideLink: true,

@@ -36,30 +36,30 @@ const ProjectCard = ({
           {description}
         </p>
 
-        <div className="flex gap-3 flex-1">
-          {techStacks.map((Stack) => (
-            <div
-              key={Stack.label}
-              className="relative group inline-block self-start"
-            >
-              <Stack.icon
-                size={24}
-                className="text-gray-400 group-hover:text-[var(--accent-3)] transition-colors duration-300"
-              />
-              <span
-                className="
-                  absolute -bottom-10 left-1/2 -translate-x-1/2
-                  scale-0 group-hover:scale-100
-                  transition-transform
-                  rounded-lg bg-[var(--gradient-1)] border border-[var(--glass-border)] px-2 py-1 text-xs text-white
-                  whitespace-nowrap z-10
-                "
-              >
-                {Stack.label}
-              </span>
-            </div>
-          ))}
-        </div>
+        // <div className="flex gap-3 flex-1">
+        //   {techStacks.map((Stack) => (
+        //     <div
+        //       key={Stack.label}
+        //       className="relative group inline-block self-start"
+        //     >
+        //       <Stack.icon
+        //         size={24}
+        //         className="text-gray-400 group-hover:text-[var(--accent-3)] transition-colors duration-300"
+        //       />
+        //       <span
+        //         className="
+        //           absolute -bottom-10 left-1/2 -translate-x-1/2
+        //           scale-0 group-hover:scale-100
+        //           transition-transform
+        //           rounded-lg bg-[var(--gradient-1)] border border-[var(--glass-border)] px-2 py-1 text-xs text-white
+        //           whitespace-nowrap z-10
+        //         "
+        //       >
+        //         {Stack.label}
+        //       </span>
+        //     </div>
+        //   ))}
+        // </div>
 
         <div className="mt-6 md:mt-auto flex gap-4 underline-offset-[3px] [&>*]:text-xs">
           {!hideLink && (

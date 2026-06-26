@@ -126,7 +126,7 @@ const About = () => {
           className="btnCont flex justify-center lg:justify-start gap-3"
         >
           <button
-            onClick={() => router.push("/resume-18-dec-2025.pdf")}
+            onClick={() => router.push("/resume/akash-sarki-resume.pdf")}
             className="button text-sm text-white px-6 py-3 button-gradient-1 flex items-center gap-2"
           >
             View Resumé

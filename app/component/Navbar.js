@@ -20,6 +20,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState(null);
 
+  if (pathname.startsWith("/studio")) {
+    return null;
+  }
+
   useEffect(() => {
     setTime(new Date());
     const id = setInterval(() => setTime(new Date()), 1000);

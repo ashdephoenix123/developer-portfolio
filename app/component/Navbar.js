@@ -28,12 +28,12 @@ export default function Navbar() {
 
   const formattedTime = time
     ? time.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZone: "Asia/Kolkata",
-        hour12: false,
-      })
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZone: "Asia/Kolkata",
+      hour12: false,
+    })
     : "";
 
   const handleLinkClick = (e, link) => {
@@ -93,7 +93,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => {
             const isRouteActive =
               link.type === "route" && pathname.startsWith(link.href);
@@ -107,9 +107,8 @@ export default function Navbar() {
                   <a
                     href={`#${link.id}`}
                     onClick={(e) => handleLinkClick(e, link)}
-                    className={`text-sm tracking-wide transition-colors cursor-pointer ${
-                      isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    className={`text-sm tracking-wide transition-colors cursor-pointer ${isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                      }`}
                     style={{ fontFamily: "'DM Mono', monospace" }}
                   >
                     {link.label}
@@ -117,9 +116,8 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`text-sm tracking-wide transition-colors ${
-                      isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    className={`text-sm tracking-wide transition-colors ${isActive ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                      }`}
                     style={{ fontFamily: "'DM Mono', monospace" }}
                   >
                     {link.label}
@@ -131,7 +129,7 @@ export default function Navbar() {
         </ul>
 
         {/* Right Info */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <span
             className="text-xs text-muted-foreground tabular-nums"
             style={{ fontFamily: "'DM Mono', monospace" }}
@@ -148,7 +146,7 @@ export default function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden text-muted-foreground hover:text-foreground transition-colors"
+          className="lg:hidden text-muted-foreground hover:text-foreground transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <div className="flex flex-col gap-1.5 w-5">
@@ -161,7 +159,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4">
+        <div className="lg:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4">
           {NAV_LINKS.map((link) => {
             const isRouteActive =
               link.type === "route" && pathname.startsWith(link.href);
@@ -174,9 +172,8 @@ export default function Navbar() {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleLinkClick(e, link)}
-                className={`text-left text-sm transition-colors ${
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`text-left text-sm transition-colors ${isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 style={{ fontFamily: "'DM Mono', monospace" }}
               >
                 {link.label}
@@ -186,9 +183,8 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-left text-sm transition-colors ${
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`text-left text-sm transition-colors ${isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 style={{ fontFamily: "'DM Mono', monospace" }}
               >
                 {link.label}

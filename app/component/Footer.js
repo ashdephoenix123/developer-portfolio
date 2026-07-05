@@ -6,7 +6,7 @@ import FadeIn from "./common/FadeIn";
 
 const Footer = () => {
   return (
-    <section id="contact" className="border-t border-border bg-card -mx-6 px-6 lg:-mx-24 lg:px-24">
+    <section id="contact" className="border-t border-border bg-card px-6 lg:px-24">
       <div className="max-w-6xl mx-auto py-24">
         <FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-end">

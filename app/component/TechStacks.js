@@ -39,7 +39,7 @@ const CATEGORY_COLORS = {
 
 const Techs = () => {
   return (
-    <section id="skills" className="bg-card border-y border-border py-24 -mx-6 px-6 lg:-mx-24 lg:px-24">
+    <section id="skills" className="bg-card border-y border-border py-24 px-6 lg:px-24">
       <div className="max-w-6xl mx-auto w-full">
         {/* Section Header */}
         <FadeIn>

@@ -35,6 +35,11 @@ module.exports = {
         hostname: "upload.wikimedia.org",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/**",
+      },
     ],
   },
 };

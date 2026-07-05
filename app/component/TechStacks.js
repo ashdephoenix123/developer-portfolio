@@ -4,17 +4,27 @@ import FadeIn from "./common/FadeIn";
 
 const SKILLS = [
   { label: "React", category: "ui" },
+  { label: "React Native", category: "ui" },
+  { label: "Expo", category: "framework" },
   { label: "TypeScript", category: "lang" },
   { label: "Next.js", category: "framework" },
   { label: "JavaScript", category: "lang" },
-  { label: "Redux", category: "state" },
+  { label: "Redux Toolkit", category: "state" },
   { label: "Tanstack Query", category: "state" },
   { label: "Node.js", category: "backend" },
   { label: "Express", category: "backend" },
-  { label: "MongoDB", category: "data" },
+  { label: "MongoDB", category: "database" },
+  { label: "PostgreSQL", category: "database" },
+  { label: "Supabase", category: "database" },
+  { label: "REST API", category: "api" },
   { label: "Webpack", category: "tooling" },
   { label: "Axios", category: "tooling" },
   { label: "HTML / CSS", category: "ui" },
+  { label: "Git", category: "tooling" },
+  { label: "GitHub", category: "tooling" },
+  { label: "Vercel", category: "Deployment" },
+  { label: "AWS", category: "Cloud" },
+  { label: "Google Cloud", category: "Cloud" },
 ];
 
 const CATEGORY_COLORS = {
@@ -76,7 +86,7 @@ const Techs = () => {
               currently learning
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {["AI Agents & LLM Integration", "Docker", "Redis", "Message Queues"].map((item) => (
+              {["AI Agents & LLM Integration, OpenAI"].map((item) => (
                 <span
                   key={item}
                   className="text-sm text-muted-foreground flex items-center gap-2"

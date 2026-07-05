@@ -71,8 +71,8 @@ const About = () => {
         {/* Stats Column */}
         <div className="hidden lg:flex flex-col gap-6 pb-2">
           {[
-            { value: "2+", label: "years experience", delay: 300 },
-            { value: "4", label: "shipped projects", delay: 400 },
+            { value: "3+", label: "years experience", delay: 300 },
+            { value: "20+", label: "shipped projects", delay: 400 },
             { value: "25%", label: "load time reduction", delay: 500 },
           ].map(({ value, label, delay }) => (
             <FadeIn key={label} delay={delay}>

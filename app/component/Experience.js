@@ -1,77 +1,90 @@
 "use client";
 
-import React from "react";
-import Header from "./common/Header";
-import { motion } from "framer-motion";
+import FadeIn from "./common/FadeIn";
 
 const Experience = () => {
   return (
-    <section className="experience text-gray-300">
-      <Header>Professional Experience</Header>
-      <motion.div
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.5 }}
-        className="glass-card p-6 relative"
-      >
-        <div className="timeline">
-          <div className="relative pl-6">
-            <div className="timeline-dot"></div>
-            <div className="mb-2">
-              <h4 className="text-md font-medium text-white">
-                Appycodes{" "}
-                <span className="text-xs text-[var(--accent-3)] font-normal">
-                  (2023 — Present)
-                </span>
-              </h4>
-              <p className="uppercase font-light text-xs text-gray-500 tracking-wider">
-                Frontend Engineer
+    <section id="about" className="max-w-6xl mx-auto px-6 py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 lg:gap-24">
+        {/* About Column */}
+        <FadeIn delay={0}>
+          <div>
+            <h2
+              className="text-3xl sm:text-4xl font-light mb-8"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              About
+            </h2>
+            <div className="space-y-6 text-muted-foreground font-light leading-relaxed" style={{ fontFamily: "'Outfit', sans-serif" }}>
+              <p>
+                I&apos;m a frontend developer who cares about the craft — clean components, fast pages, and interfaces that feel good to use. I specialize in React and the JavaScript ecosystem, with a strong focus on performance and maintainable code.
+              </p>
+              <p>
+                Right now I&apos;m at Appycodes, where I&apos;ve shipped everything from SEO-optimized Next.js apps to internal dashboards. On the side, I&apos;m building with AI and agents — exploring how LLMs can be woven into real web products.
+              </p>
+              <p>
+                Outside code: F1 races, MotoGP weekends, and strong opinions about UI details.
               </p>
             </div>
-            <ul className="mt-4 ps-4 list-disc space-y-3">
-              <li className="font-extralight text-gray-400">
-                <span className="font-normal text-gray-300">
-                  Performance Optimization:{" "}
-                </span>
-                Optimized responsive web applications using React and Next.js,
-                achieving a 25% reduction in page load times through strategic
-                code-splitting and lazy loading techniques.
-              </li>
-              <li className="font-extralight text-gray-400">
-                <span className="font-normal text-gray-300">
-                  API Architecture:{" "}
-                </span>
-                Streamlined data flow by collaborating with backend engineers to
-                implement seamless REST API integrations using Axios and
-                Interceptors.
-              </li>
-              <li className="font-extralight text-gray-400">
-                <span className="font-normal text-gray-300">
-                  Development Efficiency:{" "}
-                </span>
-                Developed a collection of reusable UI components and custom hooks
-                to standardize design patterns and accelerate the internal
-                development process.
-              </li>
-              <li className="font-extralight text-gray-400">
-                <span className="font-normal text-gray-300">
-                  SEO &amp; Growth:{" "}
-                </span>
-                Boosted organic traffic by implementing SEO best practices,
-                server-side rendering (SSR), and dynamic metadata management.
-              </li>
-              <li className="font-extralight text-gray-400">
-                <span className="font-normal text-gray-300">
-                  Project Leadership &amp; Delivery:{" "}
-                </span>
-                Managed direct client communication to define requirements and
-                ensure high-quality project delivery within strict deadlines.
-              </li>
-            </ul>
           </div>
-        </div>
-      </motion.div>
+        </FadeIn>
+
+        {/* Experience Column */}
+        <FadeIn delay={150}>
+          <div>
+            <h2
+              className="text-3xl sm:text-4xl font-light mb-8"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              Experience
+            </h2>
+
+            <div className="border border-border p-6 hover:border-primary/30 transition-colors bg-card/10">
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <div
+                    className="text-base font-medium text-foreground"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    Frontend Engineer
+                  </div>
+                  <div
+                    className="text-sm text-primary mt-0.5"
+                    style={{ fontFamily: "'DM Mono', monospace" }}
+                  >
+                    Appycodes
+                  </div>
+                </div>
+                <span
+                  className="text-xs text-muted-foreground whitespace-nowrap"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  2023 — present
+                </span>
+              </div>
+
+              <ul className="space-y-2.5">
+                {[
+                  "Reduced page load times by 25% through code-splitting and lazy loading",
+                  "Built REST API integrations using Axios and request interceptors",
+                  "Created reusable component libraries and custom React hooks",
+                  "Implemented SSR with Next.js and dynamic metadata for SEO",
+                  "Managed client communication and end-to-end project delivery",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm text-muted-foreground"
+                    style={{ fontWeight: 300, fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    <span className="text-primary mt-0.5 flex-shrink-0">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 };

@@ -1,124 +1,189 @@
 "use client";
 
 import React, { useState } from "react";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Header from "../component/common/Header";
+import SocialFeed from "../component/SocialFeed";
+import { instagramPosts, twitterPosts } from "@/mock/socialPosts";
 
 const Contact = () => {
-  const [details, setDetails] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
-  const handleDetails = (e) => {
-    const { name, value } = e.target;
-    setDetails((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const dataSend = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(details),
-    });
-    const data = await dataSend.json();
-    if (data.message === "success") {
-      toast.success("Message sent!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+    if (!form.name || !form.email || !form.message) return;
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: `Portfolio message from ${form.name}`,
+          message: form.message,
+        }),
       });
-      setDetails({
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } else {
-      toast.error("Some error occured, Please try again!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      const data = await res.json();
+      if (data.message === "success") {
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
     }
   };
 
   return (
-    <div className="contactbg flex flex-col justify-center w-full min-[768px]:py-20 max-[768px]:py-8">
-      <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <div className="contact min-[950px]:padd mb-12 text-center" id="contact">
-        <h1 className="head1">
-          Get in touch with me<span className="font-serif"></span>
-        </h1>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col mx-auto mt-22 text-black fontsm  min-[710px]:w-[70%] min-[950px]:w-1/3"
+    <div className="max-w-6xl mx-auto px-6 pt-24 pb-20">
+      <Header>Get in Touch</Header>
+
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 mt-8">
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="border border-border p-6 md:p-8 bg-card/10"
         >
-          <input
-            required
-            onChange={handleDetails}
-            name="email"
-            value={details.email}
-            type="email"
-            placeholder="Your Email"
-            className="dark:text-white rounded my-1 px-3 py-1.5 outline-none"
-          />
-          <input
-            required
-            onChange={handleDetails}
-            name="subject"
-            value={details.subject}
-            type="text"
-            placeholder="Subject"
-            className="dark:text-white rounded my-1 px-3 py-1.5 outline-none"
-          />
-          <textarea
-            required
-            onChange={handleDetails}
-            name="message"
-            value={details.message}
-            cols="30"
-            rows="10"
-            placeholder="Anything you want to say..."
-            className="dark:text-white rounded my-1 px-3 py-2 outline-none"
-          ></textarea>
-          <button
-            type="submit"
-            className="btn mt-1 hover:bg-blue-700 border-0 focus:outline-none focus:bg-blue-700"
+          <h3
+            className="text-2xl font-light text-foreground mb-3"
+            style={{ fontFamily: "'Fraunces', serif" }}
           >
-            Submit
-          </button>
-        </form>
+            Send a message
+          </h3>
+          <p
+            className="text-sm text-muted-foreground mb-8 font-light leading-relaxed"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Have a project in mind or just want to say hi? Fill out the form
+            below and I&apos;ll get back to you.
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  htmlFor="contact-name"
+                  className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Your Name
+                </label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                  placeholder="e.g. John Doe"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="contact-email"
+                  className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Email Address
+                </label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                  placeholder="e.g. john@example.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="contact-message"
+                className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                Message
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                value={form.message}
+                onChange={handleChange}
+                rows={5}
+                className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light resize-none"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+                placeholder="How can I help you?"
+              />
+            </div>
+
+            <div className="flex items-center gap-4 pt-2">
+              <button
+                type="submit"
+                id="contact-submit"
+                disabled={status === "sending"}
+                className="group flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                {status === "sending" ? (
+                  "sending..."
+                ) : (
+                  <>
+                    send message
+                    <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </>
+                )}
+              </button>
+
+              {status === "sent" && (
+                <motion.p
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="text-xs text-primary"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  ✓ Message sent successfully!
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="text-xs text-red-400"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Something went wrong. Please try again.
+                </motion.p>
+              )}
+            </div>
+          </form>
+        </motion.div>
+
+        {/* Social Feed Column */}
+        <div className="space-y-6">
+          <SocialFeed platform="instagram" posts={instagramPosts} />
+          <SocialFeed platform="twitter" posts={twitterPosts} />
+        </div>
       </div>
     </div>
   );

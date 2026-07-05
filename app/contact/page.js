@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { IoMdArrowForward } from "react-icons/io";
+import { ArrowUpRight } from "lucide-react";
 import Header from "../component/common/Header";
 import SocialFeed from "../component/SocialFeed";
 import { instagramPosts, twitterPosts } from "@/mock/socialPosts";
@@ -47,29 +47,41 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto pb-16 space-y-12">
+    <div className="max-w-6xl mx-auto px-6 pt-24 pb-20">
       <Header>Get in Touch</Header>
 
-      <div className="contact-layout">
-        {/* ──── Contact Form ──── */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 mt-8">
+        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="contact-form-section"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="border border-border p-6 md:p-8 bg-card/10"
         >
-          <div className="glass-card p-6 md:p-8">
-            <h3 className="text-lg font-medium text-white mb-2">
-              Send me a message
-            </h3>
-            <p className="text-sm text-gray-400 mb-6">
-              Have a project in mind or just want to say hi? Fill out the form
-              below and I&apos;ll get back to you.
-            </p>
+          <h3
+            className="text-2xl font-light text-foreground mb-3"
+            style={{ fontFamily: "'Fraunces', serif" }}
+          >
+            Send a message
+          </h3>
+          <p
+            className="text-sm text-muted-foreground mb-8 font-light leading-relaxed"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Have a project in mind or just want to say hi? Fill out the form
+            below and I&apos;ll get back to you.
+          </p>
 
-            <form onSubmit={handleSubmit} className="contact-form" id="contact-form">
-              <div className="contact-form__row">
+          <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  htmlFor="contact-name"
+                  className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Your Name
+                </label>
                 <input
                   id="contact-name"
                   name="name"
@@ -77,9 +89,19 @@ const Contact = () => {
                   required
                   value={form.name}
                   onChange={handleChange}
-                  className="glass-input contact-form__input"
-                  placeholder="Your name"
+                  className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                  placeholder="e.g. John Doe"
                 />
+              </div>
+              <div>
+                <label
+                  htmlFor="contact-email"
+                  className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Email Address
+                </label>
                 <input
                   id="contact-email"
                   name="email"
@@ -87,10 +109,21 @@ const Contact = () => {
                   required
                   value={form.email}
                   onChange={handleChange}
-                  className="glass-input contact-form__input"
-                  placeholder="Email address"
+                  className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                  placeholder="e.g. john@example.com"
                 />
               </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="contact-message"
+                className="block text-xs uppercase tracking-wider text-muted-foreground mb-2"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                Message
+              </label>
               <textarea
                 id="contact-message"
                 name="message"
@@ -98,51 +131,56 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 rows={5}
-                className="glass-input contact-form__textarea"
-                placeholder="Your message..."
+                className="w-full bg-transparent border border-border p-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground font-light resize-none"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+                placeholder="How can I help you?"
               />
-              <div className="flex items-center gap-4">
-                <button
-                  type="submit"
-                  id="contact-submit"
-                  disabled={status === "sending"}
-                  className="button button-gradient-1 text-sm text-white px-6 py-3 flex items-center gap-2 disabled:opacity-50"
+            </div>
+
+            <div className="flex items-center gap-4 pt-2">
+              <button
+                type="submit"
+                id="contact-submit"
+                disabled={status === "sending"}
+                className="group flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                {status === "sending" ? (
+                  "sending..."
+                ) : (
+                  <>
+                    send message
+                    <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </>
+                )}
+              </button>
+
+              {status === "sent" && (
+                <motion.p
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="text-xs text-primary"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
                 >
-                  {status === "sending" ? (
-                    <>
-                      <span className="animate-spin">⏳</span> Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message <IoMdArrowForward />
-                    </>
-                  )}
-                </button>
-                {status === "sent" && (
-                  <motion.p
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="text-sm text-green-400"
-                  >
-                    ✓ Message sent successfully!
-                  </motion.p>
-                )}
-                {status === "error" && (
-                  <motion.p
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="text-sm text-red-400"
-                  >
-                    Something went wrong. Please try again.
-                  </motion.p>
-                )}
-              </div>
-            </form>
-          </div>
+                  ✓ Message sent successfully!
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="text-xs text-red-400"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  Something went wrong. Please try again.
+                </motion.p>
+              )}
+            </div>
+          </form>
         </motion.div>
 
-        {/* ──── Social Feeds ──── */}
-        <div className="contact-social-section">
+        {/* Social Feed Column */}
+        <div className="space-y-6">
           <SocialFeed platform="instagram" posts={instagramPosts} />
           <SocialFeed platform="twitter" posts={twitterPosts} />
         </div>

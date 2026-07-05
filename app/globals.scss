@@ -3,29 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --primary-font: #60657b;
-  --primary-color: #0070f3;
-  --primary-color-dark: #000000;
-  --text1: #0067c8;
-  --bg2: #f7f7f7;
-  --text5: #929292;
-  --text2: #676767;
-  --text3: #f2f2f2;
-  --text4: #494949;
+  /* Redesign Theme Variables */
+  --font-size: 16px;
+  --background: #080808;
+  --foreground: #f0ece4;
+  --card: #111111;
+  --card-foreground: #f0ece4;
+  --popover: #111111;
+  --popover-foreground: #f0ece4;
+  --primary: #b9ff4d;
+  --primary-foreground: #080808;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #f0ece4;
+  --muted: #1e1e1e;
+  --muted-foreground: #888880;
+  --accent: #b9ff4d;
+  --accent-foreground: #080808;
+  --destructive: #ff4d4d;
+  --destructive-foreground: #080808;
+  --border: rgba(240, 236, 228, 0.1);
+  --input: transparent;
+  --input-background: #1a1a1a;
+  --switch-background: #333330;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #b9ff4d;
+  --radius: 0.625rem;
 
-  --gradient-1: #1a1a2e;
-  --gradient-2: #0a0a0f;
-
-  --accent-1: #6366f1;
-  --accent-2: #8b5cf6;
-  --accent-3: #a78bfa;
-  --glow-color: rgba(99, 102, 241, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  /* Legacy Variable Fallbacks mapped to Redesign Theme */
+  --primary-font: #888880;
+  --primary-color: #b9ff4d;
+  --primary-color-dark: #080808;
+  --text1: #b9ff4d;
+  --bg2: #111111;
+  --text5: #888880;
+  --text2: #f0ece4;
+  --text3: #111111;
+  --text4: #888880;
+  --gradient-1: #080808;
+  --gradient-2: #080808;
+  --accent-1: #b9ff4d;
+  --accent-2: #b9ff4d;
+  --accent-3: #b9ff4d;
+  --glow-color: rgba(185, 255, 77, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(240, 236, 228, 0.1);
 
   --h1: 300px;
   --w1: 480px;
-
   --h2: 180px;
   --w2: 280px;
 }
@@ -45,19 +70,20 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1rem;
-  color: var(--primary-font);
+  color: var(--foreground);
   line-height: 1.6;
   scroll-behavior: smooth;
-  background: var(--gradient-2);
+  background: var(--background);
   user-select: none;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--accent-1);
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
+
 
 /* ─── Animated Background Gradient ─── */
 @keyframes bgShift {

@@ -1,10 +1,25 @@
 import Navbar from "./component/Navbar";
 import SmoothScroll from "./component/SmoothScroll";
 import "./globals.scss";
-import { Inter } from "next/font/google";
+import { Outfit, Fraunces, DM_Mono } from "next/font/google";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--font-dm-mono",
+  display: "swap",
 });
 
 export const metadata = {
@@ -23,12 +38,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="animated-bg">
-        <main className="flex flex-col gap-1 md:gap-4 lg:gap-8 justify-between">
+    <html
+      lang="en"
+      className={`${outfit.variable} ${fraunces.variable} ${dmMono.variable}`}
+    >
+      <body className="bg-background text-foreground font-sans">
+        <main className="flex flex-col justify-between">
           <Navbar />
           <SmoothScroll>
-            <div className="px-4 lg:px-8 flex flex-col justify-center">
+            <div className="flex flex-col justify-center">
               {children}
             </div>
           </SmoothScroll>
@@ -37,3 +55,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

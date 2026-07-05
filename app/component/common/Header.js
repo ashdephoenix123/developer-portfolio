@@ -6,16 +6,23 @@ import { motion } from "framer-motion";
 const Header = ({ children }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5 }}
-      className="mb-10"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="mb-12 border-b border-border pb-6 flex items-baseline justify-between"
     >
-      <h3 className="text-2xl font-normal tracking-wide text-gray-300 uppercase">
+      <h1
+        className="text-3xl sm:text-4xl font-light text-foreground"
+        style={{ fontFamily: "'Fraunces', serif" }}
+      >
         {children}
-      </h3>
-      <div className="section-divider mt-3 max-w-[60px]" style={{ opacity: 0.6 }}></div>
+      </h1>
+      <span
+        className="text-xs text-muted-foreground"
+        style={{ fontFamily: "'DM Mono', monospace" }}
+      >
+        akashsarki.com
+      </span>
     </motion.div>
   );
 };

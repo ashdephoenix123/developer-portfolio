@@ -30,6 +30,11 @@ module.exports = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
+      },
     ],
   },
 };

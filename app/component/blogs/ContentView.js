@@ -8,7 +8,7 @@ import { formatDate } from "@/utils/helpers";
 import { motion } from "framer-motion";
 import { IoMdArrowBack } from "react-icons/io";
 
-const ContentView = ({ post }) => {
+const ContentView = ({ post, backLink = "/blogs", backText = "Back to Blogs" }) => {
   return (
     <div className="max-w-3xl mx-auto lg:px-6 pt-24 pb-20">
       {/* Back link */}
@@ -18,11 +18,11 @@ const ContentView = ({ post }) => {
         transition={{ duration: 0.4 }}
       >
         <Link
-          href="/blogs"
+          href={backLink}
           className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors mb-8"
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          <IoMdArrowBack /> Back to Blogs
+          <IoMdArrowBack /> {backText}
         </Link>
       </motion.div>
 

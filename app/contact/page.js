@@ -236,7 +236,10 @@ function XCard({ post }) {
   const [bookmarked, setBookmarked] = useState(false);
 
   return (
-    <div className="border border-border bg-card px-4 py-4 hover:bg-secondary/30 transition-colors cursor-pointer">
+    <div
+      onClick={() => post.permalink && window.open(post.permalink, "_blank")}
+      className="border border-border bg-card px-4 py-4 hover:bg-secondary/30 transition-colors cursor-pointer"
+    >
       {/* Header */}
       <div className="flex gap-3">
         <div className="size-9 rounded-full bg-[#1a1a2e] border border-border flex items-center justify-center text-xs font-medium text-foreground flex-shrink-0 font-mono">
@@ -255,13 +258,21 @@ function XCard({ post }) {
           </p>
 
           {/* Engagement row */}
-          <div className="flex items-center justify-between text-muted-foreground">
-            <button className="flex items-center gap-1.5 hover:text-[#4dcfff] transition-colors group/btn">
+          <div className="flex items-center justify-between text-muted-foreground font-mono">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="flex items-center gap-1.5 hover:text-[#4dcfff] transition-colors group/btn"
+            >
               <MessageCircle size={14} />
               <span className="text-[11px] font-mono">{post.replies}</span>
             </button>
             <button
-              onClick={() => setReposted(!reposted)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setReposted(!reposted);
+              }}
               className={`flex items-center gap-1.5 transition-colors group/btn ${reposted ? "text-[#34d399]" : "hover:text-[#34d399]"}`}
             >
               <Repeat2 size={14} />
@@ -270,7 +281,10 @@ function XCard({ post }) {
               </span>
             </button>
             <button
-              onClick={() => setLiked(!liked)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setLiked(!liked);
+              }}
               className={`flex items-center gap-1.5 transition-colors group/btn ${liked ? "text-red-400" : "hover:text-red-400"}`}
             >
               <Heart size={14} fill={liked ? "currentColor" : "none"} />
@@ -279,7 +293,10 @@ function XCard({ post }) {
               </span>
             </button>
             <button
-              onClick={() => setBookmarked(!bookmarked)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setBookmarked(!bookmarked);
+              }}
               className={`flex items-center gap-1.5 transition-colors group/btn ${bookmarked ? "text-primary" : "hover:text-primary"}`}
             >
               <Bookmark size={14} fill={bookmarked ? "currentColor" : "none"} />
@@ -302,6 +319,7 @@ export default function Contact() {
   const [activeTab, setActiveTab] = useState("instagram");
   const [copied, setCopied] = useState(false);
   const [instagramPosts, setInstagramPosts] = useState(INSTAGRAM_POSTS);
+  const [xPosts, setXPosts] = useState(X_POSTS);
 
   useEffect(() => {
     async function loadInstagram() {
@@ -317,7 +335,21 @@ export default function Contact() {
         console.warn("Could not load live Instagram posts:", err);
       }
     }
+    async function loadX() {
+      try {
+        const res = await fetch("/api/x");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.posts && data.posts.length > 0) {
+            setXPosts(data.posts);
+          }
+        }
+      } catch (err) {
+        console.warn("Could not load live X posts:", err);
+      }
+    }
     loadInstagram();
+    loadX();
   }, []);
 
   const handleCopyEmail = () => {
@@ -487,7 +519,7 @@ export default function Contact() {
           {/* X feed */}
           {activeTab === "x" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl">
-              {X_POSTS.map((post, i) => (
+              {xPosts.map((post, i) => (
                 <FadeIn key={post.id} delay={i * 70}>
                   <XCard post={post} />
                 </FadeIn>

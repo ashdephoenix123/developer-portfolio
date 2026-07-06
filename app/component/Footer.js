@@ -142,13 +142,18 @@ function InstagramCard({ post }) {
       </div>
 
       {/* Image */}
-      <div className="aspect-square bg-muted overflow-hidden relative">
+      <a
+        href={post.permalink || "https://instagram.com/akashsarki_"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="aspect-square bg-muted overflow-hidden relative block"
+      >
         <img
           src={post.image}
           alt={post.alt}
           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
         />
-      </div>
+      </a>
 
       {/* Actions */}
       <div className="px-3.5 pt-3 pb-1">
@@ -263,6 +268,24 @@ function XCard({ post }) {
 const Footer = () => {
   const [activeTab, setActiveTab] = useState("instagram");
   const [copied, setCopied] = useState(false);
+  const [instagramPosts, setInstagramPosts] = useState(INSTAGRAM_POSTS);
+
+  React.useEffect(() => {
+    async function loadInstagram() {
+      try {
+        const res = await fetch("/api/instagram");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.posts && data.posts.length > 0) {
+            setInstagramPosts(data.posts);
+          }
+        }
+      } catch (err) {
+        console.warn("Could not load live Instagram posts:", err);
+      }
+    }
+    loadInstagram();
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("hello@akashsarki.com");
@@ -411,7 +434,7 @@ const Footer = () => {
           {/* Instagram grid */}
           {activeTab === "instagram" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {INSTAGRAM_POSTS.map((post, i) => (
+              {instagramPosts.map((post, i) => (
                 <FadeIn key={post.id} delay={i * 70}>
                   <InstagramCard post={post} />
                 </FadeIn>

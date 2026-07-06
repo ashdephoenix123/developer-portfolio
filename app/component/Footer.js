@@ -378,7 +378,7 @@ const Footer = () => {
                 { href: "https://github.com/ashdephoenix123", Icon: FaGithub, label: "GitHub" },
                 { href: "https://linkedin.com/in/akashsarki", Icon: FaLinkedin, label: "LinkedIn" },
                 { href: "https://instagram.com/akashsarki_", Icon: InstagramIcon, label: "Instagram" },
-                { href: "https://x.com/akashsarki", Icon: XIcon, label: "X / Twitter" },
+                { href: "https://x.com/akashsarki_", Icon: XIcon, label: "X / Twitter" },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
@@ -502,7 +502,7 @@ const Footer = () => {
               </a>
             ) : (
               <a
-                href="https://x.com/akashsarki"
+                href="https://x.com/akashsarki_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground border border-border px-4 py-2 hover:border-border/60 transition-colors font-mono"

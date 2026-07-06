@@ -38,7 +38,7 @@ export async function GET() {
       const pubDate = itemContent.match(/<pubDate>([\s\S]*?)<\/pubDate>/);
 
       const rawText = description ? description[1] : (title ? title[1] : "");
-      
+
       // Clean up HTML tags (e.g. image links or anchor tags inserted by RSS feeds)
       const cleanText = rawText
         .replace(/<[^>]*>/g, "") // Strip HTML tags
@@ -47,7 +47,7 @@ export async function GET() {
         .replace(/&gt;/g, ">")
         .trim();
 
-      const itemLink = link ? link[1].trim() : "https://x.com/akashsarki";
+      const itemLink = link ? link[1].trim() : "https://x.com/akashsarki_";
 
       // Time calculation
       let timeAgo = "1d";

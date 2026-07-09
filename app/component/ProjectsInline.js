@@ -33,6 +33,9 @@ export default function ProjectsInline({ projects }) {
     if (title.includes("Web Journal")) {
       return "Content Platform";
     }
+    if (title.includes("ExpenseFlow")) {
+      return "Mobile Application";
+    }
     return "Web Application";
   };
 

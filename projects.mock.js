@@ -1,5 +1,29 @@
 const projectMOCK = [
   {
+    id: "expenseflow",
+    title: "ExpenseFlow",
+    subTitle:
+      "A smart personal expense tracking and budgeting app — monitor spending, categorize transactions and stay on top of your finances effortlessly.",
+    link: "https://play.google.com/store/apps/details?id=com.expenseflow",
+    image: "img/expenseflow.jpg",
+    status: "completed",
+    tech: [
+      {
+        label: "React Native",
+        icon: "react",
+      },
+      {
+        label: "Node JS",
+        icon: "node",
+      },
+      {
+        label: "MongoDB",
+        icon: "mongodb",
+      },
+    ],
+    hideLink: true,
+  },
+  {
     id: "Personal-Blog-Website",
     title: "Web Journal",
     subTitle:

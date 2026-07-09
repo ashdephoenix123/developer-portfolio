@@ -407,7 +407,7 @@ export default function Contact() {
               </button>
               <a
                 href="mailto:hello@akashsarki.com"
-                className="px-4 py-2.5 text-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5 font-mono w-full sm:w-auto"
+                className="px-4 py-2.5 text-sm bg-primary text-white hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5 font-mono w-full sm:w-auto"
               >
                 <Mail size={13} />
                 write
@@ -459,7 +459,7 @@ export default function Contact() {
 
               <a
                 href="mailto:hello@akashsarki.com"
-                className="group mt-5 flex w-full items-center justify-between bg-primary text-primary-foreground px-4 py-2.5 text-sm hover:bg-primary/90 transition-colors font-mono"
+                className="group mt-5 flex w-full items-center justify-between bg-primary text-white px-4 py-2.5 text-sm hover:bg-primary/90 transition-colors font-mono"
               >
                 send a message
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -485,7 +485,7 @@ export default function Contact() {
               <button
                 onClick={() => setActiveTab("instagram")}
                 className={`flex items-center gap-2 px-4 py-2 text-xs transition-colors font-mono ${activeTab === "instagram"
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-primary text-white"
                   : "text-muted-foreground hover:text-foreground"
                   }`}
               >
@@ -495,7 +495,7 @@ export default function Contact() {
               <button
                 onClick={() => setActiveTab("x")}
                 className={`flex items-center gap-2 px-4 py-2 text-xs transition-colors font-mono ${activeTab === "x"
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-primary text-white"
                   : "text-muted-foreground hover:text-foreground"
                   }`}
               >

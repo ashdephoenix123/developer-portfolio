@@ -14,9 +14,15 @@ export async function generateMetadata({ params }) {
   // 1. Check if it's a post
   const post = await fetchPost(slug);
   if (post && post.title) {
+    const category = post.categories && post.categories.length > 0
+      ? textToUrl(post.categories[0].title)
+      : "general";
     return {
       title: post.title,
       description: post.subTitle || "Read article on Web Journal",
+      alternates: {
+        canonical: `https://www.akashsarki.com/blogs/${category}/${slug}`,
+      },
     };
   }
 
@@ -27,6 +33,9 @@ export async function generateMetadata({ params }) {
     return {
       title: `${capitalize(slug)} Blogs - Web Journal`,
       description: `Explore the ${slug} category blogs on Web Journal.`,
+      alternates: {
+        canonical: `https://www.akashsarki.com/blogs/${slug}`,
+      },
     };
   }
 

@@ -7,6 +7,9 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Blogs - Web Journal",
   description: "Explore the blogs section of Web Journal. Read from the latest technology to latest inventions, from thrilling sports to serene and quiet nature, you will find all.",
+  alternates: {
+    canonical: "https://www.akashsarki.com/blogs",
+  },
 };
 
 const BlogsPage = async ({ searchParams }) => {

@@ -1,5 +1,3 @@
-"use client";
-
 import About from "./component/About";
 import ProjectsInline from "./component/ProjectsInline";
 import Techs from "./component/TechStacks";

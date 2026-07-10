@@ -6,16 +6,19 @@ import { fetchAllPost, fetchPost } from "@/sanity/queries/fetchPost";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
-  const { postSlug } = params;
+  const { slug, postSlug } = params;
   const post = await fetchPost(postSlug);
   return {
     title: post?.title || "Blog Detail - Web Journal",
     description: post?.subTitle || "Read article on Web Journal",
+    alternates: {
+      canonical: `https://www.akashsarki.com/blogs/${slug}/${postSlug}`,
+    },
   };
 }
 
 const BlogDetailPage = async ({ params }) => {
-  const { postSlug } = params;
+  const { slug, postSlug } = params;
 
   const [allPosts, post] = await Promise.all([
     fetchAllPost(0, 3, postSlug),
@@ -32,8 +35,26 @@ const BlogDetailPage = async ({ params }) => {
     );
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.subTitle || "Read article on Web Journal",
+    "image": post.mainImage,
+    "datePublished": post.publishedAt,
+    "dateModified": post.updatedAt || post.publishedAt,
+    "author": {
+      "@type": "Person",
+      "name": post.author?.name || "Akash Sarki",
+    },
+  };
+
   return (
     <div className="pt-24 pb-20 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ContentView key={post.title} post={post} />
       {/* Remove comments from comments out if Firebase is configured */}
       {/* <Comments postId={post._id} /> */}

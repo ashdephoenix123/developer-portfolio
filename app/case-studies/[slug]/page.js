@@ -11,6 +11,9 @@ export async function generateMetadata({ params }) {
   return {
     title: study?.title ? `${study.title} - Case Study` : "Case Study - Portfolio",
     description: study?.subTitle || "Read case study detail",
+    alternates: {
+      canonical: `https://www.akashsarki.com/case-studies/${slug}`,
+    },
   };
 }
 
@@ -28,8 +31,26 @@ const CaseStudyDetailPage = async ({ params }) => {
 
   const studyIndex = allStudies.findIndex((b) => b.slug === slug);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": study.title,
+    "description": study.subTitle || "Read case study detail",
+    "image": study.mainImage,
+    "datePublished": study.publishedAt,
+    "dateModified": study.updatedAt || study.publishedAt,
+    "author": {
+      "@type": "Person",
+      "name": study.author?.name || "Akash Sarki",
+    },
+  };
+
   return (
     <div className="pt-24 pb-20 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ContentView 
         key={study.title} 
         post={study} 

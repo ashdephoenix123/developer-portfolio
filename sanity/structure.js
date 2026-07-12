@@ -5,10 +5,11 @@ export const structure = (S) =>
     .items([
       S.documentTypeListItem('post').title('Posts'),
       S.documentTypeListItem('caseStudy').title('Case Studies'),
+      S.documentTypeListItem('resume').title('Resumes'),
       S.documentTypeListItem('category').title('Categories'),
       S.documentTypeListItem('author').title('Authors'),
       S.divider(),
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'caseStudy', 'category', 'author'].includes(item.getId()),
+        (item) => item.getId() && !['post', 'caseStudy', 'resume', 'category', 'author'].includes(item.getId()),
       ),
     ])

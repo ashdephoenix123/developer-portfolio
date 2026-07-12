@@ -4,10 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import FadeIn from "./common/FadeIn";
 
-const About = () => {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+const About = ({ resumeUrl }) => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 pt-24 pb-16">
@@ -46,14 +43,26 @@ const About = () => {
 
           <FadeIn delay={300} className="w-full">
             <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => scrollTo("work")}
-                className="group flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
-                style={{ fontFamily: "'DM Mono', monospace" }}
-              >
-                view work
-                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
+              {resumeUrl ? (
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:bg-primary/90 transition-colors"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  view resume
+                  <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              ) : (
+                <span
+                  className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium cursor-not-allowed"
+                  style={{ fontFamily: "'DM Mono', monospace" }}
+                >
+                  view resume
+                  <ArrowUpRight size={15} />
+                </span>
+              )}
               <a
                 href="https://github.com/ashdephoenix123"
                 target="_blank"
@@ -107,3 +116,4 @@ const About = () => {
 };
 
 export default About;
+

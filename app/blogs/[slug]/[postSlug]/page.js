@@ -2,8 +2,20 @@ import ContentView from "@/app/component/blogs/ContentView";
 import Comments from "@/app/component/blogs/Comments";
 import MoreArticles from "@/app/component/blogs/MoreArticles";
 import { fetchAllPost, fetchPost } from "@/sanity/queries/fetchPost";
+import { client } from "@/sanity/lib/client";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+// Prerender known slugs so crawlers hit a warm cache instead of a cold render.
+export async function generateStaticParams() {
+  const posts = await client.fetch(
+    `*[_type == "post" && defined(slug.current)] { "postSlug": slug.current, "category": categories[0]->slug.current }`
+  );
+  return posts.map(({ postSlug, category }) => ({
+    slug: category || "general",
+    postSlug,
+  }));
+}
 
 export async function generateMetadata({ params }) {
   const { slug, postSlug } = params;

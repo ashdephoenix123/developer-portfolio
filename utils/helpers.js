@@ -19,7 +19,9 @@ export const capitalize = (string) => {
 };
 
 export const textToUrl = (text) => {
-  return text.replace(" ", "-").toLowerCase();
+  // Must match Sanity's slug.current, which the sitemap emits — a canonical that
+  // disagrees with the sitemap URL keeps the page out of the index.
+  return text.trim().replace(/\s+/g, "-").toLowerCase();
 };
 
 export const urlToText = (text) => {

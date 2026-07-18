@@ -2,7 +2,7 @@ import { fetchAllPost, fetchPostsLength, fetchCategoryPost } from "@/sanity/quer
 import { fetchAllCategories } from "@/sanity/queries/fetchCategories";
 import BlogsClient from "./BlogsClient";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Blogs - Web Journal",

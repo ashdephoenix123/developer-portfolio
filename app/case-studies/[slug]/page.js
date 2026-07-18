@@ -2,8 +2,17 @@ import Link from "next/link";
 import { fetchAllCaseStudies, fetchCaseStudy } from "@/sanity/queries/fetchCaseStudy";
 import { notFound } from "next/navigation";
 import ContentView from "@/app/component/blogs/ContentView";
+import { client } from "@/sanity/lib/client";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+// Prerender known slugs so crawlers hit a warm cache instead of a cold render.
+export async function generateStaticParams() {
+  const slugs = await client.fetch(
+    `*[_type == "caseStudy" && defined(slug.current)].slug.current`
+  );
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

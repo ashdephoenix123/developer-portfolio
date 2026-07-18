@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/studio/",
+      disallow: ["/studio", "/studio/", "/api/"],
     },
     sitemap: "https://www.akashsarki.com/sitemap.xml",
   };

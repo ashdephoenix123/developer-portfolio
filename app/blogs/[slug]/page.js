@@ -1,12 +1,10 @@
 import { fetchPost, fetchCategoryPost, fetchPostsLength } from "@/sanity/queries/fetchPost";
 import { fetchAllCategories } from "@/sanity/queries/fetchCategories";
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 import { textToUrl, capitalize } from "@/utils/helpers";
-import Link from "next/link";
-import { IoMdArrowBack } from "react-icons/io";
 import CategoryBlogsClient from "../CategoryBlogsClient";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -53,6 +51,7 @@ const DynamicBlogOrCategoryPage = async ({ params }) => {
     const category = post.categories && post.categories.length > 0
       ? textToUrl(post.categories[0].title)
       : "general";
+    // NOTE: 307, not 308 — permanentRedirect() requires Next 14+ (this project is on 13.4.2).
     redirect(`/blogs/${category}/${slug}`);
   }
 
@@ -79,20 +78,9 @@ const DynamicBlogOrCategoryPage = async ({ params }) => {
     );
   }
 
-  // 3. Fallback: Not Found
-  return (
-    <div className="max-w-3xl mx-auto py-20 lg:px-6 text-center font-sans">
-      <h1 className="text-2xl text-foreground mb-4 font-serif">
-        Blog post or Category not found
-      </h1>
-      <Link
-        href="/blogs"
-        className="text-primary hover:underline inline-flex items-center gap-2 text-sm font-mono"
-      >
-        <IoMdArrowBack /> Back to Blogs
-      </Link>
-    </div>
-  );
+  // 3. Fallback: real 404, not a 200 "not found" page — a soft 404 gets crawled
+  // and then dropped from the index.
+  notFound();
 };
 
 export default DynamicBlogOrCategoryPage;

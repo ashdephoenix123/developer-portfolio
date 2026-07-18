@@ -2,6 +2,13 @@ import { client } from "@/sanity/lib/client";
 
 const BASE_URL = "https://www.akashsarki.com";
 
+// <lastmod> must be W3C datetime; Sanity's _updatedAt is already ISO 8601.
+const lastmod = (date) => (date ? `<lastmod>${new Date(date).toISOString()}</lastmod>` : "");
+
+// For listing pages, the freshest child is the honest "last modified".
+const latestOf = (docs) =>
+  docs.reduce((acc, { _updatedAt }) => (_updatedAt > acc ? _updatedAt : acc), "") || null;
+
 function generateSiteMap({ posts, categories, caseStudies }) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -12,6 +19,7 @@ function generateSiteMap({ posts, categories, caseStudies }) {
     </url>
     <url>
       <loc>${BASE_URL}/blogs</loc>
+      ${lastmod(latestOf(posts))}
       <priority>0.8</priority>
     </url>
     <url>
@@ -20,6 +28,7 @@ function generateSiteMap({ posts, categories, caseStudies }) {
     </url>
     <url>
       <loc>${BASE_URL}/case-studies</loc>
+      ${lastmod(latestOf(caseStudies))}
       <priority>0.8</priority>
     </url>
     <url>
@@ -29,10 +38,11 @@ function generateSiteMap({ posts, categories, caseStudies }) {
 
     <!-- Dynamic Category Pages -->
     ${categories
-      .map(({ slug }) => {
+      .map(({ slug, _updatedAt }) => {
         return `
       <url>
         <loc>${`${BASE_URL}/blogs/${slug}`}</loc>
+        ${lastmod(_updatedAt)}
         <priority>0.7</priority>
       </url>
     `;
@@ -41,10 +51,11 @@ function generateSiteMap({ posts, categories, caseStudies }) {
 
     <!-- Dynamic Blog Details -->
     ${posts
-      .map(({ slug, category }) => {
+      .map(({ slug, category, _updatedAt }) => {
         return `
       <url>
         <loc>${`${BASE_URL}/blogs/${category || "general"}/${slug}`}</loc>
+        ${lastmod(_updatedAt)}
         <priority>0.8</priority>
       </url>
     `;
@@ -53,10 +64,11 @@ function generateSiteMap({ posts, categories, caseStudies }) {
 
     <!-- Dynamic Case Studies -->
     ${caseStudies
-      .map(({ slug }) => {
+      .map(({ slug, _updatedAt }) => {
         return `
       <url>
         <loc>${`${BASE_URL}/case-studies/${slug}`}</loc>
+        ${lastmod(_updatedAt)}
         <priority>0.7</priority>
       </url>
     `;
@@ -69,9 +81,11 @@ function generateSiteMap({ posts, categories, caseStudies }) {
 export async function getServerSideProps({ res }) {
   // Fetch dynamic details
   const [posts, categories, caseStudies] = await Promise.all([
-    client.fetch(`*[_type == "post"] { "slug": slug.current, "category": categories[0]->slug.current }`),
-    client.fetch(`*[_type == "category"] { "slug": slug.current }`),
-    client.fetch(`*[_type == "caseStudy"] { "slug": slug.current }`),
+    client.fetch(
+      `*[_type == "post" && defined(slug.current)] { "slug": slug.current, "category": categories[0]->slug.current, _updatedAt }`
+    ),
+    client.fetch(`*[_type == "category" && defined(slug.current)] { "slug": slug.current, _updatedAt }`),
+    client.fetch(`*[_type == "caseStudy" && defined(slug.current)] { "slug": slug.current, _updatedAt }`),
   ]);
 
   const sitemap = generateSiteMap({ posts, categories, caseStudies });

@@ -1,7 +1,7 @@
 import { fetchAllCaseStudies } from "@/sanity/queries/fetchCaseStudy";
 import CaseStudiesClient from "./CaseStudiesClient";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Case Studies - Portfolio",

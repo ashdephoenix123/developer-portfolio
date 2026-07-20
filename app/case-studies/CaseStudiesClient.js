@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../component/common/Header";
+import DefaultThumbnail from "@/app/component/common/DefaultThumbnail";
 import { motion } from "framer-motion";
 
 const containerVariant = {
@@ -62,9 +63,7 @@ const CaseStudiesClient = ({ caseStudies = [] }) => {
                         sizes="(max-width: 768px) 100vw, 384px"
                       />
                     ) : (
-                      <div className="w-full h-full bg-card/20 flex items-center justify-center text-muted-foreground text-xs font-mono">
-                        No Image
-                      </div>
+                      <DefaultThumbnail title={study.title} label="Case Study" />
                     )}
                   </div>
 

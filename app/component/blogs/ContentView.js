@@ -7,6 +7,7 @@ import Link from "next/link";
 import { formatDate } from "@/utils/helpers";
 import { motion } from "framer-motion";
 import { IoMdArrowBack } from "react-icons/io";
+import DefaultThumbnail from "@/app/component/common/DefaultThumbnail";
 
 const ContentView = ({ post, backLink = "/blogs", backText = "Back to Blogs" }) => {
   return (
@@ -33,7 +34,7 @@ const ContentView = ({ post, backLink = "/blogs", backText = "Back to Blogs" }) 
         transition={{ duration: 0.6, delay: 0.1 }}
         className="relative aspect-[16/9] w-full bg-muted border border-border overflow-hidden"
       >
-        {post.mainImage && (
+        {post.mainImage ? (
           <Image
             src={post.mainImage}
             fill
@@ -41,6 +42,11 @@ const ContentView = ({ post, backLink = "/blogs", backText = "Back to Blogs" }) 
             alt={post.title}
             priority
             sizes="(max-width: 768px) 100vw, 768px"
+          />
+        ) : (
+          <DefaultThumbnail
+            title={post.title}
+            label={backLink === "/case-studies" ? "Case Study" : "Article"}
           />
         )}
       </motion.div>

@@ -4,7 +4,8 @@ import MoreArticles from "@/app/component/blogs/MoreArticles";
 import { fetchAllPost, fetchPost } from "@/sanity/queries/fetchPost";
 import { client } from "@/sanity/lib/client";
 
-export const revalidate = 3600;
+// Keep this short so newly published Sanity content appears quickly.
+export const revalidate = 60;
 
 // Prerender known slugs so crawlers hit a warm cache instead of a cold render.
 export async function generateStaticParams() {
@@ -52,7 +53,7 @@ const BlogDetailPage = async ({ params }) => {
     "@type": "Article",
     "headline": post.title,
     "description": post.subTitle || "Read article on Web Journal",
-    "image": post.mainImage,
+    ...(post.mainImage ? { image: post.mainImage } : {}),
     "datePublished": post.publishedAt,
     "dateModified": post.updatedAt || post.publishedAt,
     "author": {

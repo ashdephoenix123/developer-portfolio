@@ -2,6 +2,7 @@ import { formatDate } from "@/utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import DefaultThumbnail from "@/app/component/common/DefaultThumbnail";
 
 const ArticleCard = ({
   title,
@@ -19,7 +20,7 @@ const ArticleCard = ({
     >
       {/* Cover Image */}
       <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border bg-muted">
-        {img?.src && (
+        {img?.src ? (
           <Image
             src={img.src}
             fill
@@ -27,6 +28,8 @@ const ArticleCard = ({
             alt={title}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+        ) : (
+          <DefaultThumbnail title={title} label="Article" />
         )}
         {categories && categories.length > 0 && (
           <span

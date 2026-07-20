@@ -1,7 +1,8 @@
 import { fetchAllCaseStudies } from "@/sanity/queries/fetchCaseStudy";
 import CaseStudiesClient from "./CaseStudiesClient";
 
-export const revalidate = 3600;
+// Keep this short so newly published Sanity content appears quickly.
+export const revalidate = 60;
 
 export const metadata = {
   title: "Case Studies - Portfolio",

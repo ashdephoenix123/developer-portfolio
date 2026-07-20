@@ -15,6 +15,7 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 import { media } from "sanity-plugin-media";
+import { jsonImportTool } from "./sanity/tools/jsonImportTool";
 
 export default defineConfig({
   basePath: "/studio",
@@ -22,6 +23,7 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
+  tools: [jsonImportTool],
   plugins: [
     structureTool({ structure }),
     // Vision is for querying with GROQ from inside the Studio

@@ -40,6 +40,8 @@ export const postType = defineType({
     defineField({
       name: "mainImage",
       type: "image",
+      description:
+        "Optional — if left empty, the site shows a default thumbnail.",
       options: {
         hotspot: true,
       },

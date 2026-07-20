@@ -1,0 +1,29 @@
+{
+  "_type": "caseStudy",
+  "title": "My New Case Study",
+  "slug": "my-new-case-study",
+  "subTitle": "What this case study covers, in one line.",
+  "author": "akash-sarki",
+  "categories": [
+    "work"
+  ],
+  "body": [
+    {
+      "_type": "block",
+      "style": "h2",
+      "text": "The Problem"
+    },
+    "Describe the problem here. Plain strings become paragraphs.",
+    {
+      "_type": "block",
+      "style": "h2",
+      "text": "The Solution"
+    },
+    "Describe the solution here.",
+    {
+      "_type": "code",
+      "language": "javascript",
+      "code": "// code blocks are supported\nexport const answer = 42;"
+    }
+  ]
+}

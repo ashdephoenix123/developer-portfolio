@@ -1,0 +1,73 @@
+{
+  "_type": "post",
+  "title": "My New Blog Post",
+  "slug": "my-new-blog-post",
+  "subTitle": "A one-line teaser shown on cards and used for SEO description.",
+  "author": "akash-sarki",
+  "categories": [
+    "work"
+  ],
+  "body": [
+    "Plain strings become normal paragraphs — the quickest way to write.",
+    {
+      "_type": "block",
+      "style": "h2",
+      "text": "Headings use the style field"
+    },
+    "Supported styles: normal, h1, h2, h3, h4, blockquote.",
+    {
+      "_type": "block",
+      "children": [
+        {
+          "text": "Mix "
+        },
+        {
+          "text": "bold",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "italic",
+          "marks": [
+            "em"
+          ]
+        },
+        {
+          "text": " spans, or add a "
+        },
+        {
+          "text": "link",
+          "link": "https://www.sanity.io"
+        },
+        {
+          "text": " with the link shortcut."
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "listItem": "bullet",
+      "text": "Bullet list item one"
+    },
+    {
+      "_type": "block",
+      "listItem": "bullet",
+      "text": "Bullet list item two"
+    },
+    {
+      "_type": "block",
+      "style": "blockquote",
+      "text": "Blockquotes work too."
+    },
+    {
+      "_type": "code",
+      "language": "javascript",
+      "filename": "example.js",
+      "code": "const hello = \"world\";\nconsole.log(hello);"
+    }
+  ]
+}

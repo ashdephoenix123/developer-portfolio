@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import ContentView from "@/app/component/blogs/ContentView";
 import { client } from "@/sanity/lib/client";
 
-export const revalidate = 3600;
+// Keep this short so newly published Sanity content appears quickly.
+export const revalidate = 60;
 
 // Prerender known slugs so crawlers hit a warm cache instead of a cold render.
 export async function generateStaticParams() {
@@ -45,7 +46,7 @@ const CaseStudyDetailPage = async ({ params }) => {
     "@type": "TechArticle",
     "headline": study.title,
     "description": study.subTitle || "Read case study detail",
-    "image": study.mainImage,
+    ...(study.mainImage ? { image: study.mainImage } : {}),
     "datePublished": study.publishedAt,
     "dateModified": study.updatedAt || study.publishedAt,
     "author": {

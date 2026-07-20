@@ -4,7 +4,8 @@ import { redirect, notFound } from "next/navigation";
 import { textToUrl, capitalize } from "@/utils/helpers";
 import CategoryBlogsClient from "../CategoryBlogsClient";
 
-export const revalidate = 3600;
+// Keep this short so newly published Sanity content appears quickly.
+export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

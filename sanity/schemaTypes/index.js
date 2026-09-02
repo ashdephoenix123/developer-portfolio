@@ -5,7 +5,8 @@ import { authorType } from "./authorType";
 import { demoType } from "./demo";
 import { caseStudyType } from "./caseStudyType";
 import { resumeType } from "./resumeType";
+import { dayLogType } from "./dayLogType";
 
 export const schema = {
-  types: [blockContentType, categoryType, postType, authorType, demoType, caseStudyType, resumeType],
+  types: [blockContentType, categoryType, postType, authorType, demoType, caseStudyType, resumeType, dayLogType],
 };

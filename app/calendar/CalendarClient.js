@@ -2,14 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, ChevronLeft, ChevronRight, LogOut, Plus, Trash2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, LogOut, X } from "lucide-react";
 
 import {
   DAY_LOG_CATEGORIES,
-  DEFAULT_CATEGORY,
-  MAX_ENTRIES_PER_DAY,
-  MAX_ENTRY_LENGTH,
-  MAX_NOTE_LENGTH,
   WEEKDAYS,
   buildMonthGrid,
   categoryColor,
@@ -22,29 +18,17 @@ import {
 
 const VISIBLE_ENTRIES = 3;
 
-const newKey = () => Math.random().toString(36).slice(2, 10);
-
-const blankEntry = () => ({
-  _key: newKey(),
-  text: "",
-  category: DEFAULT_CATEGORY,
-  done: false,
-});
-
 const toMap = (logs) =>
   (logs || []).reduce((acc, log) => {
     acc[log.date] = { note: log.note || "", entries: log.entries || [] };
     return acc;
   }, {});
 
-// Compares only what would actually be saved, so trailing whitespace and the
-// always-present empty row never count as unsaved work.
+// Compares only what would actually be saved, so trailing whitespace
+// never counts as unsaved work.
 const serializeDraft = (value) =>
   JSON.stringify({
-    note: value.note.trim(),
-    entries: value.entries
-      .filter((entry) => entry.text.trim())
-      .map(({ text, category, done }) => ({ text: text.trim(), category, done })),
+    note: (value?.note || "").trim(),
   });
 
 const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
@@ -55,9 +39,8 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
   const [draft, setDraft] = useState(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [focusIndex, setFocusIndex] = useState(null);
   const [baseline, setBaseline] = useState("");
-  const inputRefs = useRef([]);
+  const textareaRef = useRef(null);
   // Lets the Escape listener call the current guarded close without re-binding.
   const requestCloseRef = useRef(() => { });
 
@@ -130,16 +113,12 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
     const stored = logsByDate[dateKey];
     const next = {
       note: stored?.note || "",
-      // Start with one empty line so the day is immediately writable.
-      entries: stored?.entries?.length
-        ? stored.entries.map((entry) => ({ ...entry }))
-        : [blankEntry()],
+      entries: stored?.entries || [],
     };
     setDraft(next);
     setBaseline(serializeDraft(next));
     setError("");
     setOpenDate(dateKey);
-    setFocusIndex(0);
   };
 
   useEffect(() => {
@@ -152,72 +131,12 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
   }, [openDate]);
 
   useEffect(() => {
-    if (focusIndex === null) return;
-    inputRefs.current[focusIndex]?.focus();
-    setFocusIndex(null);
-  }, [focusIndex]);
-
-  const updateEntry = (index, patch) =>
-    setDraft((current) => ({
-      ...current,
-      entries: current.entries.map((entry, i) =>
-        i === index ? { ...entry, ...patch } : entry
-      ),
-    }));
-
-  const addEntryAfter = (index) => {
-    setDraft((current) => {
-      if (current.entries.length >= MAX_ENTRIES_PER_DAY) return current;
-      const entries = [...current.entries];
-      entries.splice(index + 1, 0, blankEntry());
-      return { ...current, entries };
-    });
-    setFocusIndex(index + 1);
-  };
-
-  const removeEntry = (index) =>
-    setDraft((current) => {
-      const entries = current.entries.filter((_, i) => i !== index);
-      return { ...current, entries: entries.length ? entries : [blankEntry()] };
-    });
-
-  // Reads the category off the latest state rather than the render closure, so
-  // clicks in quick succession each advance a step instead of collapsing into one.
-  const cycleCategory = (index) =>
-    setDraft((current) => ({
-      ...current,
-      entries: current.entries.map((entry, i) => {
-        if (i !== index) return entry;
-        const position = DAY_LOG_CATEGORIES.findIndex(
-          (category) => category.value === (entry.category || DEFAULT_CATEGORY)
-        );
-        const next = DAY_LOG_CATEGORIES[(position + 1) % DAY_LOG_CATEGORIES.length];
-        return { ...entry, category: next.value };
-      }),
-    }));
-
-  const handleEntryKeyDown = (event, index) => {
-    if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
-      event.preventDefault();
-      save();
-      return;
+    if (openDate && textareaRef.current) {
+      textareaRef.current.focus();
+      const len = textareaRef.current.value.length;
+      textareaRef.current.setSelectionRange(len, len);
     }
-    if (event.key === "Enter") {
-      event.preventDefault();
-      addEntryAfter(index);
-      return;
-    }
-    // Backspace on an empty line removes it, the way a list behaves in a notes app.
-    if (
-      event.key === "Backspace" &&
-      !draft.entries[index].text &&
-      draft.entries.length > 1
-    ) {
-      event.preventDefault();
-      removeEntry(index);
-      setFocusIndex(Math.max(0, index - 1));
-    }
-  };
+  }, [openDate]);
 
   const save = async () => {
     if (!canWrite || saving) return;
@@ -228,14 +147,7 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
     const payload = {
       date: openDate,
       note: draft.note.trim(),
-      entries: draft.entries
-        .filter((entry) => entry.text.trim())
-        .map(({ _key, text, category, done }) => ({
-          _key,
-          text: text.trim(),
-          category,
-          done,
-        })),
+      entries: draft.entries || [],
     };
 
     try {
@@ -259,10 +171,10 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
       const saved = await res.json();
       setLogsByDate((prev) => {
         const next = { ...prev };
-        if (!saved.entries.length && !saved.note) {
+        if (!saved.entries?.length && !saved.note) {
           delete next[saved.date];
         } else {
-          next[saved.date] = { note: saved.note, entries: saved.entries };
+          next[saved.date] = { note: saved.note, entries: saved.entries || [] };
         }
         return next;
       });
@@ -394,7 +306,7 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
                 </div>
 
                 {log?.note && (
-                  <div className="hidden sm:block text-[10px] text-primary/80 italic font-serif truncate mb-1">
+                  <div className="text-[10px] sm:text-[11px] text-primary/85 italic font-serif leading-snug line-clamp-2 sm:line-clamp-3 mb-1">
                     {log.note}
                   </div>
                 )}
@@ -473,137 +385,81 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
             role="dialog"
             aria-modal="true"
             aria-label={formatFullDate(openDate)}
-            className="relative w-full sm:w-[420px] max-h-[85vh] sm:max-h-none sm:h-full bg-card border-t sm:border-t-0 sm:border-l border-border flex flex-col"
+            className="relative w-full sm:w-[460px] max-h-[90vh] sm:max-h-none sm:h-full bg-card border-t sm:border-t-0 sm:border-l border-border flex flex-col shadow-2xl"
           >
-            <div className="flex items-start justify-between gap-3 px-5 py-4 border-b border-border">
+            <div className="flex items-start justify-between gap-3 px-6 py-5 border-b border-border">
               <div>
                 <div className="text-[10px] text-muted-foreground font-mono mb-1">
                   {openDate}
                   {isDirty && <span className="text-primary/70"> · unsaved</span>}
                 </div>
-                <h2 className="text-lg font-light font-serif leading-tight">
+                <h2 className="text-xl font-light font-serif leading-tight">
                   {formatFullDate(openDate)}
                 </h2>
               </div>
               <button
                 onClick={requestClose}
                 aria-label="Close"
-                className="text-muted-foreground hover:text-foreground transition-colors mt-1"
+                className="text-muted-foreground hover:text-foreground transition-colors p-1 -mr-1"
               >
-                <X size={16} />
+                <X size={18} />
               </button>
             </div>
 
             {/* data-lenis-prevent keeps smooth-scroll from hijacking this panel */}
-            <div className="flex-1 overflow-y-auto px-5 py-4" data-lenis-prevent>
-              <label
-                htmlFor="day-note"
-                className="block text-[10px] text-muted-foreground font-mono mb-1.5"
-              >
-                day note
-              </label>
-              <input
-                id="day-note"
+            <div className="flex-1 overflow-y-auto px-6 py-5 flex flex-col" data-lenis-prevent>
+              <div className="flex items-center justify-between mb-2">
+                <label
+                  htmlFor="day-highlight"
+                  className="text-xs text-muted-foreground font-mono tracking-wide"
+                >
+                  Your day's highlight
+                </label>
+                {draft.note?.length > 0 && (
+                  <span className="text-[10px] text-muted-foreground/60 font-mono">
+                    {draft.note.length} {draft.note.length === 1 ? "char" : "chars"}
+                  </span>
+                )}
+              </div>
+
+              <textarea
+                ref={textareaRef}
+                id="day-highlight"
                 value={draft.note}
-                maxLength={MAX_NOTE_LENGTH}
                 onChange={(event) =>
                   setDraft((current) => ({ ...current, note: event.target.value }))
                 }
                 onKeyDown={(event) => {
-                  if (event.key === "Enter") {
+                  if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
                     event.preventDefault();
                     save();
                   }
                 }}
-                placeholder="a holiday, a trip, a mood…"
-                className="w-full bg-transparent border-b border-border/60 focus:border-primary/50 px-0.5 py-1 text-sm outline-none transition-colors mb-6"
+                placeholder="What was the standout highlight, achievement, or reflection from today?"
+                rows={8}
+                className="w-full flex-1 min-h-[200px] sm:min-h-[280px] bg-secondary/15 hover:bg-secondary/25 focus:bg-secondary/25 border border-border/60 focus:border-primary/60 rounded-sm p-3.5 text-sm sm:text-base font-sans text-foreground placeholder:text-muted-foreground/40 leading-relaxed outline-none transition-colors resize-y"
               />
 
-              <div className="text-[10px] text-muted-foreground font-mono mb-2.5">
-                what you did
-              </div>
-
-              <div className="space-y-2.5">
-                {draft.entries.map((entry, index) => (
-                  <div key={entry._key} className="flex items-center gap-2">
-                    <button
-                      onClick={() => updateEntry(index, { done: !entry.done })}
-                      aria-label={entry.done ? "Mark as not done" : "Mark as done"}
-                      title={entry.done ? "not done" : "done"}
-                      className={`w-4 h-4 shrink-0 border flex items-center justify-center transition-colors ${entry.done
-                        ? "bg-primary border-primary"
-                        : "border-border hover:border-primary/50"
-                        }`}
-                    >
-                      {entry.done && (
-                        <Check size={10} className="text-primary-foreground" />
-                      )}
-                    </button>
-
-                    <input
-                      ref={(element) => {
-                        inputRefs.current[index] = element;
-                      }}
-                      value={entry.text}
-                      maxLength={MAX_ENTRY_LENGTH}
-                      onChange={(event) =>
-                        updateEntry(index, { text: event.target.value })
-                      }
-                      onKeyDown={(event) => handleEntryKeyDown(event, index)}
-                      placeholder="what did you do?"
-                      className={`flex-1 min-w-0 bg-transparent border-b border-border/60 focus:border-primary/50 px-0.5 py-1 text-sm outline-none transition-colors ${entry.done ? "line-through text-muted-foreground" : "text-foreground"
-                        }`}
-                    />
-
-                    <button
-                      onClick={() => cycleCategory(index)}
-                      aria-label={`Category: ${entry.category || DEFAULT_CATEGORY}. Click to change.`}
-                      title={entry.category || DEFAULT_CATEGORY}
-                      className="w-4 h-4 shrink-0 rounded-full border border-border/60 hover:scale-110 transition-transform"
-                      style={{ backgroundColor: categoryColor(entry.category) }}
-                    />
-
-                    <button
-                      onClick={() => removeEntry(index)}
-                      aria-label="Remove line"
-                      className="text-muted-foreground hover:text-destructive transition-colors"
-                    >
-                      <Trash2 size={13} />
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => addEntryAfter(draft.entries.length - 1)}
-                disabled={draft.entries.length >= MAX_ENTRIES_PER_DAY}
-                className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-mono"
-              >
-                <Plus size={12} />
-                add line
-              </button>
-
-              <p className="mt-6 text-[10px] text-muted-foreground/70 font-mono leading-relaxed">
-                enter for a new line · ctrl+enter saves · click the dot to change
-                category · the box strikes a line through
+              <p className="mt-3 text-[11px] text-muted-foreground/60 font-mono leading-relaxed">
+                press <kbd className="text-muted-foreground/80 border border-border px-1.5 py-0.5 rounded text-[10px]">cmd+enter</kbd> or <kbd className="text-muted-foreground/80 border border-border px-1.5 py-0.5 rounded text-[10px]">ctrl+enter</kbd> to save
               </p>
             </div>
 
-            <div className="border-t border-border px-5 py-4">
+            <div className="border-t border-border px-6 py-4 bg-card">
               {error && (
                 <p className="mb-3 text-xs text-destructive font-mono">{error}</p>
               )}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <button
                   onClick={save}
                   disabled={!canWrite || saving}
-                  className="flex-1 bg-primary text-primary-foreground px-4 py-2.5 text-sm font-mono hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                  className="flex-1 bg-primary text-primary-foreground px-4 py-2.5 text-sm font-mono hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-medium"
                 >
                   {saving ? "saving…" : "save"}
                 </button>
                 <button
                   onClick={requestClose}
-                  className="px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground border border-border hover:border-border/60 transition-colors font-mono"
+                  className="px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground border border-border hover:border-border/60 transition-colors font-mono"
                 >
                   cancel
                 </button>

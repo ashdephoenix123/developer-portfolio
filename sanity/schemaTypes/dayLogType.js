@@ -6,7 +6,6 @@ import {
   DEFAULT_CATEGORY,
   MAX_ENTRIES_PER_DAY,
   MAX_ENTRY_LENGTH,
-  MAX_NOTE_LENGTH,
 } from "../../utils/dayLog";
 
 // One document per day. The calendar page writes these through /api/day-log,
@@ -26,11 +25,11 @@ export const dayLogType = defineType({
     }),
     defineField({
       name: "note",
-      title: "Day note",
-      type: "string",
+      title: "Your day's highlight",
+      type: "text",
+      rows: 4,
       description:
-        "Optional label for the whole day — a holiday, a trip, anything that frames it.",
-      validation: (Rule) => Rule.max(MAX_NOTE_LENGTH),
+        "The standout highlight, achievement, or reflection for the day.",
     }),
     defineField({
       name: "entries",

@@ -8,7 +8,6 @@ import {
   DEFAULT_CATEGORY,
   MAX_ENTRIES_PER_DAY,
   MAX_ENTRY_LENGTH,
-  MAX_NOTE_LENGTH,
   dayLogId,
   isKnownCategory,
   isValidDateKey,
@@ -92,7 +91,7 @@ export async function POST(request) {
   }
 
   const note =
-    typeof body?.note === "string" ? body.note.trim().slice(0, MAX_NOTE_LENGTH) : "";
+    typeof body?.note === "string" ? body.note.trim() : "";
   const entries = normalizeEntries(body?.entries);
 
   try {

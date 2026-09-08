@@ -416,7 +416,7 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
                   Your day's highlight
                 </label>
                 {draft.note?.length > 0 && (
-                  <span className="text-[10px] text-muted-foreground/60 font-mono">
+                  <span className="text-[10px] text-muted-foreground font-mono">
                     {draft.note.length} {draft.note.length === 1 ? "char" : "chars"}
                   </span>
                 )}
@@ -437,11 +437,11 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
                 }}
                 placeholder="What was the standout highlight, achievement, or reflection from today?"
                 rows={8}
-                className="w-full flex-1 min-h-[200px] sm:min-h-[280px] bg-secondary/15 hover:bg-secondary/25 focus:bg-secondary/25 border border-border/60 focus:border-primary/60 rounded-sm p-3.5 text-sm sm:text-base font-sans text-foreground placeholder:text-muted-foreground/40 leading-relaxed outline-none transition-colors resize-y"
+                className="w-full flex-1 min-h-[220px] sm:min-h-[300px] bg-background border border-border focus:border-primary rounded-sm p-4 text-sm sm:text-base font-sans text-foreground placeholder:text-muted-foreground leading-relaxed outline-none transition-colors resize-y"
               />
 
-              <p className="mt-3 text-[11px] text-muted-foreground/60 font-mono leading-relaxed">
-                press <kbd className="text-muted-foreground/80 border border-border px-1.5 py-0.5 rounded text-[10px]">cmd+enter</kbd> or <kbd className="text-muted-foreground/80 border border-border px-1.5 py-0.5 rounded text-[10px]">ctrl+enter</kbd> to save
+              <p className="mt-3 text-[11px] text-muted-foreground font-mono leading-relaxed">
+                press <kbd className="text-muted-foreground border border-border px-1.5 py-0.5 rounded text-[10px]">cmd+enter</kbd> or <kbd className="text-muted-foreground border border-border px-1.5 py-0.5 rounded text-[10px]">ctrl+enter</kbd> to save
               </p>
             </div>
 

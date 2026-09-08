@@ -27,9 +27,9 @@ export const dayLogType = defineType({
     defineField({
       name: "note",
       title: "Day note",
-      type: "string",
+      type: "text",
       description:
-        "Optional label for the whole day — a holiday, a trip, anything that frames it.",
+        "Your highlight for the day — a holiday, a trip, anything that frames it.",
       validation: (Rule) => Rule.max(MAX_NOTE_LENGTH),
     }),
     defineField({

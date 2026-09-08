@@ -500,12 +500,12 @@ const CalendarClient = ({ initialMonth, today, initialLogs, canWrite }) => {
                 htmlFor="day-note"
                 className="block text-[10px] text-muted-foreground font-mono mb-1.5"
               >
-                day note
+                Today's highlight
               </label>
               <input
                 id="day-note"
+                type="text"
                 value={draft.note}
-                maxLength={MAX_NOTE_LENGTH}
                 onChange={(event) =>
                   setDraft((current) => ({ ...current, note: event.target.value }))
                 }

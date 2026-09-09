@@ -1,30 +1,31 @@
 "use client";
 
+import Image from "next/image";
 import FadeIn from "./common/FadeIn";
 
 const SKILLS = [
-  { label: "React", category: "ui" },
-  { label: "React Native", category: "ui" },
-  { label: "Expo", category: "framework" },
-  { label: "TypeScript", category: "lang" },
-  { label: "Next.js", category: "framework" },
-  { label: "JavaScript", category: "lang" },
-  { label: "Redux Toolkit", category: "state" },
-  { label: "Tanstack Query", category: "state" },
-  { label: "Node.js", category: "backend" },
-  { label: "Express", category: "backend" },
-  { label: "MongoDB", category: "database" },
-  { label: "PostgreSQL", category: "database" },
-  { label: "Supabase", category: "database" },
-  { label: "REST API", category: "api" },
-  { label: "Webpack", category: "tooling" },
-  { label: "Axios", category: "tooling" },
-  { label: "HTML / CSS", category: "ui" },
-  { label: "Git", category: "tooling" },
-  { label: "GitHub", category: "tooling" },
-  { label: "Vercel", category: "Deployment" },
-  { label: "AWS", category: "Cloud" },
-  { label: "Google Cloud", category: "Cloud" },
+  { label: "React", category: "ui", icon: "/techstacks/react.png" },
+  { label: "React Native", category: "ui", icon: "/techstacks/react.png" },
+  { label: "Expo", category: "framework", icon: "/techstacks/expo.svg?v=1" },
+  { label: "TypeScript", category: "lang", icon: "/techstacks/ts.png" },
+  { label: "Next.js", category: "framework", icon: "/techstacks/next.png" },
+  { label: "JavaScript", category: "lang", icon: "/techstacks/js.png" },
+  { label: "Redux Toolkit", category: "state", icon: "/techstacks/redux.png" },
+  { label: "Tanstack Query", category: "state", icon: "/techstacks/tanstack.png" },
+  { label: "Node.js", category: "backend", icon: "/techstacks/nodejs.png" },
+  { label: "Express", category: "backend", icon: "/techstacks/expressjs.png" },
+  { label: "MongoDB", category: "database", icon: "/techstacks/mongodb.png" },
+  { label: "PostgreSQL", category: "database", icon: "/techstacks/postgresql.svg?v=1" },
+  { label: "Supabase", category: "database", icon: "/techstacks/supabase.svg" },
+  { label: "REST API", category: "api", icon: "/techstacks/api.svg" },
+  { label: "Webpack", category: "tooling", icon: "/techstacks/webpack.png" },
+  { label: "Axios", category: "tooling", icon: "/techstacks/axios.png" },
+  { label: "HTML / CSS", category: "ui", icon: "/techstacks/html.png", iconSecondary: "/techstacks/css.png" },
+  { label: "Git", category: "tooling", icon: "/techstacks/git.svg" },
+  { label: "GitHub", category: "tooling", icon: "/techstacks/github.svg" },
+  { label: "Vercel", category: "Deployment", icon: "/techstacks/vercel.svg?v=1" },
+  { label: "AWS", category: "Cloud", icon: "/techstacks/aws.svg" },
+  { label: "Google Cloud", category: "Cloud", icon: "/techstacks/gcloud.png" },
 ];
 
 const CATEGORY_COLORS = {
@@ -33,8 +34,12 @@ const CATEGORY_COLORS = {
   framework: "text-[#4dcfff]",
   state: "text-[#c084fc]",
   backend: "text-[#fb7185]",
+  database: "text-[#34d399]",
   data: "text-[#34d399]",
+  api: "text-[#38bdf8]",
   tooling: "text-[#94a3b8]",
+  Deployment: "text-[#a78bfa]",
+  Cloud: "text-[#f472b6]",
 };
 
 const Techs = () => {
@@ -63,10 +68,38 @@ const Techs = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {SKILLS.map((skill, i) => (
             <FadeIn key={skill.label} delay={i * 30}>
-              <div className="group flex items-center gap-3 border border-border px-4 py-3 hover:border-primary/40 hover:bg-primary/5 transition-all cursor-default w-full">
-                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 bg-current ${CATEGORY_COLORS[skill.category] || "text-foreground"}`} />
+              <div className="group flex items-center gap-3 border border-border px-3.5 py-3 hover:border-primary/40 hover:bg-card/40 transition-all cursor-default w-full">
+                {skill.iconSecondary ? (
+                  <div className="w-5 h-5 flex-shrink-0 relative flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                    <Image
+                      src={skill.icon}
+                      alt="HTML"
+                      width={14}
+                      height={14}
+                      className="w-3.5 h-3.5 object-contain absolute left-0 top-0"
+                    />
+                    <Image
+                      src={skill.iconSecondary}
+                      alt="CSS"
+                      width={14}
+                      height={14}
+                      className="w-3.5 h-3.5 object-contain absolute right-0 bottom-0"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                    <Image
+                      src={skill.icon}
+                      alt={skill.label}
+                      width={20}
+                      height={20}
+                      className="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-200"
+                      unoptimized={skill.icon?.endsWith(".svg")}
+                    />
+                  </div>
+                )}
                 <span
-                  className="text-sm text-foreground"
+                  className="text-sm text-foreground group-hover:text-primary transition-colors truncate"
                   style={{ fontFamily: "'DM Mono', monospace" }}
                 >
                   {skill.label}
@@ -77,7 +110,7 @@ const Techs = () => {
         </div>
 
         {/* Currently Learning Panel */}
-        <FadeIn delay={300}>
+        {/* <FadeIn delay={300}>
           <div className="mt-12 border border-primary/20 bg-primary/5 px-6 py-5">
             <div
               className="text-xs text-primary mb-3"
@@ -98,7 +131,7 @@ const Techs = () => {
               ))}
             </div>
           </div>
-        </FadeIn>
+        </FadeIn> */}
       </div>
     </section>
   );

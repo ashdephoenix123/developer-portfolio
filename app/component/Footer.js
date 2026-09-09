@@ -450,16 +450,6 @@ const Footer = () => {
                 <InstagramIcon size={13} />
                 Instagram
               </button>
-              <button
-                onClick={() => setActiveTab("x")}
-                className={`flex items-center gap-2 px-4 py-2 text-xs transition-colors font-mono ${activeTab === "x"
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-                  }`}
-              >
-                <XIcon size={13} />
-                X / Twitter
-              </button>
             </div>
           </FadeIn>
 

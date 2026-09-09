@@ -111,31 +111,31 @@ const projectMOCK = [
       },
     ],
   },
-  {
-    id: "next-ecomm-product-management",
-    title: "Project Management - The Sharkk Co.",
-    subTitle:
-      "A dedicated product management dashboard for the main Sharkk Co. e-commerce platform — built with Next.js to streamline product creation, updates and inventory control.",
-    link: "https://next-ecomm-product-management.vercel.app/",
-    github: "https://github.com/ashdephoenix123/next-ecomm-product-management",
-    image: "img/next-ecomm-pm.jpg",
-    status: "completed",
-    tech: [
-      {
-        label: "React",
-        icon: "react",
-      },
-      {
-        label: "Next JS",
-        icon: "next",
-      },
-      {
-        label: "MUI",
-        icon: "mui",
-      },
-    ],
-    hideLink: true,
-  },
+  // {
+  //   id: "next-ecomm-product-management",
+  //   title: "Project Management - The Sharkk Co.",
+  //   subTitle:
+  //     "A dedicated product management dashboard for the main Sharkk Co. e-commerce platform — built with Next.js to streamline product creation, updates and inventory control.",
+  //   link: "https://next-ecomm-product-management.vercel.app/",
+  //   github: "https://github.com/ashdephoenix123/next-ecomm-product-management",
+  //   image: "img/next-ecomm-pm.jpg",
+  //   status: "completed",
+  //   tech: [
+  //     {
+  //       label: "React",
+  //       icon: "react",
+  //     },
+  //     {
+  //       label: "Next JS",
+  //       icon: "next",
+  //     },
+  //     {
+  //       label: "MUI",
+  //       icon: "mui",
+  //     },
+  //   ],
+  //   hideLink: true,
+  // },
   // {
   //   id: "lms",
   //   title: "Anonymous University",

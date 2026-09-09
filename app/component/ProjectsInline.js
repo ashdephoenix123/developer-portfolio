@@ -7,14 +7,14 @@ export default function ProjectsInline({ projects }) {
   // Sort projects so they match the Figma redesign order
   const sortedProjects = [...projects].sort((a, b) => {
     const order = [
-      "The Sharkk Co.",
-      "Project Management - The Sharkk Co.",
+      "ExpenseFlow",
       "Flix Stream",
+      "The Sharkk Co.",
       "Web Journal"
     ];
     const indexA = order.indexOf(a.title);
     const indexB = order.indexOf(b.title);
-    
+
     const valA = indexA === -1 ? 99 : indexA;
     const valB = indexB === -1 ? 99 : indexB;
     return valA - valB;

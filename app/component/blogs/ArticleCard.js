@@ -5,6 +5,7 @@ import React from "react";
 import DefaultThumbnail from "@/app/component/common/DefaultThumbnail";
 
 const ArticleCard = ({
+  id,
   title,
   description,
   img,
@@ -12,14 +13,16 @@ const ArticleCard = ({
   categories,
   author,
   publishedDate,
+  label = "Article",
 }) => {
   return (
     <Link
       href={href}
-      className="group border border-border bg-card/10 hover:bg-card/30 hover:border-primary/20 transition-all duration-300 block overflow-hidden"
+      id={id}
+      className="group border border-border bg-card/10 hover:bg-card/30 hover:border-primary/20 transition-all duration-300 flex flex-col h-full overflow-hidden"
     >
       {/* Cover Image */}
-      <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border bg-muted">
+      <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border bg-muted shrink-0">
         {img?.src ? (
           <Image
             src={img.src}
@@ -29,12 +32,16 @@ const ArticleCard = ({
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (
-          <DefaultThumbnail title={title} label="Article" />
+          <DefaultThumbnail title={title} label={label} />
         )}
         {categories && categories.length > 0 && (
           <span
             className="absolute top-3 left-3 bg-background/90 text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 border border-border"
-            style={{ fontFamily: "'DM Mono', monospace" }}
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              borderColor: categories[0]?.color ? `${categories[0].color}33` : undefined,
+              color: categories[0]?.color || undefined,
+            }}
           >
             {categories[0].title}
           </span>
@@ -42,7 +49,7 @@ const ArticleCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col justify-between min-h-[160px]">
+      <div className="p-5 flex flex-col justify-between flex-1 min-h-[160px]">
         <div>
           <h2
             className="text-lg font-light text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2 leading-snug"
@@ -67,7 +74,7 @@ const ArticleCard = ({
                   src={author.image}
                   width={18}
                   height={18}
-                  alt={author.name}
+                  alt={author.name || "Author"}
                   className="object-cover w-8 h-8 border border-border"
                 />
               )}
